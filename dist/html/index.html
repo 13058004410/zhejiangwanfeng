@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+        <meta name="renderer" content="webkit" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/main.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <title>浙江万丰企业集团</title>
+    </head>
+    <body>
+        <!-- PC端导航条 -->
+        <div class="header">
+            <div class="container">
+                <img src="./img/logo.jpg" alt="">
+                <ul class="nav">
+                    <li><a href="#">走进万丰</a></li>
+                    <li><a href="#">新闻资讯</a></li>
+                    <li><a href="#">核心业务</a></li>
+                    <li><a href="#">媒体聚焦</a></li>
+                    <li><a href="#">联系我们</a></li>                    
+                    <li><a href="#">OA登陆</a></li>                    
+                </ul>
+                <form class="search">
+                    <input type="sbumit" placeholder="搜索">
+                </form>
+            </div>
+        </div>
+        <!-- 手机端导航条 -->
+        <div class="header-m">
+                <img src="./img/logo.jpg" alt="">
+                <div class="icon" onclick="fun()"></div>
+                <div class="nav-m">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">走进万丰</a></li>
+                        <li><a href="#">新闻资讯</a></li>
+                        <li><a href="#">核心业务</a></li>
+                        <li><a href="#">媒体聚焦</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">OA登陆</a></li>
+
+                    </ul>
+                </div>
+            
+        </div>
+        <!-- 轮播图 -->
+        <div class="banner">
+            <!-- <ul class="banner-wrapper"> -->
+                <!-- <li> -->
+            <!-- 包着图片的那个大框         -->
+            <div class="list">
+                <a href="#">
+                    <img  src="./img/5cb138c54a8a3.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138d4b6344.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138e160a9d.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138ef67b58.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138fd8a742.jpg" alt="" >
+                </a>
+            </div>    
+                   
+                <!-- </li> -->
+                <!-- <li> -->
+                    
+                <!-- </li> -->
+            <!-- </ul> -->
+            <!-- 左右箭头a标签 -->
+            <a href="#" class="arrow right" rel="external nofollow">
+                <img src="./img/left.png" alt="" >
+            </a>
+            <a href="#" class="arrow left" re="external nofollow" >
+                <img src="./img/right.png" alt="">
+            </a>
+            <!-- 轮播指示器 -->
+            <ol class="indecate">
+                <li index="1" style="background:url(./img/icon12.png);" class="active"></li>
+                <li index="2" style="background:url(./img/icon13.png);"></li>
+                <li index="3" style="background:url(./img/icon14.png);"></li>
+                <li index="4" style="background:url(./img/icon15.png);"></li>
+                <li index="5" style="background:url(./img/icon16.png);"></li>
+            </ol>
+            <!-- 手机版的轮播指示器 -->
+            <ol class="indecate_m">
+                <li index="1" class="active"></li>
+                <li index="2" ></li>
+                <li index="3" ></li>
+                <li index="4" ></li>
+                <li index="5" ></li>
+            </ol>
+        </div>
+        <!-- 轮播图下边的横条 -->
+        <div class="space"></div>
+    </body>
+
+
+    <!-- 轮播指示器选中时图片替换 -->
+    <script>
+        $(function(){
+            $('.indecate li').hover(function(){
+                    $(this).addClass('active').siblings().removeClass('active')
+                },
+                // function(){
+                //     $(this).siblings().removeClass('active')
+                // }
+            )
+        })
+    </script>
+
+
+
+    <script>
+        var no=0;
+        var arr=['../img/nav.png','../img/close.png'];
+        function fun(){
+            no^=1;
+            $('.icon').css({
+                'background':'url('+arr[no]+')',
+                'background-size':'cover'
+            })
+        }
+    </script>
+</html>
