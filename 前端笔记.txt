@@ -1,0 +1,62 @@
+
+0.npm init -y  初始化当前项目，创建一个叫package.json的文件
+
+1.不需要用npm install 在当前目录下创建node_modules文件夹，后面用gulp创建。
+
+2.npm install express 在node_modules目录下创建express文件夹
+
+3.Please make sure you have the correct access rights and the repository exists.这是git的ssh公钥出问题，把C：\user下的.ssh文件夹删掉。然后打开git bash  输入 
+git config —global user.name "用户名"回车
+git config —global user.email "邮箱"回车
+ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
+最后你会看到类似一幅图画的代码，代表新的公钥已经生成。打开id_ras.pub这个文件，复制里边的公钥，去github上面新建SSH公钥就可以了。
+
+4.npm install gulp-less gulp-watch gulp-cssmin gulp-livereload gulp-rev-collector gulp-clean gulp-connect gulp-sourcemaps gulp gulp-sass gulp-uglify gulp-babel @babel/core @babel/preset-env gulp-htmlmin gulp-connect --save-dev     安装gulp以及gulp插件，同时也会创建node_modules文件目录
+
+1.gulp是一个类似于webpack的打包工具。它的功能可以有搭建后端服务器、把ES6代码降级为ES5代码、压缩代码、往dist文件夹里边写入文件等等。
+
+2.创建项目的基本步骤：在github创建一个仓库，然后克隆到本地，然后进入项目文件夹用npm init -y 初始化项目生产packege.json文件，创建gulpfile.js配置文件，手动创建dist和src及其子目录，运行gulp init命令初始化gulp插件以及创建node_modules文件目录，运行gulp dev启动gulpfile.js里边的任务就会顺便启动服务器了。src下面有js、css、image这些文件夹以及index.html文件。
+
+3.gulp init 命令是在gulp dev启动服务器之后在浏览器输入localhost:端口第一次打开index.html页面之后才能执行的命令。
+
+4.@media (max-width:767px){
+            写一些样式在里边，
+            让这些样式在屏幕小于767px的时候执行
+        }
+
+5.若页面需默认用极速内核，增加标签：<meta name="renderer" content="webkit"> 
+
+6. 以前的bootstrap框架文件使用使用顺序是：
+	1.bootstrap.css
+	2.jquery.js
+	3.popper.js
+	4.bootstrap.js
+    现在的是：
+	1.bootstrap.css
+	2.jquery.js
+	3.bootstrap.bundle.js
+
+7.媒体查询：
+
+                @media (min-width:768px){}
+	@media(min-width:992px){}
+	@media(min-width:1200px){}
+
+                由小到大从上到下排列，左右外边距为auto
+
+
+
+8.新闻列表的标题和日期想要浏览器窗口放大缩小不散架就用ul li布局
+
+9.媒体查询的样式要另外一个文件写
+
+10.关于两个DIV在父元素里边浮动，缩小窗口其中一个会往下跑的问题解决：左边浮动的DIV的有外边距要用百分比！！！
+
+11.导航栏显示二级菜单适合使用$(this).eq(0)这个方法，选定特定的li起作用
+
+
+
+
+
+
+
