@@ -54,7 +54,7 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 11.导航栏显示二级菜单适合使用$(this).eq(0)这个方法，选定特定的li起作用
 
-
+12.把新建的本地分支推送到github上面git push origin first
 
 
 
