@@ -7,7 +7,7 @@
 }
 
 html{
-    font-size:14px;
+    font-size:16px;
 }
 
 html,body{
@@ -23,6 +23,11 @@ ul li{
 
 .header{
     width:100%;
+    /* max-height:76px; */
+    border:1px solid #E4E4E4;
+    /* position: relative; */
+    /* top:10px; */
+    /* z-index: 5; */
 }
 
 .header:after{
@@ -43,9 +48,17 @@ ul li{
     clear:both;
 }
 
+#nav a{
+    color:#666;
+    text-decoration: none;
+}
+
+
+
 .container img {
   float: left;
   margin-right:20px;
+  max-height:74px;
 }
 
 .container form{
@@ -68,6 +81,7 @@ ul li{
   display: inline-block;
   padding: 0 10px;
   line-height: 76px;
+  border-bottom:2px solid whtie;
 }
 
 /* 导航条二级下拉菜单 */
@@ -75,7 +89,7 @@ ul li{
     width:100%;
     min-height:260px;
     background:white;
-    border:1px solid red;
+    /* border:1px solid red; */
     top:70px;
     position: absolute;
     z-index:5;  /*想要使用这个属性，就要先对他进行绝对定位 */
@@ -83,23 +97,32 @@ ul li{
     display:none;
     justify-content:center;
     padding:15px 0;
+    margin-top:10px;
 }
 
-
+.drop_menu a{
+    color:white;
+    text-decoration: none;
+}
 
 .drop_menu>div{
-    border:1px solid green;
+    /* border:1px solid green; */
     /* float:left; */
     margin-right:0.5%;
+}
+
+.drop_menu>div>h2{
+    margin-bottom:20px;
 }
 
 .drop_menu>div:nth-child(1){
     max-width:585px;
 }
 .drop_menu>div:nth-child(1)>p{
-    font-size:16px;
+    font-size:14px;
     color:#666;
     text-indent:2.5rem;
+    line-height: 25px;
 }
 .drop_menu>div:nth-child(2){
     max-width:250px;
@@ -147,12 +170,9 @@ ul li{
     color:#666;
 }
 
-/* 手机端样式 */
+/* 手机端导航条当屏幕大于768px时不显示 */
 .header-m{
-    padding:0 10px;
-    display:none;
-    position:fixed;
-    z-index: 6;
+    display:none
 }
 
 .nav-m{
@@ -181,6 +201,7 @@ ul li{
 
 /* 轮播图样式 */
 .banner{
+    /* margin-top:3px; */
     position:relative;
     /* left:0; */
     overflow:hidden;

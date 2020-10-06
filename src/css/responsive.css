@@ -10,8 +10,15 @@
     .header{
         display:none;
     }
+    /* 手机端样式 */
     .header-m{
+        padding:0 10px;
         display:block;
+        position:fixed;
+        top:0;
+        z-index: 6;
+        width:100%;
+        background:white;
     }
     .icon{
         background:url(../img/nav.png);
@@ -29,6 +36,7 @@
 
     /* 轮播图部分 */
     .banner{
+        margin-top:82px;
         position: relative;
         width:100%;
         /* height:100%; */
