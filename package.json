@@ -40,6 +40,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "gulp-run-sequence": "^0.3.2"
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-webserver": "^0.9.1"
   }
 }

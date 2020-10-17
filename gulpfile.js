@@ -15,7 +15,9 @@ var connect=require('gulp-connect');//引入gulp-connect模块
 //     .pipe(rename('resize.min.js'))
 //     .pipe(gulp.dest('dist/fot')); //压缩后的路径
 // });
- 
+var webserver=require('gulp-webserver'); 
+
+
 gulp.task('watchs',function(){
     gulp.watch('./src/*.html',gulp.series('html'));
     gulp.watch('./src/css/*.css',gulp.series('css'));
@@ -24,11 +26,29 @@ gulp.task('watchs',function(){
 gulp.task('connect',function(){
     connect.server({
         root:'src',//根目录
-        // ip:'192.168.11.62',//默认localhost:8080
+        // ip:'127.0.0.1',//默认localhost:80
         livereload:true,//自动更新
-        port:9999//端口
+        port:80//端口
     })
 })
+
+// gulp.task('webserver',function(){
+//     gulp.src('./src')
+//         .pipe(webserver({
+//             host:'localhost',
+//             port:80,
+//             livereload:true,
+//             open:'./index.html',//默认打开的页面
+//             directoryListing:{
+//                 enable:true,
+//                 path:'./src'
+//             },
+//             proxies:[{
+//                 source:'/api',
+//                 target:'http://www.5.com'
+//             }]
+//         }))
+// })
 
 gulp.task('html',function(){
     return gulp.src('./src/*.html')
