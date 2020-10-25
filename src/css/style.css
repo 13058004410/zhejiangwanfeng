@@ -531,6 +531,7 @@ ul li{
 /* 通知公告 */
 .notice{
     width:35%;
+    /* max-height:300px; */
     /* height:257px; */
     /* border:1px solid red; */
 }
@@ -538,6 +539,7 @@ ul li{
 .notice .tab-wrapper ul{
     border-bottom:1px solid#F3F3F3;
 }
+
 
 .notice .news-list li{
     width:100%;
@@ -564,6 +566,7 @@ ul li{
 .notice .news-list img{
     display:block;
     float:left;
+    margin-top:2px;
 }
 
 .notice .news-list li.active{

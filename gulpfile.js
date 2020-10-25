@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulpHbsRouter=require('gulp-hbs-router');
 // var rename = require('gulp-rename');//重命名
 var uglify=require('gulp-uglify');//js压缩
 var watch=require('gulp-watch');//监视
@@ -18,15 +19,36 @@ var connect=require('gulp-connect');//引入gulp-connect模块
 var webserver=require('gulp-webserver'); 
 
 
+//使用路由器
+
+// gulp.task('hbs',()=>{
+//     gulp.src(['./layout/**/*.hbs']);
+//         .pipe(gulpPlumber())
+//         .pipe(gulpPlumber())
+//         .pipe(gulpHbsRouter({
+//             cwdPath:`${_dirname}/`,
+//             routerPath:'hbsRouter.js',
+//             partialPath:'partial.js',
+//             minify:true
+//         }))
+//         .pipe(gulp.dest('./'))
+// })
+
+
+
+
+
+
 gulp.task('watchs',function(){
     gulp.watch('./src/*.html',gulp.series('html'));
     gulp.watch('./src/css/*.css',gulp.series('css'));
     gulp.watch('./src/js/*.js',gulp.series('js'));
 })
+
 gulp.task('connect',function(){
     connect.server({
         root:'src',//根目录
-        // ip:'127.0.0.1',//默认localhost:80
+        ip:'127.0.0.1',//默认localhost:80
         livereload:true,//自动更新
         port:80//端口
     })
