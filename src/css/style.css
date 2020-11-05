@@ -498,7 +498,8 @@ ul li{
 
 /* 大块新闻下面的列表 */
 .news .news-list{
-    margin-top:7px;
+    margin:7px;
+    font-size:14px;
 }
 
 .news .news-list li{
@@ -514,10 +515,12 @@ ul li{
     overflow: hidden;
     white-space:nowrap;
     color:#333;
+    font-size:14px;
 }
 
 .news .news-list span{
     float:right;
+
 }
 
 .news .img a:nth-child(3) span{
@@ -540,6 +543,9 @@ ul li{
     border-bottom:1px solid#F3F3F3;
 }
 
+.notice .news-list{
+    margin:0 0 30px 0;
+}
 
 .notice .news-list li{
     width:100%;
@@ -582,6 +588,7 @@ ul li{
     overflow:hidden;
     white-space:nowrap;
     float:left;
+    font-size:14px;
 }
 
 .notice .tab-wrapper li:nth-child(2){
@@ -620,7 +627,7 @@ ul li{
 }
 
 .file .news-list ul li{
-    line-height:16px;
+    line-height:20px;
     padding:6px 0;
 }
 
@@ -632,13 +639,14 @@ ul li{
     border-right:4px solid transparent;
     border-top:4px solid transparent;
     border-bottom:4px solid transparent;
-    margin:4px 10px 0 0;
+    margin:7px 10px 0 0;
     float:left;
 }
 
 
 .file .news-list ul li a{
     color:#666;
+    font-size:14px;
 }
 
 /* 横幅图片 */

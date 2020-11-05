@@ -38,9 +38,9 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 7.媒体查询：
 
-                @media (min-width:768px){}
-	@media(min-width:992px){}
-	@media(min-width:1200px){}
+                @media (min-width:768px){          }
+	@media(min-width:992px){           }
+	@media(min-width:1200px){            }
 
                 由小到大从上到下排列，左右外边距为auto
 
@@ -71,7 +71,7 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 16.如果用var定义的变量它会发生函数提升，函数里边的除外。
 
-17.手机端导航条的显示和隐藏适合用slidToggle()函数配合click()点击事件来实现。（jquery）
+17.手机端导航条的显示和隐藏适合用slideToggle()函数配合click()点击事件来实现。（jquery）
 
 
 
