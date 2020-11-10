@@ -1,12 +1,14 @@
+// const { get } = require("../../routes/luyou");
+
 $(function(){
     //通知公告列表的ajax请求
     $.ajax({
         type:'GET',
-        dataType:'json',
-        contenType:'application/json;charset=UTF-8',
+        dataType:'json',  //服务器返回的数据类型
+        contenType:'application/json;charset=UTF-8',  //发给服务器的数据类型
         url:'/luyou/huoqu',
         success:function(data){
-            console.log(data);
+            // console.log(data);
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
@@ -51,5 +53,86 @@ $(function(){
             console.log(e.responseText);
         }
     });   
-    
+    // 文件发布列表
+    $.ajax({
+        type:"get",
+        dataType:'json',
+        contentType:'application/json;charset=utf-8',
+        url:'/luyou/huoqu_2',
+        success:function(data){
+            var str='';
+            for(var i=0;i<data.length;i++){
+                str+=`
+                    <li><a href="#">${data[i].title}</a></li>
+                `;
+            }
+            $('#document').html(str);
+        },
+        err:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+    // 核心业务列表
+    $.ajax({
+        type:"get",
+        dataType:'json',
+        contentType:'application/json;charset=utf-8',
+        url:'/luyou/huoqu_3',
+        success:function(data){
+            var str='';
+            for(var i=0;i<data.length;i++){
+                str+=`
+                    <div><a href="#"><img src="${data[i].img}" alt=""><h3>${data[i].title}</h3></a></div>
+                `;
+            }
+            $('#hexinyewu').html(str);
+            // console.log($('#hexinyewu').html(str))
+        },
+        err:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    });
+    // 成员单位列表
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;charset=utf-8',
+        url:'/luyou/huoqu_4',       
+        success:function(data){
+            console.log(data)
+            var str='';
+            for(var i=0;i<data.length;i++){
+                str+=`
+                    <li><a href="#">${data[i].title}</a><img src="./img/hot.png" alt=""></li>
+                `
+            };
+            $('#member_unit').html(str);
+        },
+        err:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+    //视频中心
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;charset=uft-8',
+        url:'/luyou/huoqu_5',
+        success:function(data){
+            var str='';
+            for(var i=0;i<data.length;i++){
+                str+=`
+                    <li><a href="#">${data[i].title}</a></li>
+                `;
+            };
+            $('#video-list').html(str);
+        },
+        err:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
 })

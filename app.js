@@ -6,6 +6,7 @@ var app=express();
 app.listen(80);
 
 app.use(express.static('src'));
+
 app.use(bodyParser.urlencoded({
     extended:false
 }));
