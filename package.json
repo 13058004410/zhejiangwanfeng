@@ -45,6 +45,7 @@
     "gulp-hbs-router": "^1.0.6",
     "gulp-run-sequence": "^0.3.2",
     "gulp-webserver": "^0.9.1",
+    "jade": "^1.11.0",
     "mysql": "^2.18.1"
   }
 }

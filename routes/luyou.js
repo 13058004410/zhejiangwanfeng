@@ -4,6 +4,12 @@ const pool=require('../pool.js');
 
 var luyou=express.Router();
 
+
+
+
+
+
+
 // 子路由1
 luyou.get('/huoqu',function(req,res){
     pool.query('select*from zongbuxinwen limit 5',function(err,result){
@@ -38,7 +44,7 @@ luyou.get('/huoqu_5',function(req,res){
     pool.query('select*from zongbuxinwen limit 4',function(err,result){
         if(err)throw err;
         res.send(result);
-    });
+    });   
 });
 
 module.exports=luyou;
