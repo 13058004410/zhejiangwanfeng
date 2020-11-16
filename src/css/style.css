@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ html{
 
 html,body{
     width:100% !important;
+    font-family: "Microsoft YaHei",'Arial';
     /* height:100% !important; */
 }
 
@@ -96,7 +98,7 @@ ul li{
     line-height: 38px;
     display:none;
     justify-content:center;
-    padding:15px 0;
+    padding:15px 20px;
     margin-top:10px;
 }
 

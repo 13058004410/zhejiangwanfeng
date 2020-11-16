@@ -47,4 +47,27 @@ luyou.get('/huoqu_5',function(req,res){
     });   
 });
 
+//走进万丰企业概况文章数据
+luyou.get('/qiyegaikuang',function(req,res){
+    pool.query('select*from article',function(err,result){
+        if(err)throw err;
+        res.send(result);
+    });
+})
+
+//走进万丰董事长致辞数据
+luyou.get('/dongshizhangzhici',function(req,res){
+    pool.query('select*from article',function(err,result){
+        if(err)throw err;
+        res.send(result);
+    });
+});
+//走进万丰组织框架数据
+luyou.get('/zuzhikuangjia',function(req,res){
+    pool.query('select*from article',function(err,result){
+        if(err)throw err;
+        res.send(result);
+    });
+});
+
 module.exports=luyou;

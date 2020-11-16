@@ -5,7 +5,7 @@ $(function(){
     $.ajax({
         type:'GET',
         dataType:'json',  //服务器返回的数据类型
-        contenType:'application/json;charset=UTF-8',  //发给服务器的数据类型
+        contentType:'application/json;charset=UTF-8',  //发给服务器的数据类型
         url:'/luyou/huoqu',
         success:function(data){
             // console.log(data);
@@ -101,7 +101,7 @@ $(function(){
         contentType:'application/json;charset=utf-8',
         url:'/luyou/huoqu_4',       
         success:function(data){
-            console.log(data)
+            // console.log(data)
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
@@ -135,4 +135,66 @@ $(function(){
             console.log(e.responseText);
         }
     })
+
+    //页面加载时默认显示的文章
+    jituangaikuang();
+    
 })
+
+//走进万丰页面的企业概况
+function jituangaikuang(){
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;utf-8',
+        url:'/luyou/qiyegaikuang',
+        success:function(data){
+            var str=''; 
+            str=data[0].content;    
+            $('#jituangaikuang').html(str);
+        },
+        error:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+}
+
+//走进万丰页面的董事长致辞
+function dongshizhangzhici(){
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;utf-8',
+        url:'/luyou/dongshizhangzhici',
+        success:function(data){          
+            var str='';
+            str=data[1].content;
+            $('.text-content').remove()
+            $('#jituangaikuang').html(str);   
+        },
+        error:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+}
+//走进万丰页面的组织框架
+function zuzhikuangjia(){
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;utf-8',
+        url:'/luyou/zuzhikuangjia',
+        success:function(data){          
+            var str='';
+            str=data[2].content;
+            $('.text-content').remove()
+            $('#jituangaikuang').html(str);   
+        },
+        error:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+}

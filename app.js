@@ -4,7 +4,7 @@ var bodyParser=require('body-parser');
 
 var app=express();
 app.listen(80,function(){
-    console.log('server has start...');
+    console.log('server has started...');
 });
 
 

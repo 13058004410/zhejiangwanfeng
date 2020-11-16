@@ -1,0 +1,81 @@
+*{padding:0;margin:0;box-sizing:border-box}
+
+/* 大横幅图片 */
+.banner img:nth-child(2){
+    display:none;
+}
+.banner img{
+    display: block;
+}
+.banner .text{
+    width:25%;
+    height:25%;
+    position: absolute;
+    top:20%;
+    right:12%;
+    min-width:243px;
+    
+}
+
+.banner .text h1{
+    color:#fff;
+    font-size:40px;
+    font-weight:normal;
+    line-height: 50px;
+}
+.banner .text h2{
+    color:#fff;
+    font-size:30px;
+    font-weight:normal;
+    line-height: 50px;
+}
+
+/* 二级导航菜单 */
+.menu_2{
+    border-bottom:1px solid #e5e5e5;
+}
+.menu_2 .container ul li{
+    float:left;
+    line-height: 67px;
+    white-space: nowrap;
+    padding:0 1%;
+    font-size:18px;
+    border-right:1px solid #e5e5e5;
+    width:14%;
+    text-align: center;
+    cursor: pointer;
+}
+.menu_2 .container ul li:first-child{
+    border-left:1px solid #e5e5e5;
+}
+.menu_2 .container ul li.active{
+    background:#1D6BC3;
+    color:#fff;
+}
+.text-content .num-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:50px;
+}
+.text-content .num-info .num-item p{
+    text-align: center;
+}
+.text-content .num-info .num-item p:nth-child(1){
+    font-size:76px;
+    color:#0073bc;
+}
+.text-content h1{
+    font-size:36px;
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.text-content .text{
+    text-indent: 32px;
+    font-size: 16px;
+    color: #666;
+    line-height: 36px;
+    margin-bottom: 40px;
+}
