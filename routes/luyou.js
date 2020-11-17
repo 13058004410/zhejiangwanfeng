@@ -69,5 +69,12 @@ luyou.get('/zuzhikuangjia',function(req,res){
         res.send(result);
     });
 });
+//走进万丰集团荣誉数据
+luyou.get('/jituanrongyu',function(req,res){
+    pool.query('select*from article',function(err,result){
+        if(err)throw err;
+        res.send(result);
+    });
+});
 
 module.exports=luyou;

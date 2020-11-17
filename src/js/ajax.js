@@ -198,3 +198,22 @@ function zuzhikuangjia(){
         }
     })
 }
+//走进万丰页面的集团荣誉
+function jituanrongyu(){
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;charset=utf-8',
+        url:'/luyou/jituanrongyu',
+        success:function(data){
+            console.log(data);
+            var str=data[3].content;
+            $('.text-content').remove();
+            $('#jituangaikuang').html(str);
+        },
+        error:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+}

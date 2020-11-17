@@ -73,7 +73,11 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 17.手机端导航条的显示和隐藏适合用slideToggle()函数配合click()点击事件来实现。（jquery）
 
+18.想要用nodejs实现动态页面跳转（没有.html后缀）就要引入FS文件系统模块，app.get('/login',function(req,res){res.sendFile(__dirname+'/src/'+'login.html')})
 
+19.如果项目要用到图片CSS、js等静态资源，app.use(express.static('src'))
+
+20.如果是发POST请求，就要使用到中间件body-parser，它可以对POST的请求体进行解析。app.use(bodyPar.urlencoded({extended:false}))
 
 
 

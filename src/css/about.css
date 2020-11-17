@@ -52,6 +52,9 @@
     background:#1D6BC3;
     color:#fff;
 }
+.text-content{
+    padding-top:90px;
+}
 .text-content .num-info{
     display: flex;
     justify-content: space-between;
@@ -68,7 +71,7 @@
     font-size:36px;
     color: #333;
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
 
 }
@@ -78,4 +81,30 @@
     color: #666;
     line-height: 36px;
     margin-bottom: 40px;
+}
+.text-content img{
+    border: 0;
+    vertical-align: middle;
+}
+.container .honor-wrapper{
+    padding-top:90px
+}
+.container .honor-wrapper .honor-list li{
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    margin: 0 1.15%;
+    margin-bottom: 40px;
+}
+.container .honor-wrapper .honor-list li img{
+    width:100%;
+    max-height:230px;
+}
+.container .honor-wrapper .honor-list li p{
+    height: 50px;
+    line-height: 50px;
+    color: #333;
+    font-size: 18px;
+    background: #E5E5E5;
+    text-align: center;
 }
