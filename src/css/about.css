@@ -1,5 +1,6 @@
 *{padding:0;margin:0;box-sizing:border-box}
-
+a{text-decoration: none;}
+a img{display: block;}
 /* 大横幅图片 */
 .banner img:nth-child(2){
     display:none;
@@ -92,7 +93,7 @@
 .container .honor-wrapper .honor-list li{
     display: inline-block;
     vertical-align: top;
-    width: 31%;
+    width: 30%;
     margin: 0 1.15%;
     margin-bottom: 40px;
 }

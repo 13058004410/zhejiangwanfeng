@@ -137,7 +137,7 @@ $(function(){
     })
 
     //页面加载时默认显示的文章
-    jituangaikuang();
+    // jituangaikuang();
     
 })
 
@@ -206,10 +206,19 @@ function jituanrongyu(){
         contentType:'application/json;charset=utf-8',
         url:'/luyou/jituanrongyu',
         success:function(data){
-            console.log(data);
-            var str=data[3].content;
+            var str='';           
+            for(var i=0;i<data.length;i++){
+                str+=`
+                    <li>
+                        <a href="#">
+                            <img src="${data[i].img}" class="img_ry">
+                            <p class="ellipsis">${data[i].p}</p>
+                        </a> 
+                    </li>
+                `           
+            };
             $('.text-content').remove();
-            $('#jituangaikuang').html(str);
+            $('#jituanrongyu').html(str);
         },
         error:function(e){
             console.log(e.status);

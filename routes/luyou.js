@@ -71,7 +71,7 @@ luyou.get('/zuzhikuangjia',function(req,res){
 });
 //走进万丰集团荣誉数据
 luyou.get('/jituanrongyu',function(req,res){
-    pool.query('select*from article',function(err,result){
+    pool.query('select*from jituanrongyu limit 0,12',function(err,result){
         if(err)throw err;
         res.send(result);
     });
