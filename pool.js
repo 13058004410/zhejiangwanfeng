@@ -5,7 +5,7 @@ const pool=mysql.createPool({
     password:'root',
     host:'127.0.0.1',
     port:'3306',
-    database:'xinwen',
+    database:'zhejiangwanfeng',
     connectionLimit:20
 });
 

@@ -1,5 +1,7 @@
 $(function(){
-    
+    //取消那个窗口发生改变就刷新页面的事件
+    $(window).unbind('resize');
+
     //二级菜单点中变颜色
     $('#menu_2>li').click(function(){
         // console.log(11111111);
