@@ -77,4 +77,13 @@ luyou.get('/jituanrongyu',function(req,res){
     });
 });
 
+luyou.get('/jituanrongyu_2',function(req,res){
+    pool.query('select * from jituanrongyu',function(err,result){
+        if(err)throw err;
+        res.send(result);
+    })
+})
+
+
+
 module.exports=luyou;
