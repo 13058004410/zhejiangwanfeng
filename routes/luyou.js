@@ -70,20 +70,32 @@ luyou.get('/zuzhikuangjia',function(req,res){
     });
 });
 //走进万丰集团荣誉数据
-luyou.get('/jituanrongyu',function(req,res){
-    pool.query('select*from jituanrongyu limit 0,12',function(err,result){
-        if(err)throw err;
-        res.send(result);
-    });
+// luyou.get('/jituanrongyu',function(req,res){
+//     pool.query('select*from jituanrongyu limit 0,12',function(err,result){
+        
+//         if(err)throw err;
+//         res.send(result);
+//     });
+// });
+
+//集团荣誉分页列表
+luyou.get('/huoqu_6',function(req,res){
+    var pno=req.query.pno;
+    var psize=req.query.psize;
+    var count=parseInt(psize);
+    var sql='select*from jituanrongyu limit ?,?';
+    var start=(pno-1)*count;
+    pool.query(sql,[start,count],function(err,result){
+        res.send(result)
+    })
 });
 
-luyou.get('/jituanrongyu_2',function(req,res){
-    pool.query('select * from jituanrongyu',function(err,result){
-        if(err)throw err;
-        res.send(result);
+//企业文化
+luyou.get('/qiyewenhua',function(req,res){
+    pool.query('select*from article',function(err,result){
+        res.send(result)
     })
 })
-
 
 
 module.exports=luyou;

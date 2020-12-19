@@ -2,6 +2,9 @@ $(function(){
     //取消那个窗口发生改变就刷新页面的事件
     $(window).unbind('resize');
 
+    //自动加载集团概况页面
+    jituangaikuang();
+
     //二级菜单点中变颜色
     $('#menu_2>li').click(function(){
         // console.log(11111111);
@@ -21,17 +24,10 @@ $(function(){
         $('#menu_2>li').eq(2).click(function(){
             zuzhikuangjia();
         })
-        //切换到集团荣誉
-        $('#menu_2>li').eq(2).click(function(){
-            jituanrongyu();
+        //切换到企业文化
+        $('#menu_2>li').eq(4).click(function(){
+            qiyewenhua();
         })
-
- 
-        
-
-
-
-
         
     
 })

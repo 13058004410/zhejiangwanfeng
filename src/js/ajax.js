@@ -198,126 +198,25 @@ function zuzhikuangjia(){
         }
     })
 }
-//走进万丰页面的集团荣誉
-function jituanrongyu(){
+
+//走进万丰页面的企业文化
+function qiyewenhua(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;charset=utf-8',
-        url:'/luyou/jituanrongyu',
-        success:function(data){
-            var str='';           
-            for(var i=0;i<data.length;i++){
-                str+=`
-                    <li>
-                        <a href="#">
-                            <img src="${data[i].img}" class="img_ry">
-                            <p class="ellipsis">${data[i].p}</p>
-                        </a> 
-                    </li>
-                `           
-            };
-            $('.text-content').remove();
-            $('#jituanrongyu').html(str);
+        contentType:'application/json;utf-8',
+        url:'/luyou/qiyewenhua',
+        success:function(data){          
+            var str='';
+            str=data[3].content;
+            $('#jituangaikuang').children().remove();
+            $('#jituangaikuang').html(str);   
         },
         error:function(e){
             console.log(e.status);
             console.log(e.responseText);
         }
-    });
-    $.ajax({
-        type:'get',
-        dataType:'json',
-        contentType:'application/json;charset=utf-8',
-        url:'luyou/jituanrongyu_2',
-        success:function(data){
-            //---------------------底部分页列表-------------------------
-            var rows=data.length;
-            var pageOptions = {pageTotal:Math.ceil(rows/12),curPage:5,paginationId:'xxx'}; //对象里边的属性值手动填写
-            dynamicPagingFunc(pageOptions);
-            
-            function dynamicPagingFunc(pageOptions){
-                var pageTotal = pageOptions.pageTotal || 1;
-                var curPage = pageOptions.curPage||1;
-                var doc = document;
-                var paginationId = doc.getElementById(''+pageOptions.paginationId+'') || doc.getElementById('pagination');
-                var html = '';
-                if(curPage>pageTotal){
-                    curPage =1;
-                }
-                /*总页数小于5，全部显示*/
-                if(pageTotal<=5){
-                    html = appendItem(pageTotal,curPage,html);
-                    paginationId.innerHTML = html;
-                    
-                }
-                /*总页数大于5时，要分析当前页*/
-                if(pageTotal>5){
-                    if(curPage<=4){
-                        html = appendItem(pageTotal,curPage,html);
-                        paginationId.innerHTML = html;
-                    }else if(curPage>4){
-                        html = appendItem(pageTotal,curPage,html);
-                        paginationId.innerHTML = html;
-                    }
-                }
-            }
-            
-            function appendItem(pageTotal,curPage,html){
-                var starPage = 0;
-                var endPage = 0;
-                
-                html+='<a class="pageItem" id="prevBtn">&lt;</a>';
-                
-                if(pageTotal<=5){
-                    starPage = 1;
-                    endPage = pageTotal;    
-                }else if(pageTotal>5 && curPage<=4){
-                    starPage = 1;
-                    endPage = 4;
-                    if(curPage==4){
-                        endPage = 5;
-                    }
-                }else{
-                    if(pageTotal==curPage){
-                        starPage = curPage-3;
-                        endPage = curPage;
-                    }else{
-                        starPage = curPage-2;
-                        endPage = curPage+1;
-                    }
-                    html += '<a class="pageItem" id="first">1</a><span class="over">...</span>';
-                }
-                
-
-
-                for(let i = starPage;i <= endPage;i++){
-                    if(i==curPage){
-                        html += '<a class="active pageItem" id="first">'+i+'</a>';
-                    }else{
-                        html += '<a href="#" class="pageItem">'+i+'</a>';
-                    }
-                }
-                
-
-                if(pageTotal<=5){
-                    html+='<a href="#" class="pageItem" id="nextBtn">&gt;</a>';
-                }else{
-                    if(curPage<pageTotal-2){ 
-                        html += '<span class="over">...</span>';
-                    }
-                    if(curPage<=pageTotal-2){
-                        html += '<a href="#" class="pageItem">'+pageTotal+'</a>';
-                    }
-                    html+='<a href="#" class="pageItem" id="nextBtn">&gt;</a>';
-                }
-
-                return html;
-            }
-        },
-        error:function(e){
-            console.log(e.responseText);
-        }
     })
 }
+
 

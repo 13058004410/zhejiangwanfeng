@@ -11,6 +11,7 @@
         <script src="./js/main.js"></script>
         <script src="./js/about.js"></script>
         <script src="./js/ajax.js"></script>
+        <script src="./js/pagination.js"></script>
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/responsive.css">
         <link rel="stylesheet" href="./css/about.css">
@@ -226,42 +227,40 @@
                         <p>万丰集团秉承竞争、开放、合作的经营理念；实施拓展市场、注重研发、自主创新的经营战略；采用外部市场化、内部集优化、管理精细化的经营机制；恪守规范、严谨、诚信的经营准则；致力精益求精、精诚协作、勇争一流的高素质团队建设，全力打造一个资产优良、管理科学、结构合理、财务严谨的具有国际竞争力的集科工贸于一体的大而强集团公司。我们将竭尽全力为客户提供“满足需求的产品”和“优质上乘的服务”，以期不断提升企业核心竞争力，获得可持续良性经营能力，努力将万丰集团打造成为国际一流企业!</p>
                     </div>
                 </div> -->
-                <div class="honor-wrapper"> 
-                    <ul class="honor-list" id="jituanrongyu"> 
-                        <!-- <li>
-                            <a href="#">
-                                <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a75cfe66a0.jpg" class="img_ry" /> 
-                                <p class="ellipsis">全省县级供销社经济20强</p> 
-                            </a>
-                         </li> -->
-                        <!-- <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74eccf77b.jpg" class="img_ry" /> <p class="ellipsis">萧山区知名商号</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a753a9ad7c.jpg" class="img_ry" /> <p class="ellipsis">萧山区十佳社区共建先进单位</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a750577304.jpg" class="img_ry" /> <p class="ellipsis">2012年度百强企业</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a756b33c2e.jpg" class="img_ry" /> <p class="ellipsis">杭州服务名牌</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a751d132d1.jpg" class="img_ry" /> <p class="ellipsis">杭州市服务业企业100强</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a75e8ae1e8.jpg" class="img_ry" /> <p class="ellipsis">浙江省信用管理示范企业</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74cfd4ad9.jpg" class="img_ry" /> <p class="ellipsis">市级农业龙头企业</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a763102c40.jpg" class="img_ry" /> <p class="ellipsis">2012年度“五好”基层党组织</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a7589219fe.jpg" class="img_ry" /> <p class="ellipsis">全国供销合作社系统百强企业</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74aeb8a0b.jpg" class="img_ry" /> <p class="ellipsis">2011年度萧山区文史地方志工作先进集体</p> </a> </li>
-                        <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a748e9a266.jpg" class="img_ry" /> <p class="ellipsis">2011年度萧山区内部审计工作先进集体</p> </a> </li>  -->
-                    </ul> 
-                    <!-- 分页开始 -->
-                    <!-- 首先，在body中添加div id="pagination"  -->
-                    <div id="pagination">
-                        <!-- 后面会在JS中动态追加 ，此处为了，实现前端效果，所以注册
-                        <a class="banBtn pageItem" id="prevBtn">&lt;</a>
-                        <a class="active pageItem" id="first">1</a>
-                        <a href="#" class="pageItem">2</a>
-                        <a href="#" class="pageItem">3</a>
-                        <a href="#" class="pageItem">4</a>
-                        <span class="over">...</span>
-                        <a href="#" class="pageItem" id="last">10</a>
-                        <a href="#" class="pageItem" id="nextBtn">&gt;</a> -->
-                    
-                    </div> 
+                 
+                    <!-- <li>
+                        <a href="#">
+                            <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a75cfe66a0.jpg" class="img_ry" /> 
+                            <p class="ellipsis">全省县级供销社经济20强</p> 
+                        </a>
+                        </li> -->
+                    <!-- <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74eccf77b.jpg" class="img_ry" /> <p class="ellipsis">萧山区知名商号</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a753a9ad7c.jpg" class="img_ry" /> <p class="ellipsis">萧山区十佳社区共建先进单位</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a750577304.jpg" class="img_ry" /> <p class="ellipsis">2012年度百强企业</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a756b33c2e.jpg" class="img_ry" /> <p class="ellipsis">杭州服务名牌</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a751d132d1.jpg" class="img_ry" /> <p class="ellipsis">杭州市服务业企业100强</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a75e8ae1e8.jpg" class="img_ry" /> <p class="ellipsis">浙江省信用管理示范企业</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74cfd4ad9.jpg" class="img_ry" /> <p class="ellipsis">市级农业龙头企业</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a763102c40.jpg" class="img_ry" /> <p class="ellipsis">2012年度“五好”基层党组织</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a7589219fe.jpg" class="img_ry" /> <p class="ellipsis">全国供销合作社系统百强企业</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a74aeb8a0b.jpg" class="img_ry" /> <p class="ellipsis">2011年度萧山区文史地方志工作先进集体</p> </a> </li>
+                    <li> <a href="#"> <img src="http://www.zjwfgroup.com/data/upload/admin/20180820/5b7a748e9a266.jpg" class="img_ry" /> <p class="ellipsis">2011年度萧山区内部审计工作先进集体</p> </a> </li>  -->
+               
+                <!-- 分页开始 -->
+                <!-- 首先，在body中添加div id="pagination"  -->
+                <!-- <div id="content"></div>
 
-                </div> 
+                <div id="pagination"> -->
+                    <!-- <ul>
+                        <li class="li" index="0">上一页</li>
+                        <li class="li" index="1">1</li>
+                        <li class="li" index="2">2</li>
+                        <li class="li" index="3">3</li>
+                        <li class="li" index="4">4</li>
+                        <li class="li" index="5">下一页</li>
+                    </ul> -->
+                <!-- </div> -->
+
             </div>
             
             

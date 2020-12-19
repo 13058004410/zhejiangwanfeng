@@ -69,7 +69,47 @@ insert into article VALUES
 (3,
 '<div class="text-content"> <p style="text-align: center;"><img src="./img/zuzhikuangjia.png" title="zzjg.jpg" alt="zzjg.jpg"></p> </div>'),
 (4,
-'<div class="honor-wrapper"> <ul class="honor-list"> <li> <a href="#"> <img src="./img/01.png" class="img_ry"> <p class="ellipsis">全省县级供销社经济20强</p> </a> </li><li> <a href="#"> <img src="./img/02.png" class="img_ry"> <p class="ellipsis">萧山区知名商号</p> </a> </li><li> <a href="#"> <img src="./img/03.png" class="img_ry"> <p class="ellipsis">萧山区十佳社区共建先进单位</p> </a> </li><li> <a href="#"> <img src="./img/04.png" class="img_ry"> <p class="ellipsis">2012年度百强企业</p> </a> </li><li> <a href="#"> <img src="./img/05.png" class="img_ry"> <p class="ellipsis">杭州服务名牌</p> </a> </li><li> <a href="#"> <img src="./img/06.png" class="img_ry"> <p class="ellipsis">杭州市服务业企业100强</p> </a> </li><li> <a href="#"> <img src="./img/07.png" class="img_ry"> <p class="ellipsis">浙江省信用管理示范企业</p> </a> </li><li> <a href="#"> <img src="./img/08.png" class="img_ry"> <p class="ellipsis">市级农业龙头企业</p> </a> </li><li> <a href="#"> <img src="./img/09.png" class="img_ry"> <p class="ellipsis">2012年度“五好”基层党组织</p> </a> </li><li> <a href="#"> <img src="./img/10.png" class="img_ry"> <p class="ellipsis">全国供销合作社系统百强企业</p> </a> </li><li> <a href="#"> <img src="./img/11.png" class="img_ry"> <p class="ellipsis">2011年度萧山区文史地方志工作先进集体</p> </a> </li><li> <a href="#"> <img src="./img/12.png" class="img_ry"> <p class="ellipsis">2011年度萧山区内部审计工作先进集体</p> </a> </li> </ul> <div class="slip-wrapper pagination"> <div> <span class="current">1</span><a class="num" href="/index.php/news/jtry/id/8/p/2">2</a><a class="num" href="/index.php/news/jtry/id/8/p/3">3</a><a class="num" href="/index.php/news/jtry/id/8/p/4">4</a><a class="num" href="/index.php/news/jtry/id/8/p/5">5</a><a class="num" href="/index.php/news/jtry/id/8/p/6">6</a> <a class="next" href="/index.php/news/jtry/id/8/p/2">下一页</a> <a class="end" href="/index.php/news/jtry/id/8/p/8">末页</a></div> </div> <div class="load-more"> <span class="more" data-id="1">加载更多</span> </div> </div>');
+'<div class="honor-wrapper"> <ul class="honor-list"> <li> <a href="#"> <img src="./img/01.png" class="img_ry"> <p class="ellipsis">全省县级 供销社经济20强</p> </a> </li><li> <a href="#"> <img src="./img/02.png" class="img_ry"> <p class="ellipsis">萧山区知名商号</p> </a> </li><li> <a href="#"> <img src="./img/03.png" class="img_ry"> <p class="ellipsis">萧山区十佳社区共建先进单位</p> </a> </li><li> <a href="#"> <img src="./img/04.png" class="img_ry"> <p class="ellipsis">2012年度百强企业</p> </a> </li><li> <a href="#"> <img src="./img/05.png" class="img_ry"> <p class="ellipsis">杭州服务名牌</p> </a> </li><li> <a href="#"> <img src="./img/06.png" class="img_ry"> <p class="ellipsis">杭州市服务业企业100强</p> </a> </li><li> <a href="#"> <img src="./img/07.png" class="img_ry"> <p class="ellipsis">浙江省信用管理示范企业</p> </a> </li><li> <a href="#"> <img src="./img/08.png" class="img_ry"> <p class="ellipsis">市级农业龙头企业</p> </a> </li><li> <a href="#"> <img src="./img/09.png" class="img_ry"> <p class="ellipsis">2012年度“五好”基层党组织</p> </a> </li><li> <a href="#"> <img src="./img/010.png" class="img_ry"> <p class="ellipsis">全国供销合作社系统百强企业</p> </a> </li><li> <a href="#"> <img src="./img/011.png" class="img_ry"> <p class="ellipsis">2011年度萧山区文史地方志工作先进集体</p> </a> </li><li> <a href="#"> <img src="./img/012.png" class="img_ry"> <p class="ellipsis">2011年度萧山区内部审计工作先进集体</p> </a> </li> </ul> <div class="slip-wrapper pagination"> <div> <span class="current">1</span><a class="num" href="/index.php/news/jtry/id/8/p/2">2</a><a class="num" href="/index.php/news/jtry/id/8/p/3">3</a><a class="num" href="/index.php/news/jtry/id/8/p/4">4</a><a class="num" href="/index.php/news/jtry/id/8/p/5">5</a><a class="num" href="/index.php/news/jtry/id/8/p/6">6</a> <a class="next" href="/index.php/news/jtry/id/8/p/2">下一页</a> <a class="end" href="/index.php/news/jtry/id/8/p/8">末页</a></div></div> <div class="load-more"> <span class="more" data-id="1">加载更多</span> </div> </div>'),
+(5,
+'
+  <div class="qywh-wrapper"> 
+   <h1 class="title">企业文化</h1> 
+   <div class="flex-box"> 
+    <div class="flex_img">
+     <img src="../img/5b7a61f5864bf.png" width="100%" />
+    </div> 
+    <ul class="flex-item list-paddingleft-2">
+     <li><p><strong>万丰宗旨：</strong>福祉社会，实现价值</p></li>
+     <li><p><strong>万丰发展目标：</strong>创建区域经济中具有较高影响力和核心竞争力的现代品牌型国际化强集团，争当全市合作经济的领头雁、全省合作经济的排头兵、全国合作经济的先行者</p></li>
+     <li><p><strong>万丰发展理念：</strong>开放 竞争 合作 共赢</p></li>
+     <li><p><strong>万丰核心价值观：</strong>百年万丰，永攀高峰；敬业报国，追求卓越</p></li>
+     <li><p><strong>万丰精神：</strong>自强不息，勇争一流</p></li>
+     <li><p><strong>万丰作风：</strong>知识常新 团队协作 严谨高效</p></li>
+     <li><p><strong>万丰管理信条：</strong>员工是万丰之本 市场是万丰之命</p></li>
+     <li><p><strong>万丰管理理念：</strong>大气经营，精细管理，开放合作，诚信发展</p></li>
+     <li><p><strong>万丰管理目标：</strong>人尽其才 财尽其用</p></li>
+     <li><p><strong>万丰管理模式：</strong>规范化 精细化 科学化 法治化</p></li>
+     <li><p><strong>万丰经营方针：</strong>竞争求生存 创新求发展</p></li>
+     <li><p><strong>万丰营销理念：</strong>真诚服务到永远</p></li>
+     <li><p><strong>万丰经营宗旨：</strong>诚信为本</p></li>
+     <li><p><strong>万丰市场观：</strong>欲胜市场先自强</p></li>
+     <li><p><strong>万丰质量观：</strong>企业发展质量先行</p></li>
+     <li><p><strong>万丰客户观：</strong>有万丰，万家丰；一切为了客户，为了客户一切，为了一切客户</p></li>
+     <li><p><strong>万丰产业观：</strong>做专 做精 做强 打造特色 铸造品牌</p></li>
+     <li><p><strong>万丰工作态度：</strong>只争朝夕 不找借口 注重细节</p></li>
+     <li><p><strong>万丰个人修养：</strong>忠诚 勤学 精业 为公 包容</p></li>
+     <li><p><strong>万丰行为准则：</strong>缜密治业 厚德待人 廉洁自律</p></li>
+     <li><p><strong>万丰道德规范：</strong>诚实守信 遵守公德</p></li>
+     <li><p><strong>万丰人际理念：</strong>以人为本 构建和谐</p></li>
+     <li><p><strong>万丰人际关系：</strong>平等 友爱 理解 信任</p></li>
+     <li><p><strong>万丰文化准则：</strong>传承精华 弘扬先进</p></li>
+     <li><p><strong>万丰文化标识：</strong>寓意丰富 独特鲜明</p></li>
+     <li><p><strong>万丰文化战略：</strong>信息化 国际化 本土化</p></li>
+    </ul> 
+   </div> 
+  </div>');
+
+
 
 create table jituanrongyu(id int not null auto_increment primary key,img varchar(65535),p varchar(65535));
 insert into jituanrongyu values
@@ -82,77 +122,77 @@ insert into jituanrongyu values
 (null,'../img/07.png','浙江省信用管理示范企业'),
 (null,'../img/08.png','市级农业龙头企业'),
 (null,'../img/09.png','2012年度“五好”基层党组织'),
-(null,'../img/10.png','全国供销合作社系统百强企业'),
-(null,'../img/11.png','2011年度萧山区文史地方志工作先进集体'),
-(null,'../img/12.png','2011年度萧山区内部审计工作先进集体'),
-(null,'../img/13.png','2001-2006年信用等级AAA企业'),
-(null,'../img/14.png','2004年萧山区百强企业'),
-(null,'../img/15.png','2004年浙江省供销系统先进单位'),
-(null,'../img/16.png','2005-2007年杭州市内审先进单位'),
-(null,'../img/17.png','2005杭州市百强企业'),
-(null,'../img/18.png','2005年列中国最大1000家企业集团第…'),
-(null,'../img/19.png','2005年萧山区百强企业'),
-(null,'../img/20.png','2005年信用等级AAA企业'),
-(null,'../img/21.png','2006年杭州市百强企业'),
-(null,'../img/22.png','2006年萧山区帮扶工作先进企业'),
-(null,'../img/23.png','2006年萧山区帮扶工作先进企业'),
-(null,'../img/24.png','2006年信用等级AAA企业'),
-(null,'../img/25.png','2007年安全生产先进单位'),
-(null,'../img/26.png','2007年度萧山区百强企业'),
-(null,'../img/27.png','2007年杭州市&quot;示范性老干部党支部&quot;'),
-(null,'../img/28.png','2007年老干部工作先进集体'),
-(null,'../img/29.png','2007年社区共建先进单位'),
-(null,'../img/30.png','2007年信访先进集体'),
-(null,'../img/31.png','2007年信用等级AAA企业'),
-(null,'../img/32.png','2008年“万丰”商号被认定为萧山区知名…'),
-(null,'../img/33.png','2008年度全国供销系统百强企业'),
-(null,'../img/34.png','2008年度浙江省服务业百强企业'),
-(null,'../img/35.png','2008年度浙江省服务业百强企业'),
-(null,'../img/36.png','2008年集团荣列中国服务业企业500强…'),
-(null,'../img/37.png','2008年集团荣列中国服务业企业500强…'),
-(null,'../img/38.png','2008年集团荣列中国服务业企业500强…'),
-(null,'../img/39.png','2008年集团荣列中国服务业企业500强…'),
-(null,'../img/40.png','2008年浙江省服务业百强企业'),
-(null,'../img/41.png','2009-2010杭州市萧山区网络文化协…'),
-(null,'../img/42.png','2009-2010杭州市萧山区网络文化协…'),
-(null,'../img/43.png','2009杭州市百强企业'),
-(null,'../img/44.png','2009年度就业再就业工作先进单位'),
-(null,'../img/45.png','2009年度食品安全工作先进单位'),
-(null,'../img/46.png','2009年度食品安全工作先进单位'),
-(null,'../img/47.png','2009年度无偿献血先进单位'),
-(null,'../img/48.png','2009年度萧山区百强企业'),
-(null,'../img/49.png','2009年度萧山区百强企业'),
-(null,'../img/50.png','2009年度萧山区内部审计工作先进集体'),
-(null,'../img/51.png','2009年度信访工作先进集体'),
-(null,'../img/52.png','2009年度信访工作先进集体'),
-(null,'../img/53.png','2009年社会治安综合治理先进单位'),
-(null,'../img/54.png','2009年社会治安综合治理先进单位'),
-(null,'../img/55.png','2009年萧山区突出贡献奖'),
-(null,'../img/56.png','2010年度“五好”基层党组织'),
-(null,'../img/57.png','2010年度“最佳党日”活动创新奖'),
-(null,'../img/58.png','2010年度杭州市萧山区防汛防台抗旱优胜…'),
-(null,'../img/59.png','2010年度杭州市萧山区防汛防台抗旱优胜…'),
-(null,'../img/60.png','2010年度杭州市萧山区服务业发展先进企…'),
-(null,'../img/61.png','2010年度杭州市萧山区服务业发展先进企…'),
-(null,'../img/62.png','2010年度全省供销社系统社务信息工作先…'),
-(null,'../img/63.png','2010年度萧山区百强企业'),
-(null,'../img/64.png','2010年度萧山区百强企业'),
-(null,'../img/65.png','2010年度萧山区内部审计工作先进集体'),
-(null,'../img/66.png','2010年度萧山区网络文化建设和管理工作…'),
-(null,'../img/67.png','2010年浙江省服务业百强企业'),
-(null,'../img/68.png','2011年度全省供销社系统社务信息工作先…'),
-(null,'../img/69.png','2011年度萧山区内部审计工作先进集体'),
-(null,'../img/70.png','2011年度萧山区文史地方志工作先进集体'),
-(null,'../img/71.png','2011年度萧山区综合安全工作先进集体'),
-(null,'../img/72.png','供销合作社创新发展教育基地'),
-(null,'../img/73.png','老干部工作先进集体'),
-(null,'../img/74.png','全国供销合作社系统百强企业'),
-(null,'../img/75.png','全国供销系统培训示范基地'),
-(null,'../img/76.png','全省供销社系统农村实用人才培训工作三等奖…'),
-(null,'../img/77.png','市级农业龙头企业'),
-(null,'../img/78.png','萧山区“五好”党建示范点'),
-(null,'../img/79.png','萧山区2009年度先进基层党组织'),
-(null,'../img/80.png','浙江省供销合作社系统先进集体'),
-(null,'../img/81.png','浙江十佳企业之歌'),
-(null,'../img/82.png','浙江十佳企业之歌'),
-(null,'../img/83.png','浙江万丰企业集团公司2011年营业收入超…');
+(null,'../img/010.png','全国供销合作社系统百强企业'),
+(null,'../img/011.png','2011年度萧山区文史地方志工作先进集体'),
+(null,'../img/012.png','2011年度萧山区内部审计工作先进集体'),
+(null,'../img/013.png','2001-2006年信用等级AAA企业'),
+(null,'../img/014.png','2004年萧山区百强企业'),
+(null,'../img/015.png','2004年浙江省供销系统先进单位'),
+(null,'../img/016.png','2005-2007年杭州市内审先进单位'),
+(null,'../img/017.png','2005杭州市百强企业'),
+(null,'../img/018.png','2005年列中国最大1000家企业集团第…'),
+(null,'../img/019.png','2005年萧山区百强企业'),
+(null,'../img/020.png','2005年信用等级AAA企业'),
+(null,'../img/021.png','2006年杭州市百强企业'),
+(null,'../img/022.png','2006年萧山区帮扶工作先进企业'),
+(null,'../img/023.png','2006年萧山区帮扶工作先进企业'),
+(null,'../img/024.png','2006年信用等级AAA企业'),
+(null,'../img/025.png','2007年安全生产先进单位'),
+(null,'../img/026.png','2007年度萧山区百强企业'),
+(null,'../img/027.png','2007年杭州市&quot;示范性老干部党支部&quot;'),
+(null,'../img/028.png','2007年老干部工作先进集体'),
+(null,'../img/029.png','2007年社区共建先进单位'),
+(null,'../img/030.png','2007年信访先进集体'),
+(null,'../img/031.png','2007年信用等级AAA企业'),
+(null,'../img/032.png','2008年“万丰”商号被认定为萧山区知名…'),
+(null,'../img/033.png','2008年度全国供销系统百强企业'),
+(null,'../img/034.png','2008年度浙江省服务业百强企业'),
+(null,'../img/035.png','2008年度浙江省服务业百强企业'),
+(null,'../img/036.png','2008年集团荣列中国服务业企业500强…'),
+(null,'../img/037.png','2008年集团荣列中国服务业企业500强…'),
+(null,'../img/038.png','2008年集团荣列中国服务业企业500强…'),
+(null,'../img/039.png','2008年集团荣列中国服务业企业500强…'),
+(null,'../img/040.png','2008年浙江省服务业百强企业'),
+(null,'../img/041.png','2009-2010杭州市萧山区网络文化协…'),
+(null,'../img/042.png','2009-2010杭州市萧山区网络文化协…'),
+(null,'../img/043.png','2009杭州市百强企业'),
+(null,'../img/044.png','2009年度就业再就业工作先进单位'),
+(null,'../img/045.png','2009年度食品安全工作先进单位'),
+(null,'../img/046.png','2009年度食品安全工作先进单位'),
+(null,'../img/047.png','2009年度无偿献血先进单位'),
+(null,'../img/048.png','2009年度萧山区百强企业'),
+(null,'../img/049.png','2009年度萧山区百强企业'),
+(null,'../img/050.png','2009年度萧山区内部审计工作先进集体'),
+(null,'../img/051.png','2009年度信访工作先进集体'),
+(null,'../img/052.png','2009年度信访工作先进集体'),
+(null,'../img/053.png','2009年社会治安综合治理先进单位'),
+(null,'../img/054.png','2009年社会治安综合治理先进单位'),
+(null,'../img/055.png','2009年萧山区突出贡献奖'),
+(null,'../img/056.png','2010年度“五好”基层党组织'),
+(null,'../img/057.png','2010年度“最佳党日”活动创新奖'),
+(null,'../img/058.png','2010年度杭州市萧山区防汛防台抗旱优胜…'),
+(null,'../img/059.png','2010年度杭州市萧山区防汛防台抗旱优胜…'),
+(null,'../img/060.png','2010年度杭州市萧山区服务业发展先进企…'),
+(null,'../img/061.png','2010年度杭州市萧山区服务业发展先进企…'),
+(null,'../img/062.png','2010年度全省供销社系统社务信息工作先…'),
+(null,'../img/063.png','2010年度萧山区百强企业'),
+(null,'../img/064.png','2010年度萧山区百强企业'),
+(null,'../img/065.png','2010年度萧山区内部审计工作先进集体'),
+(null,'../img/066.png','2010年度萧山区网络文化建设和管理工作…'),
+(null,'../img/067.png','2010年浙江省服务业百强企业'),
+(null,'../img/068.png','2011年度全省供销社系统社务信息工作先…'),
+(null,'../img/069.png','2011年度萧山区内部审计工作先进集体'),
+(null,'../img/070.png','2011年度萧山区文史地方志工作先进集体'),
+(null,'../img/071.png','2011年度萧山区综合安全工作先进集体'),
+(null,'../img/072.png','供销合作社创新发展教育基地'),
+(null,'../img/073.png','老干部工作先进集体'),
+(null,'../img/074.png','全国供销合作社系统百强企业'),
+(null,'../img/075.png','全国供销系统培训示范基地'),
+(null,'../img/076.png','全省供销社系统农村实用人才培训工作三等奖…'),
+(null,'../img/077.png','市级农业龙头企业'),
+(null,'../img/078.png','萧山区“五好”党建示范点'),
+(null,'../img/079.png','萧山区2009年度先进基层党组织'),
+(null,'../img/080.png','浙江省供销合作社系统先进集体'),
+(null,'../img/081.png','浙江十佳企业之歌'),
+(null,'../img/082.png','浙江十佳企业之歌'),
+(null,'../img/083.png','浙江万丰企业集团公司2011年营业收入超…');
