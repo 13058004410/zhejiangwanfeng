@@ -76,7 +76,7 @@ insert into article VALUES
    <h1 class="title">企业文化</h1> 
    <div class="flex-box"> 
     <div class="flex_img">
-     <img src="../img/5b7a61f5864bf.png" width="100%" />
+     <img src="../img/5b7a61f5864bf.jpg" width="100%" />
     </div> 
     <ul class="flex-item list-paddingleft-2">
      <li><p><strong>万丰宗旨：</strong>福祉社会，实现价值</p></li>
@@ -110,7 +110,7 @@ insert into article VALUES
   </div>');
 
 
-
+-- 集团荣誉
 create table jituanrongyu(id int not null auto_increment primary key,img varchar(65535),p varchar(65535));
 insert into jituanrongyu values
 (null,'../img/01.png','全省县级供销社经济20强'),
@@ -196,3 +196,43 @@ insert into jituanrongyu values
 (null,'../img/081.png','浙江十佳企业之歌'),
 (null,'../img/082.png','浙江十佳企业之歌'),
 (null,'../img/083.png','浙江万丰企业集团公司2011年营业收入超…');
+
+-- 成员单位
+create table chengyuandanwei(id int not null auto_increment primary key,li varchar(65535));
+insert into chengyuandanwei values
+(null,'<li> <h2 class="ellipsis">萧山供销防汛科技开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山区临清镇浴美路238号</p><p>电话：0571-82259185</p><p>传真：0571-82259185</p><p>邮编：311251</p><p>邮箱：241218917@qq.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州万丰置业有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路223号</p><p>电话：0571-82785688</p><p>传真：0571-82632473</p><p>邮编：311201</p><p>邮箱：xszcgl@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江萧山鞋城</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路51号</p><p>电话：0571-82656433</p><p>传真：0571-82632384</p><p>邮编：311203</p><p>邮箱：scglbu@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 建德半岛凯豪大酒店</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：建德市新安东路688号</p><p>电话：0571-64185888</p><p>传真：0571-64185888</p><p>邮编：311600</p><p>邮箱：dumpling_2006@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江万禾农产品有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区萧然东路223号</p><p>电话：0571-82378288</p><p>传真：0571-82676585</p><p>邮编：311203</p><p>邮箱：wanjiafeng2009@126.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江环强再生资源开发集团有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区新塘街道萧绍路215号</p><p>电话：0571—82751255</p><p>传真：0571—82729613</p><p>邮编：311201</p><p>邮箱：wzhsgsi@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 杭州萧山万丰房地产开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州萧山城厢街道人民路51号6楼</p><p>电话：0571-82377867</p><p>传真：0571-82377868</p><p>邮编：311203</p><p>邮箱：wffc@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">中国石化杭州萧山万丰石油有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山城厢街道人民路51号</p><p>电话：13967133228</p><p>传真：0571-82625662</p><p>邮编：311203</p><p>邮箱：wfshiyou@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州萧山万丰医药有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区南阳镇永利路47号</p><p>电话：0571-82173938</p><p>传真：0571-82173915</p><p>邮编：311227</p><p>邮箱：wfyyao@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山区烟花爆竹专营有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山城厢街道人民路221号</p><p>电话：0571-82638830</p><p>传真：0571-82655011</p><p>邮编：311201</p><p>邮箱：yanhua@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山供销防汛科技开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山区临清镇浴美路238号</p><p>电话：0571-82259185</p><p>传真：0571-82259185</p><p>邮编：311251</p><p>邮箱：241218917@qq.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州万丰置业有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路223号</p><p>电话：0571-82785688</p><p>传真：0571-82632473</p><p>邮编：311201</p><p>邮箱：xszcgl@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江萧山鞋城</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路51号</p><p>电话：0571-82656433</p><p>传真：0571-82632384</p><p>邮编：311203</p><p>邮箱：scglbu@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 建德半岛凯豪大酒店</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：建德市新安东路688号</p><p>电话：0571-64185888</p><p>传真：0571-64185888</p><p>邮编：311600</p><p>邮箱：dumpling_2006@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江万禾农产品有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区萧然东路223号</p><p>电话：0571-82378288</p><p>传真：0571-82676585</p><p>邮编：311203</p><p>邮箱：wanjiafeng2009@126.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江环强再生资源开发集团有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区新塘街道萧绍路215号</p><p>电话：0571—82751255</p><p>传真：0571—82729613</p><p>邮编：311201</p><p>邮箱：wzhsgsi@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 杭州萧山万丰房地产开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州萧山城厢街道人民路51号6楼</p><p>电话：0571-82377867</p><p>传真：0571-82377868</p><p>邮编：311203</p><p>邮箱：wffc@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">中国石化杭州萧山万丰石油有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山城厢街道人民路51号</p><p>电话：13967133228</p><p>传真：0571-82625662</p><p>邮编：311203</p><p>邮箱：wfshiyou@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州萧山万丰医药有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区南阳镇永利路47号</p><p>电话：0571-82173938</p><p>传真：0571-82173915</p><p>邮编：311227</p><p>邮箱：wfyyao@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山区烟花爆竹专营有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山城厢街道人民路221号</p><p>电话：0571-82638830</p><p>传真：0571-82655011</p><p>邮编：311201</p><p>邮箱：yanhua@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山供销防汛科技开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山区临清镇浴美路238号</p><p>电话：0571-82259185</p><p>传真：0571-82259185</p><p>邮编：311251</p><p>邮箱：241218917@qq.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州万丰置业有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路223号</p><p>电话：0571-82785688</p><p>传真：0571-82632473</p><p>邮编：311201</p><p>邮箱：xszcgl@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江萧山鞋城</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区城厢街道人民路51号</p><p>电话：0571-82656433</p><p>传真：0571-82632384</p><p>邮编：311203</p><p>邮箱：scglbu@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 建德半岛凯豪大酒店</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：建德市新安东路688号</p><p>电话：0571-64185888</p><p>传真：0571-64185888</p><p>邮编：311600</p><p>邮箱：dumpling_2006@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江万禾农产品有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区萧然东路223号</p><p>电话：0571-82378288</p><p>传真：0571-82676585</p><p>邮编：311203</p><p>邮箱：wanjiafeng2009@126.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江环强再生资源开发集团有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区新塘街道萧绍路215号</p><p>电话：0571—82751255</p><p>传真：0571—82729613</p><p>邮编：311201</p><p>邮箱：wzhsgsi@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 杭州萧山万丰房地产开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州萧山城厢街道人民路51号6楼</p><p>电话：0571-82377867</p><p>传真：0571-82377868</p><p>邮编：311203</p><p>邮箱：wffc@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">中国石化杭州萧山万丰石油有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山城厢街道人民路51号</p><p>电话：13967133228</p><p>传真：0571-82625662</p><p>邮编：311203</p><p>邮箱：wfshiyou@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州萧山万丰医药有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区南阳镇永利路47号</p><p>电话：0571-82173938</p><p>传真：0571-82173915</p><p>邮编：311227</p><p>邮箱：wfyyao@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山区烟花爆竹专营有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山城厢街道人民路221号</p><p>电话：0571-82638830</p><p>传真：0571-82655011</p><p>邮编：311201</p><p>邮箱：yanhua@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江万禾农产品有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区萧然东路223号</p><p>电话：0571-82378288</p><p>传真：0571-82676585</p><p>邮编：311203</p><p>邮箱：wanjiafeng2009@126.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">浙江环强再生资源开发集团有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区新塘街道萧绍路215号</p><p>电话：0571—82751255</p><p>传真：0571—82729613</p><p>邮编：311201</p><p>邮箱：wzhsgsi@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis"> 杭州萧山万丰房地产开发有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州萧山城厢街道人民路51号6楼</p><p>电话：0571-82377867</p><p>传真：0571-82377868</p><p>邮编：311203</p><p>邮箱：wffc@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">中国石化杭州萧山万丰石油有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山城厢街道人民路51号</p><p>电话：13967133228</p><p>传真：0571-82625662</p><p>邮编：311203</p><p>邮箱：wfshiyou@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">杭州萧山万丰医药有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：杭州市萧山区南阳镇永利路47号</p><p>电话：0571-82173938</p><p>传真：0571-82173915</p><p>邮编：311227</p><p>邮箱：wfyyao@xs.zj.cn</p> <img src="../img/sj.jpg" class="sj"> </li>'),
+(null,'<li> <h2 class="ellipsis">萧山区烟花爆竹专营有限公司</h2> <img src="../img/line.jpg" width="80%;height:0"> <p>地址：萧山城厢街道人民路221号</p><p>电话：0571-82638830</p><p>传真：0571-82655011</p><p>邮编：311201</p><p>邮箱：yanhua@163.com</p> <img src="../img/sj.jpg" class="sj"> </li>');

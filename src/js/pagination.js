@@ -35,7 +35,7 @@ function jituanrongyu(){
         for(var i=0;i<Math.ceil(data.length);i++){
             html+=`                   
                     <li>
-                        <img src="${data[i].img}" alt="">
+                        <img src="${data[i].img}" alt="" style="height:80%;">
                         <p>${data[i].p}</p>
                     </li>                   
             `;     
@@ -129,7 +129,7 @@ function jituanrongyu(){
                 // console.log(11168);                  
                 html+=`                   
                         <li>
-                            <img src="${data[i].img}" alt="">
+                            <img src="${data[i].img}" alt="" style="height:80%;">
                             <p>${data[i].p}</p>
                         </li>                   
                 `;                         

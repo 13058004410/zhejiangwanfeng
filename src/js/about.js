@@ -28,6 +28,10 @@ $(function(){
         $('#menu_2>li').eq(4).click(function(){
             qiyewenhua();
         })
+        //切换到成员单位
+        $('#menu_2>li').eq(5).click(function(){
+            chengyuandanwei();
+        })
         
     
 })

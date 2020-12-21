@@ -83,8 +83,8 @@ luyou.get('/huoqu_6',function(req,res){
     var pno=req.query.pno;
     var psize=req.query.psize;
     var count=parseInt(psize);
-    var sql='select*from jituanrongyu limit ?,?';
     var start=(pno-1)*count;
+    var sql='select*from jituanrongyu limit ?,?';
     pool.query(sql,[start,count],function(err,result){
         res.send(result)
     })
@@ -93,6 +93,18 @@ luyou.get('/huoqu_6',function(req,res){
 //企业文化
 luyou.get('/qiyewenhua',function(req,res){
     pool.query('select*from article',function(err,result){
+        res.send(result)
+    })
+})
+//成员单位
+luyou.get('/chengyuandanwei',function(req,res){
+    var pno=req.query.pno;
+    var psize=req.query.psize;
+    var count=parseInt(psize);
+    var start=(pno-1)*count;
+    var sql='select*from chengyuandanwei limit ?,?';
+    pool.query(sql,[start,count],function(err,result){
+        console.log(result);
         res.send(result)
     })
 })
