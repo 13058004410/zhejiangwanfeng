@@ -326,36 +326,43 @@ a img{display: block;}
     white-space: nowrap !important;
 } */
 #jituangaikuang{
-    /* position: relative; */
+    position: relative;
+    left:0;
 }
 
 #moveList{
+    display:block;
+    position: relative;
     overflow: hidden !important;
     width:1120px;
     height:80px;
-    /* padding:0 50px; */
-    position: absolute;
-    left:500px;
+    left:0;     
 }
 
 .moveList ul{
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
     white-space: nowrap !important;
-    display: block;
-    position: absolute;
-    /* top:0; */
-    /* left:100px; */
+    display: inline-block;
     width:100%;
     height:100%;
+    position: relative;
+    /* 这个初始位置一定要设置好，不然会出现跳跃移动的现象 */
+    left:0;  
+}
+
+.moveList li.active{
+    color: #e47916 !important;
 }
 
 .moveList li{
-    font-size: 50px !important;
-    color: #e47916 !important;
+    font-size: 30px !important;
+    color: #666 !important;
     width:135px !important;
     line-height: 50px !important;
     display: inline-block !important;
     float:none;
     width:150px;
     height:50px;
+    position: absolute;
+    left:0;
 }

@@ -1,31 +1,17 @@
 $(function(){
 
-    $('#jituangaikuang').on('mousedown','#moveList',function(e) { 
-        // e.pageX
+    $('#jituangaikuang').on('mousedown','ul',function(e) { 
         var positionDiv = $(this).offset();
         var distenceX = e.pageX - positionDiv.left;
         console.log(e.pageX)
-        // var distenceY = e.pageY - positionDiv.top;
-        //alert(distenceX)
-        // alert(positionDiv.left);
-    
+   
         $(document).mousemove(function(e){
             var x = e.pageX - distenceX;
-            // var y = e.pageY - distenceY;           
-            // if (x < 0) {
-            //     x = 0;
-            // } else if (x > $(document).width() - $('ul').outerWidth(true)) {
-            //     x = $(document).width() - $('ul').outerWidth(true);
-            // }
-    
-            // if (y < 0) {
-            //     y = 0;
-            // } else if (y > $(document).height() - $('div').outerHeight(true)) {
-            //     y = $(document).height() - $('div').outerHeight(true);
-            // }
-            $('#moveList').css({
+
+            x=x-400;
+            $('ul').css({
+                
                 'left': x + 'px'
-                // 'top': y + 'px'
             });
         });
         

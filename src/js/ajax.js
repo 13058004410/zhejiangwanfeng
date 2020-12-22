@@ -400,15 +400,18 @@ function wanfenglicheng(){
                 <li  id='pre'><img src="../img/prev.png"></li>
             `;
         }
-        //循环输出页码================    
+        //循环输出页码================
+        var X=$('#jituangaikuang li').offset().left;
+        console.log(X)    
+        
         for(var i=1;i<=totalPage;i++){
-            if(i==curPage){
+            if(X==940){
                 str+=`
-                    <li class="active" index="${i}">${i}</li>
+                    <li class="active" index="${i}">${i+2000}</li>
                 `;
             }else{
                 str+=`
-                    <li class="" index="${i}">${i}</li>
+                    <li class="" index="${i}">${i+2000}</li>
                 `;
             }                                    
         }
