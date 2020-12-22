@@ -42,7 +42,7 @@ $(function(){
                         <a href="#">
                             ${data[i].title}
                         </a>
-                        <span>${data[i].date}</span>
+                        <li>${data[i].date}/li>
                     </li>
                 `
             }
@@ -224,7 +224,7 @@ function chengyuandanwei(){
         var pno=1;
         var pageSize=12;       
         //页面默认加载的分页列表---->第一页
-        getData(1,12);
+        getData(pno,pageSize);
     
         //第一个函数：发ajax请求获取后端数据，调用第二个函数       
         function getData(curPage,pageSize){           
@@ -234,7 +234,7 @@ function chengyuandanwei(){
                 url:'/luyou/chengyuandanwei?pno='+curPage+'&psize='+pageSize,
                 contentType:'application/json;utf-8',  
                 success:function(data){
-                    // console.log(data);
+                    // console.log(data.length);
                     // $('#pagination').html(data)
                     //拿到数据之后在页面循环输出
                     innerData(data,pno);
@@ -248,12 +248,12 @@ function chengyuandanwei(){
        
         //第二个函数：生成分页列表、生成内容列表
         function innerData(data,curPage){
-            var totalPage=Math.ceil(data.length/2);
+            var totalPage=Math.ceil(data.length/4);
     
             //生成内容列表=======================================
             var html='<div id="content"><ul>';
             for(var i=0;i<Math.ceil(data.length);i++){
-                html+=data[0].li;     
+                html+=data[i].li;     
             }
             html+='</ul></div>';
             // $('#jituangaikuang').html(html);
@@ -354,4 +354,135 @@ function chengyuandanwei(){
         }    
 }
 
+//走进万丰页面的万丰历程
+function wanfenglicheng(){
+    //声明一个变量pno用来传参--->当前页码   
+    var pno=1;
+    var pageSize=2;       
+    //页面默认加载的分页列表---->第一页
+    getData(pno,pageSize);
 
+    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
+    function getData(curPage,pageSize){           
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
+            contentType:'application/json;utf-8',  
+            success:function(data){
+                // console.log(data.length);
+                // $('#pagination').html(data)
+                //拿到数据之后在页面循环输出
+                innerData(data,pno);
+            },
+            error:function(e){
+                console.log(e.staus)
+                console.log(e.responseText)
+            }
+        });           
+    }
+    //第二个函数：生成分页列表、生成内容列表
+    function innerData(data,curPage){
+      
+        var totalPage=Math.ceil(data.length);
+        //生成分页列表============================================
+        // console.log(data.length)
+        var str='<div id="moveList" class="moveList"><ul>';
+        //把首页按钮输出来
+        // if(curPage!=1){
+        //     str+=`
+        //         <li  id='home'>首页>
+        //     `;      
+        // };
+        //把上一页输出
+        if(curPage!=1){
+            str+=`
+                <li  id='pre'><img src="../img/prev.png"></li>
+            `;
+        }
+        //循环输出页码================    
+        for(var i=1;i<=totalPage;i++){
+            if(i==curPage){
+                str+=`
+                    <li class="active" index="${i}">${i}</li>
+                `;
+            }else{
+                str+=`
+                    <li class="" index="${i}">${i}</li>
+                `;
+            }                                    
+        }
+        //把下一页输出
+        if(curPage!=totalPage){
+            str+=`
+                <li class='' id='next'>下一页</li>
+            `;
+        }
+        //把末页按钮输出来
+        // if(curPage!=totalPage){
+        //     str+=`
+        //         <li class='' id='total'>末页</li>
+        //     `;
+        // };
+        str+='</ul></div>';
+        $('#jituangaikuang').html(str);
+
+
+        
+        //点击首页
+        $('#home').click(function(){
+            console.log(pno);
+            pno=1;
+            getData(pno,pageSize);
+        })
+        //点击上一页
+        $('#pre').click(function(){
+            console.log(pno);
+            pno=pno-1;
+            if(pno<1){
+                pno==1;
+            };
+            getData(pno,pageSize);
+        })
+        //点击下一页
+        $('#next').click(function(){
+            pno=pno+1;
+            if(pno>totalPage){
+                pno==totalPage;
+            };
+            getData(pno,pageSize);
+        })
+        //点击末页
+        $('#total').click(function(){
+            console.log(pno);
+            pno=totalPage;
+            getData(pno,pageSize);
+        })
+        //点击切换内容页
+        $('.li').click(function(){                  
+            pno=$(this).attr('index');
+            //获取pno发再次发ajax请求
+            getData(pno,pageSize);                
+            var html='<div id="content"><ul>';
+            for(var i=0;i<Math.ceil(data.length);i++){  
+                // console.log(11168);                  
+                html+=data[i];                         
+            }
+            html+='</ul></div></iframe>';
+            // console.log(str);
+            // $('#content').remove();
+            // $('#jituangaikuang').html(html);               
+        });
+
+        //生成内容列表=======================================
+        var html='<div id="content"><ul>';
+        // console.log(data);
+        for(var i=0;i<Math.ceil(data.length);i++){
+            html+=data[i].li;     
+        }        
+        html+='</ul></div>';
+        // str+=html;
+        // $('#jituangaikuang').html(str);
+        
+    } 
+}

@@ -108,6 +108,19 @@ luyou.get('/chengyuandanwei',function(req,res){
         res.send(result)
     })
 })
+//万丰历程
+luyou.get('/wanfenglicheng',function(req,res){
+    var pno=req.query.pno;
+    var psize=req.query.psize;
+    var count=parseInt(psize);
+    var start=(pno-1)*count;
+    var sql='select*from wanfenglicheng';
+    pool.query(sql,function(err,result){
+        // console.log(result);
+        res.send(result)
+    })
+});
+
 
 
 module.exports=luyou;

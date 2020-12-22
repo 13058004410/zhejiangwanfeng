@@ -79,7 +79,9 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 20.如果是发POST请求，就要使用到中间件body-parser，它可以对POST的请求体进行解析。app.use(bodyPar.urlencoded({extended:false}))
 
+21.数据库里边的数据导进去的时候要连页面的标签一起导进去，调用的时候就方便。
 
+22.事件委托这个题目要背一下
 
 
 

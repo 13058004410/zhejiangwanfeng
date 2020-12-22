@@ -62,15 +62,15 @@ $(document).ready(function(){
         var imgCount=5;
         var index=1;
         var intervalId;
-        var buttonLi=$('.indecate')[0].children;//htmlCollection集合
-        var buttonLi_m=$('.indecate_m')[0].children;//htmlCollection集合
+        var buttonLi=$('.indecate').children();//htmlCollection集合
+        var buttonLi_m=$('.indecate_m').children();//htmlCollection集合
 
         //自动轮播功能 使用定时器
         autoNextPage();
         function autoNextPage(){
             console.log('开始轮播')
             intervalId=setInterval(function(){
-                nextPage(true);
+                    nextPage(true);
             },3000);
         }
 
@@ -106,7 +106,7 @@ $(document).ready(function(){
                     }else{
                         index=$(this).attr('index')-1;
                     }
-                    nextPage(true);
+                        nextPage(true);
                 };
             }
         }
@@ -126,7 +126,7 @@ $(document).ready(function(){
                             }else{
                                 index=$(this).attr('index')-1;
                             }
-                            nextPage(true);
+                                nextPage(true);
                         };
                     }
                 }
@@ -138,7 +138,6 @@ $(document).ready(function(){
         function nextPage(next){
             var imgWidth=$('.list img').css('width');
             var imgWidth_num=imgWidth.replace('px','');
-            console.log(imgWidth_num);
             var targetLeft=0;
             //当前的圆点去掉active样式
             $(buttonLi[index-1]).removeClass('active');

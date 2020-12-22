@@ -1,4 +1,4 @@
-$(function(){
+$(function(){  
     //取消那个窗口发生改变就刷新页面的事件
     $(window).unbind('resize');
 
@@ -7,7 +7,6 @@ $(function(){
 
     //二级菜单点中变颜色
     $('#menu_2>li').click(function(){
-        // console.log(11111111);
         $(this).addClass('active').siblings().removeClass('active')
     });
 
@@ -32,7 +31,12 @@ $(function(){
         $('#menu_2>li').eq(5).click(function(){
             chengyuandanwei();
         })
-        
+        //切换到万丰历程
+        $('#menu_2>li').eq(6).click(function(){
+            
+            wanfenglicheng();
+            
+        })
     
 })
 

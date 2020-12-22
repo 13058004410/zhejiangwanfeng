@@ -24,5 +24,4 @@ app.get('/about',function(req,res){
 
 
 
-
 app.use('/luyou',luyou);
