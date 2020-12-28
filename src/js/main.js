@@ -58,7 +58,7 @@ $(document).ready(function(){
           location.reload()
         // alert('窗口大小改变了')
     })
-        // 轮播图
+        // 轮播图==================================
         var imgCount=5;
         var index=1;
         var intervalId;

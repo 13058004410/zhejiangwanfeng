@@ -10,6 +10,13 @@ $(function(){
         $(this).addClass('active').siblings().removeClass('active')
     });
 
+
+    
+
+
+
+
+
     //二级菜单点中切换文章内容
         //切换到集团概况
         $('#menu_2>li').eq(0).click(function(){
@@ -32,12 +39,10 @@ $(function(){
             chengyuandanwei();
         })
         //切换到万丰历程
-        $('#menu_2>li').eq(6).click(function(){
-            
-            wanfenglicheng();
-            
+        $('#menu_2>li').eq(6).click(function(){           
+            wanfenglicheng();                            
         })
-    
+        
 })
 
 
