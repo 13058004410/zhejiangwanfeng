@@ -1,6 +1,5 @@
-$(function(){
-    
-    var imgCount = 5;
+function paomadeng(){
+	var imgCount = 5;
         var index = 1;
         var intervalId;
         var span = $('.list').children();//htmlCollection 集合
@@ -15,18 +14,19 @@ $(function(){
 		
         //小圆点的相应功能 事件委托
         clickButtons();
-        function clickButtons(){
-            
-			var length = span.length;
+        function clickButtons(){  			    
+			var length = span.length;			      
 			for(var i=0;i<length;i++){
 				span[i].onclick = function(){
+					
 					$(span[index-1]).removeClass('on');
 					if($(this).attr('index')==1){
 						index = 11;
+						
 					}else{
 						index = $(this).attr('index')-1;
+						console.log(index);
                     }
-                    console.log(1688)
 					nextPage(true);			   
 				};
 			}
@@ -45,6 +45,7 @@ $(function(){
 				}else{
 					index++;
 					targetLeft = -115*(index-1);
+					
 				}
 		   
 			}else{//往前走
@@ -57,10 +58,11 @@ $(function(){
 				}       
 			}
 			$('.list').animate({left:targetLeft+500+'px'});
+			
 			//更新后的圆点加上样式
 			$(span[index-1]).addClass('on');             
         }
-})
+}
 
 
 

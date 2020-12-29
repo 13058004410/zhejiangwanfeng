@@ -411,13 +411,13 @@ function wanfenglicheng(){
             if(i==curPage){
                 // <li class="active" index="${i}">${i+2000}</li>
                 str+=`
-                    <span index="1" class="on" index="${i}">${i+2000}</span>
+                    <span index="${i}" class="on" index="${i}">${i+2000}</span>
                     
                 `;
             }else{
                 // <li class="" index="${i}">${i+2000}</li>
                 str+=`
-                    <span index="1" index="${i}">${i+2000}</span>                    
+                    <span index="${i}">${i+2000}</span>                    
                 `;
             }                                    
         }
@@ -433,8 +433,8 @@ function wanfenglicheng(){
         //     `;
         // };
         str+=`
-            <a href="#"  rel="external nofollow" class="arrow left"><img src="../img/next.png" alt=""></a>
-            <a href="#"  rel="external nofollow" class="arrow right"><img src="../img/prev.png" alt=""></a>
+            <a href="javascript:;"  rel="external nofollow" class="arrow left"><img src="../img/next.png" alt=""></a>
+            <a href="javascript:;"  rel="external nofollow" class="arrow right"><img src="../img/prev.png" alt=""></a>
         `;
         // <div  id='next' class="next"><img src="../img/next.png"></div>
         $('#jituangaikuang').html(str);
@@ -487,7 +487,7 @@ function wanfenglicheng(){
             // $('#jituangaikuang').html(html);               
         });
 
-        
+        paomadeng();
 
         //生成内容列表=======================================
         var html='<div id="content"><ul>';
