@@ -40,7 +40,7 @@ $(function(){
         })
         //切换到万丰历程
         $('#menu_2>li').eq(6).click(function(){           
-            wanfenglicheng();                            
+            wanfenglicheng();
         })
         
 })

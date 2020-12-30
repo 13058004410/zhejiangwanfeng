@@ -14,7 +14,7 @@ function jituanrongyu(){
             url:'/luyou/huoqu_6?pno='+curPage+'&psize='+pageSize,
             contentType:'application/json;utf-8',  
             success:function(data){
-                // console.log(data);
+                console.log(data);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
                 innerData(data,pno);

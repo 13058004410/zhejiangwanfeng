@@ -1,10 +1,10 @@
 function paomadeng(){
 	var imgCount = 5;
         var index = 1;
-        var intervalId;
         var span = $('.list').children();//htmlCollection 集合
         //点击下一页 上一页的功能
         $('.left').click(function(){
+			console.log(1677)
 			nextPage(true);
         });
         $('.right').click(function(){
@@ -14,18 +14,15 @@ function paomadeng(){
 		
         //小圆点的相应功能 事件委托
         clickButtons();
-        function clickButtons(){  			    
-			var length = span.length;			      
-			for(var i=0;i<length;i++){
+        function clickButtons(){
+			var length = span.length;
+			for(var i=0;i<length;i++){				
 				span[i].onclick = function(){
-					
 					$(span[index-1]).removeClass('on');
 					if($(this).attr('index')==1){
 						index = 11;
-						
 					}else{
 						index = $(this).attr('index')-1;
-						console.log(index);
                     }
 					nextPage(true);			   
 				};

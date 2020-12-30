@@ -257,9 +257,7 @@ function chengyuandanwei(){
             }
             html+='</ul></div>';
             // $('#jituangaikuang').html(html);
-    
-    
-    
+       
             //生成分页列表============================================
             // console.log(data.length)
             var str='<div id="pagination"><ul>';
@@ -358,9 +356,9 @@ function chengyuandanwei(){
 function wanfenglicheng(){
     //声明一个变量pno用来传参--->当前页码   
     var pno=1;
-    var pageSize=2;       
+    var pageSize=6;       
     //页面默认加载的分页列表---->第一页
-    getData(pno,pageSize);
+    getData(1,6);
 
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
     function getData(curPage,pageSize){           
@@ -382,124 +380,81 @@ function wanfenglicheng(){
         });           
     }
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(data,curPage){
-      
+    function innerData(data,curPage){      
         var totalPage=Math.ceil(data.length);
-        //生成分页列表============================================
-        // console.log(data.length)
-        // var str=`<div id="pre" class="pre"><img src="../img/prev.png"></div>`;
-        
-        //把首页按钮输出来
-        // if(curPage!=1){
-        //     str+=`
-        //         <li  id='home'>首页>
-        //     `;      
-        // };
-        //把上一页输出
+        //生成分页列表============================================          
         var str='<div class="wrapper"><div class="list" style="left:500px;">';
         //循环输出页码================
-        // var X;
-        // var lis;
-        // lis=$('#jituangaikuang li');
-        // for(var i=1;i<lis.length;i++){
-        //     lis[i].click(function(){
-        //         X=$(this).offset().left;
-        //         console.log(X)
-        //     })
-        // };
         for(var i=1;i<=totalPage;i++){
             if(i==curPage){
-                // <li class="active" index="${i}">${i+2000}</li>
                 str+=`
-                    <span index="${i}" class="on" index="${i}">${i+2000}</span>
-                    
+                    <span class="on" index="${i}">${i+2000}</span>                    
                 `;
             }else{
-                // <li class="" index="${i}">${i+2000}</li>
                 str+=`
-                    <span index="${i}">${i+2000}</span>                    
+                    <span class="" index="${i}">${i+2000}</span>                    
                 `;
             }                                    
-        }
-            
-        
-        
-        //把下一页输出
+        }                   
         str+='</div>';
-        //把末页按钮输出来
-        // if(curPage!=totalPage){
-        //     str+=`
-        //         <li class='' id='total'>末页</li>
-        //     `;
-        // };
+        //把左右箭头输出
         str+=`
-            <a href="javascript:;"  rel="external nofollow" class="arrow left"><img src="../img/next.png" alt=""></a>
-            <a href="javascript:;"  rel="external nofollow" class="arrow right"><img src="../img/prev.png" alt=""></a>
+            <a href="javascript:;"  rel="external nofollow" class="arrow left next"><img src="../img/next.png" alt=""></a>
+            <a href="javascript:;"  rel="external nofollow" class="arrow right pre"><img src="../img/prev.png" alt=""></a>
         `;
-        // <div  id='next' class="next"><img src="../img/next.png"></div>
+        
+        
+       
+        //生成内容列表=======================================
+        var html='<div id="content"><ul>';
+        for(var i=0;i<Math.ceil(data.length);i++){
+            html+=data[i].li;     
+        }        
+        html+='</ul></div>';  
+        str+=html;            
         $('#jituangaikuang').html(str);
 
 
-        
-        //点击首页
-        // $('#home').click(function(){
-        //     // console.log(pno);
-        //     pno=1;
-        //     getData(pno,pageSize);
-        // })
-        //点击上一页
-        $('#pre').click(function(){          
-            pno=pno-1;
-            if(pno<1){
-                pno=1;
-                // console.log(pno);
-            };
-            getData(pno,pageSize);
-        })
-        //点击下一页
-        $('#next').click(function(){           
-            pno=pno+1;
-            if(pno>totalPage){
-                pno=totalPage;
-            };
-            console.log(totalPage)
-            getData(pno,pageSize);
-        })
-        //点击末页
-        // $('#total').click(function(){
-        //     console.log(pno);
-        //     pno=totalPage;
-        //     getData(pno,pageSize);
-        // })
         //点击切换内容页
-        $('.li').click(function(){                  
+        $('.list>span').click(function(){  
             pno=$(this).attr('index');
             //获取pno发再次发ajax请求
             getData(pno,pageSize);                
             var html='<div id="content"><ul>';
             for(var i=0;i<Math.ceil(data.length);i++){  
-                // console.log(11168);                  
-                html+=data[i];                         
+                html+=data[i].li;                         
             }
-            html+='</div></div>';
-            // console.log(str);
-            // $('#content').remove();
-            // $('#jituangaikuang').html(html);               
+            html+='</ul></div>'; 
+            // str+=html;
+            // $('#jituangaikuang').html(str);                         
         });
 
+        //点击上一页
+        $('.pre').click(function(){ 
+            pno=pno-1;
+            if(pno<1){
+                pno=1;
+            };   
+            paomadeng();         
+            getData(pno,pageSize);
+            str+=html;
+            $('#jituangaikuang').html(str);
+            
+        })
+        //点击下一页
+        $('.next').click(function(){  
+            console.log(totalPage);
+            pno=pno+1;
+            if(pno>totalPage){
+                pno=totalPage;
+            };   
+            paomadeng();         
+            getData(pno,pageSize);
+            str+=html;
+            $('#jituangaikuang').html(str);
+        })
+
+        //输出HTML代码之后再调用下面这个函数才有效
         paomadeng();
-
-        //生成内容列表=======================================
-        var html='<div id="content"><ul>';
-        // console.log(data);
-        for(var i=0;i<Math.ceil(data.length);i++){
-            html+=data[i].li;     
-        }        
-        html+='</ul></div>';
-        // str+=html;
-        // $('#jituangaikuang').html(str);
-
-
-        
     } 
 }

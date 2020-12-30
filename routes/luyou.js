@@ -114,9 +114,8 @@ luyou.get('/wanfenglicheng',function(req,res){
     var psize=req.query.psize;
     var count=parseInt(psize);
     var start=(pno-1)*count;
-    var sql='select*from wanfenglicheng';
-    pool.query(sql,function(err,result){
-        // console.log(result);
+    var sql='select*from wanfenglicheng limit ?,?';
+    pool.query(sql,[start,count],function(err,result){       
         res.send(result)
     })
 });
