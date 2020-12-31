@@ -25,7 +25,7 @@
 					}else{
 						index = $(this).attr('index')-1;
                     }
-                    console.log(index)
+                    
 					nextPage(true);			   
 				};
 			}
@@ -33,7 +33,8 @@
 	
 		// 图片左右移动
 		function nextPage(next){
-            var targetLeft = 0;
+			var targetLeft = 0;
+			
 			//当前的圆点去掉on样式
             $(span[index-1]).removeClass('on');	
             
@@ -45,7 +46,7 @@
 					index++;
 					targetLeft = -115*(index-1);
 				}
-		   
+				
 			}else{//往前走
 				if(index == 1){//在第一张，直接跳到第五张
 					index = 11;
@@ -55,9 +56,10 @@
 					targetLeft = -115*(index-1);
 				}       
 			}
+			
 			$('.list').animate({left:targetLeft+500+'px'});
 			//更新后的圆点加上样式
-			$(span[index-1]).addClass('on');             
+			// $(span[index-1]).addClass('on');             
         }
 
 
