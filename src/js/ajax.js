@@ -380,7 +380,9 @@ function wanfenglicheng(){
         });           
     }
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(data,curPage){      
+    function innerData(data,curPage){ 
+        var html;
+             
         var totalPage=Math.ceil(data.length);
         //生成分页列表============================================          
         var str='<div class="wrapper"><div class="list" style="left:500px;">';
@@ -402,59 +404,55 @@ function wanfenglicheng(){
             <a href="javascript:;"  rel="external nofollow" class="arrow left next"><img src="../img/next.png" alt=""></a>
             <a href="javascript:;"  rel="external nofollow" class="arrow right pre"><img src="../img/prev.png" alt=""></a>
         `;
-        
+        $('#jituangaikuang').html(str);
         
        
         //生成内容列表=======================================
-        var html='<div id="content"><ul>';
-        for(var i=0;i<Math.ceil(data.length);i++){
-            html+=data[i].li;     
-        }        
-        html+='</ul></div>';  
-        str+=html;            
-        $('#jituangaikuang').html(str);
+            // html='<div id="content"><ul>';
+            // for(var i=0;i<Math.ceil(data.length);i++){
+            //     html+=data[i].li;     
+            // }        
+            // html+='</ul></div>';  
+            // str+=html;            
+            // $('#jituangaikuang').html(str);
 
 
         //点击切换内容页
-        $('.list>span').click(function(){  
-            pno=$(this).attr('index');
-            //获取pno发再次发ajax请求
-            getData(pno,pageSize);                
-            var html='<div id="content"><ul>';
-            for(var i=0;i<Math.ceil(data.length);i++){  
-                html+=data[i].li;                         
-            }
-            html+='</ul></div>'; 
-            // str+=html;
-            // $('#jituangaikuang').html(str);                         
-        });
+        // $('.list>span').click(function(){ 
+        //                  
+        //     //获取pno发再次发ajax请求
+        //     getData(pno,pageSize);                           
+        
+	                       
+        // });
+
+        
+
 
         //点击上一页
         $('.pre').click(function(){ 
             pno=pno-1;
             if(pno<1){
                 pno=1;
-            };   
-            paomadeng();         
-            getData(pno,pageSize);
-            str+=html;
+            };                 
+            // str+=html;
             $('#jituangaikuang').html(str);
-            
+            getData(pno,pageSize);
+            youbian();
         })
-        //点击下一页
-        $('.next').click(function(){  
-            console.log(totalPage);
+
+        // //点击下一页
+        $('.next').click(function(){           
             pno=pno+1;
             if(pno>totalPage){
                 pno=totalPage;
-            };   
-            paomadeng();         
-            getData(pno,pageSize);
-            str+=html;
+            };              
+            // str+=html;
             $('#jituangaikuang').html(str);
+            getData(pno,pageSize);  
+            zuobian();
         })
 
-        //输出HTML代码之后再调用下面这个函数才有效
-        paomadeng();
+
     } 
 }
