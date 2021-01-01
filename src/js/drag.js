@@ -1,21 +1,26 @@
-
-		var imgCount = 6;
+$(function(){
+	var imgCount = 6;
 		var index = 1;
 		var span = $('.list').children();//htmlCollection 集合
 		//点击下一页 上一页的功能
-		function youbian(){
-			console.log(1688);
-			nextPage(false);
-		}
-		function zuobian(){
-			console.log(1688);
-			nextPage(true);
-		}
+		$('#jituangaikuang').on('click','a',function(e){
+			var left=$('.left').attr('class')
+			// console.log(left)
+			if(left=='left'){
+				nextPage(false);
+			}
+		});			
 			
-			
+		$('#jituangaikuang').on('click','a',function(e){
+			var left=$('.right').attr('class')
+			// console.log(left)
+			if(left=='right'){
+				nextPage(false);
+			}
+		});	
 		//小圆点的相应功能 事件委托
 		clickButtons();
-        function clickButtons(){
+        function clickButtons(){			
 			var length = span.length;
 			for(var i=0;i<length;i++){
 				span[i].onclick = function(){
@@ -33,6 +38,7 @@
 	
 		// 图片左右移动
 		function nextPage(next){
+			
             var targetLeft = 0;
 			//当前的圆点去掉on样式
             $(span[index-1]).removeClass('on');	
@@ -60,4 +66,5 @@
 			$(span[index-1]).addClass('on');             
         }
 
+})
 

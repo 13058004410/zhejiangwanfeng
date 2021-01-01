@@ -356,9 +356,9 @@ function chengyuandanwei(){
 function wanfenglicheng(){
     //声明一个变量pno用来传参--->当前页码   
     var pno=1;
-    var pageSize=6;       
+    var pageSize=12;       
     //页面默认加载的分页列表---->第一页
-    getData(1,6);
+    getData(1,12);
 
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
     function getData(curPage,pageSize){           
@@ -368,7 +368,7 @@ function wanfenglicheng(){
             url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
             contentType:'application/json;utf-8',  
             success:function(data){
-                // console.log(data.length);
+                // console.log(data);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
                 innerData(data,pno);
@@ -379,80 +379,77 @@ function wanfenglicheng(){
             }
         });           
     }
+   
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(data,curPage){ 
-        var html;
-             
-        var totalPage=Math.ceil(data.length);
-        //生成分页列表============================================          
-        var str='<div class="wrapper"><div class="list" style="left:500px;">';
-        //循环输出页码================
+    function innerData(data,curPage){
+        var totalPage=Math.ceil(data.length/2);
+        // console.log(totalPage);
+        var html='<div class="wrapper">';
+        html+=`<div class="list" style="left:500px">`;
+        //循环输出页码================    
         for(var i=1;i<=totalPage;i++){
             if(i==curPage){
-                str+=`
-                    <span class="on" index="${i}">${i+2000}</span>                    
+                html+=`
+                        <span class="on" index="${i}">${i+2000}</span>
                 `;
             }else{
-                str+=`
-                    <span class="" index="${i}">${i+2000}</span>                    
+                html+=`
+                        <span class="" index="${i}">${i+2000}</span>
                 `;
             }                                    
-        }                   
-        str+='</div>';
+        }
         //把左右箭头输出
-        str+=`
-            <a href="javascript:;"  rel="external nofollow" class="arrow left next"><img src="../img/next.png" alt=""></a>
-            <a href="javascript:;"  rel="external nofollow" class="arrow right pre"><img src="../img/prev.png" alt=""></a>
+        html+=`</div>
+                <a class="arrow right" ><img src="../img/prev.png"></a>
+                <a class="arrow left"><img src="../img/next.png"></a>
         `;
-        $('#jituangaikuang').html(str);
         
-       
-        //生成内容列表=======================================
-            // html='<div id="content"><ul>';
-            // for(var i=0;i<Math.ceil(data.length);i++){
-            //     html+=data[i].li;     
-            // }        
-            // html+='</ul></div>';  
-            // str+=html;            
-            // $('#jituangaikuang').html(str);
+        // html+=`</div>`;
 
+        $('#jituangaikuang').html(html);
+
+   
+        //点击上一页
+        // $('.right').click(function(){
+        //     // zuobian()
+        //     console.log(pno);
+        //     pno=pno-1;
+        //     if(pno<1){
+        //         pno==1;
+        //     };
+        //     getData(pno,pageSize);
+        // })
+        //点击下一页
+        // $('.left').click(function(){
+        //     // youbian()
+        //     pno=pno+1;
+        //     if(pno>totalPage){
+        //         pno==totalPage;
+        //     };
+        //     getData(pno,pageSize);
+        // })
 
         //点击切换内容页
-        // $('.list>span').click(function(){ 
-        //                  
+        // $('.li').click(function(){                  
+        //     pno=$(this).attr('index');
         //     //获取pno发再次发ajax请求
-        //     getData(pno,pageSize);                           
-        
-	                       
+        //     getData(pno,pageSize);                
+        //     var html='<div id="content"><ul>';
+        //     for(var i=0;i<Math.ceil(data.length);i++){  
+        //         // console.log(11168);                  
+        //         html+=`                   
+        //                 <li>
+        //                     <img src="${data[i].img}" alt="" style="height:80%;">
+        //                     <p>${data[i].p}</p>
+        //                 </li>                   
+        //         `;                         
+        //     }
+        //     html+='</ul></div>';
+        //     // console.log(str);
+        //     // $('#content').remove();
+        //     $('#jituangaikuang').html(html);               
         // });
 
         
-
-
-        //点击上一页
-        $('.pre').click(function(){ 
-            pno=pno-1;
-            if(pno<1){
-                pno=1;
-            };                 
-            // str+=html;
-            $('#jituangaikuang').html(str);
-            getData(pno,pageSize);
-            youbian();
-        })
-
-        // //点击下一页
-        $('.next').click(function(){           
-            pno=pno+1;
-            if(pno>totalPage){
-                pno=totalPage;
-            };              
-            // str+=html;
-            $('#jituangaikuang').html(str);
-            getData(pno,pageSize);  
-            zuobian();
-        })
-
-
     } 
 }
