@@ -402,10 +402,10 @@ border:1px solid #fff;
     vertical-align: middle;
 }
 
-#jituangaikuang .left{
+#jituangaikuang #left{
 right:-1px;
 }
-#jituangaikuang .right{
+#jituangaikuang #right{
 left:0;
 }
 #jituangaikuang .container:hover #jituangaikuang .arrow{

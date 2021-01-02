@@ -259,7 +259,6 @@ function chengyuandanwei(){
             // $('#jituangaikuang').html(html);
        
             //生成分页列表============================================
-            // console.log(data.length)
             var str='<div id="pagination"><ul>';
             //把首页按钮输出来
             if(curPage!=1){
@@ -400,8 +399,8 @@ function wanfenglicheng(){
         }
         //把左右箭头输出
         html+=`</div>
-                <a class="arrow right" ><img src="../img/prev.png"></a>
-                <a class="arrow left"><img src="../img/next.png"></a>
+                <a class="arrow " id="right" ><img src="../img/prev.png"></a>
+                <a class="arrow " id="left"><img src="../img/next.png"></a>
         `;
         
         // html+=`</div>`;
