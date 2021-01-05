@@ -406,7 +406,7 @@ function wanfenglicheng(){
         // html+=`</div>`;
 
         $('#jituangaikuang').html(html);
-
+        paomadeng();
    
         //点击上一页
         // $('.right').click(function(){

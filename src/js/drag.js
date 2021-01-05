@@ -1,25 +1,23 @@
-(function($) {
-	$.fn.exist = function(){ 
+// (function($) {
+// 	$.fn.exist = function(){ 
 		
-	 if($(this).length>=1){
+// 	 if($(this).length>=1){
 			
-	  return true;
-	 }
-	 return false;
+// 	  return true;
+// 	 }
+// 	 return false;
 
-	};
-})(jQuery);
+// 	};
+// })(jQuery);
 
 
-$(function(){
-	.when(.ajax,$.ajax()).then(function(){})
+function paomadeng(){
 	var imgCount = 6;
 		var index = 1;
 		
-		var span = $('.list').children();//htmlCollection 集合
-		if(span.length>0){
-			console.log(span);
-		}
+		var span = document.getElementById('jituangaikuang').children;//htmlCollection 集合
+		span=span[0].children[0].children;
+		console.log(span);
 
 		//点击下一页 上一页的功能
 		$('#jituangaikuang').on('click','a',function(e){
@@ -30,24 +28,10 @@ $(function(){
 			}else{
 				nextPage(false)
 			}
-			// var a=$(this)			
-			// for(var i=0;i<a.length;i++){
-			// 	if(a.eq(1).attr('id')=='right'){
-			// 		console.log(1677)
-			// 		nextPage(true)
-			// 	}else{
-			// 		nextPage(false)
-			// 	}
-			// }
+			
 		});			
 			
-		// $('#jituangaikuang').on('click','a',function(e){
-		// 	var right=$('#right').attr('id')			
-		// 	if(right=='right'){
-		// 		// console.log(right)
-		// 		nextPage(false);
-		// 	}
-		// });	
+		
 		//小圆点的相应功能 事件委托
 		clickButtons();
         function clickButtons(){				
@@ -74,21 +58,21 @@ $(function(){
             $(span[index-1]).removeClass('on');	
             
 			if(next){//往后走
-				if(index == 11){//到最后一张，直接跳到第一张
+				if(index == 6){//到最后一张，直接跳到第一张
 					targetLeft = 0;
 					index = 1;
 				}else{
 					index++;
-					targetLeft = -115*(index-1);
+					targetLeft = -100*(index-1);
 				}
 				
 			}else{//往前走
 				if(index == 1){//在第一张，直接跳到第五张
-					index = 11;
-					targetLeft = -115*(imgCount-1);
+					index = 6;
+					targetLeft = -100*(imgCount-1);
 				}else{
 					index--;
-					targetLeft = -115*(index-1);
+					targetLeft = -100*(index-1);
 				}       
 			}
 			
@@ -97,6 +81,6 @@ $(function(){
 			$(span[index-1]).addClass('on');
 			             
         }
+}	
 
-})
 

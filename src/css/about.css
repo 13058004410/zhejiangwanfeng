@@ -357,7 +357,7 @@ a img{display: block;}
     padding-top:15px;
 }
 #jituangaikuang .list{
-width:3000px;
+width:1000px;
 height:400px;
 position:absolute;
 overflow: hidden;
@@ -419,7 +419,7 @@ display:block;
 }
 #jituangaikuang .list span{
     display: inline-block;
-    width:2%;
+    width:5%;
     /* background:#ccc; */
     text-align: center;
     line-height: 50px;
