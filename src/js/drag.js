@@ -1,25 +1,21 @@
-(function($) {
-	$.fn.exist = function(){ 
-		
-	 if($(this).length>=1){
-			
-	  return true;
-	 }
-	 return false;
-
-	};
-})(jQuery);
-
-
-$(function(){
-	.when(.ajax,$.ajax()).then(function(){})
+function paomadeng(){
 	var imgCount = 6;
-		var index = 1;
+		var index = 1;		
+		// var span = document.getElementById('jituangaikuang').childNodes;	//htmlCollection 集合
+		var span = document.getElementById('jituangaikuang').children;	//htmlCollection 集合
+		span=span[0].children[0].children;
+		// console.log(span[0].children[0].children)
+		// console.log((span[0].childNodes[0].childNodes));	
+		// var span_1=span[0].childNodes[0].childNodes;
+		// for(var i in span_1){
+		// 	if(i%2!=0){
+		// 		var arr=[];
+		// 		arr.push(span_1[i])
+		// 		// console.log(arr)
+		// 	}
+			
+		// }
 		
-		var span = $('.list').children();//htmlCollection 集合
-		if(span.length>0){
-			console.log(span);
-		}
 
 		//点击下一页 上一页的功能
 		$('#jituangaikuang').on('click','a',function(e){
@@ -41,13 +37,7 @@ $(function(){
 			// }
 		});			
 			
-		// $('#jituangaikuang').on('click','a',function(e){
-		// 	var right=$('#right').attr('id')			
-		// 	if(right=='right'){
-		// 		// console.log(right)
-		// 		nextPage(false);
-		// 	}
-		// });	
+	
 		//小圆点的相应功能 事件委托
 		clickButtons();
         function clickButtons(){				
@@ -97,6 +87,9 @@ $(function(){
 			$(span[index-1]).addClass('on');
 			             
         }
+}
 
-})
+
+		
+
 

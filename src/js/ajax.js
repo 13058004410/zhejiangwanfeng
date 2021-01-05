@@ -138,6 +138,8 @@ $(function(){
 
     //页面加载时默认显示的文章
     // jituangaikuang();
+
+
     
 })
 
@@ -351,6 +353,7 @@ function chengyuandanwei(){
         }    
 }
 
+
 //走进万丰页面的万丰历程
 function wanfenglicheng(){
     //声明一个变量pno用来传参--->当前页码   
@@ -362,6 +365,7 @@ function wanfenglicheng(){
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
     function getData(curPage,pageSize){           
         $.ajax({
+            async: false,
             type:'get',
             dataType:'json',
             url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
@@ -384,7 +388,7 @@ function wanfenglicheng(){
         var totalPage=Math.ceil(data.length/2);
         // console.log(totalPage);
         var html='<div class="wrapper">';
-        html+=`<div class="list" style="left:500px">`;
+        html+=`<div class="list" id="list" style="left:500px">`;
         //循环输出页码================    
         for(var i=1;i<=totalPage;i++){
             if(i==curPage){
@@ -403,11 +407,11 @@ function wanfenglicheng(){
                 <a class="arrow " id="left"><img src="../img/next.png"></a>
         `;
         
-        // html+=`</div>`;
+        html+=`</div>`;
 
         $('#jituangaikuang').html(html);
 
-   
+        paomadeng();
         //点击上一页
         // $('.right').click(function(){
         //     // zuobian()

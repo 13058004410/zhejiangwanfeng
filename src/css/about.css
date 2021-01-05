@@ -361,7 +361,7 @@ width:3000px;
 height:400px;
 position:absolute;
 overflow: hidden;
-
+display:block;
 }
 #jituangaikuang .list>img{
 float:left;
