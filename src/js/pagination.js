@@ -1,4 +1,4 @@
-
+//jituanrongyu==================================================
 function jituanrongyu(){
     //声明一个变量pno用来传参--->当前页码   
     var pno=1;
@@ -31,7 +31,7 @@ function jituanrongyu(){
         var totalPage=Math.ceil(data.length/2);
 
         //生成内容列表=======================================
-        var html='<div id="content"><ul>';
+        var html='<div id="content"><ul class="jituanrongyu">';
         for(var i=0;i<Math.ceil(data.length);i++){
             html+=`                   
                     <li>
@@ -121,25 +121,25 @@ function jituanrongyu(){
             getData(pno,pageSize);
         })
         //点击切换内容页
-        // $('.li').click(function(){                  
-        //     pno=$(this).attr('index');
-        //     //获取pno发再次发ajax请求
-        //     getData(pno,pageSize);                
-        //     var html='<div id="content"><ul>';
-        //     for(var i=0;i<Math.ceil(data.length);i++){  
-        //         // console.log(11168);                  
-        //         html+=`                   
-        //                 <li>
-        //                     <img src="${data[i].img}" alt="" style="height:80%;">
-        //                     <p>${data[i].p}</p>
-        //                 </li>                   
-        //         `;                         
-        //     }
-        //     html+='</ul></div>';
-        //     // console.log(str);
-        //     // $('#content').remove();
-        //     $('#jituangaikuang').html(html);               
-        // });
+        $('.li').click(function(){                  
+            pno=$(this).attr('index');
+            //获取pno发再次发ajax请求
+            getData(pno,pageSize);                
+            var html='<div id="content"><ul>';
+            for(var i=0;i<Math.ceil(data.length);i++){  
+                // console.log(11168);                  
+                html+=`                   
+                        <li>
+                            <img src="${data[i].img}" alt="" style="height:80%;">
+                            <p>${data[i].p}</p>
+                        </li>                   
+                `;                         
+            }
+            html+='</ul></div>';
+            // console.log(str);
+            // $('#content').remove();
+            $('#jituangaikuang').html(html);               
+        });
 
         
     }        

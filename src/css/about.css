@@ -53,9 +53,7 @@ a img{display: block;}
     background:#1D6BC3;
     color:#fff;
 }
-.text-content{
-    padding-top:90px;
-}
+
 .text-content .num-info{
     display: flex;
     justify-content: space-between;
@@ -112,64 +110,11 @@ a img{display: block;}
     text-align: center;
 }
 
-/* 分页列表的样式 */
-/*
-#pagination{
-    width: 500px;
-    height: 100px;
-    border: 2px solid crimson;   
-    margin: 50px auto ;
-    padding-top: 34px ;
-    padding-left: 50px;
-}
-
-.over,.pageItem{
-    float: left;
-    display: block;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-}
-
-.pageItem{
-    border: 1px solid orangered;
-    text-decoration: none;
-    color: dimgrey;
-    margin-right: -1px;
-    解决边框加粗问题
-}
-.pageItem:hover{
-    background-color: #f98e4594;
-    color:orangered ;
-}
-.clearfix{
-    clear: both;
-}
-.active{
-    background-color: #f98e4594;
-    color:orangered ;
-}
-.banBtn{
-    border:1px solid #ff980069;
-    color: #ff980069;
-}
-#prevBtn{
-    margin-right: 10px;
-}
-#nextBtn{
-    margin-left: 10px;
-}
-*/
 
 
-/* 分页列表的样式 */
-#content{
-    width:98%;
-    /* border:1px solid orange; */
-    float:left;
-    margin-top:50px;
-}
+
+/* 集团荣誉=========================================================================== */
+
 
 #pagination{
     background:#f5f5f5;
@@ -209,7 +154,7 @@ a img{display: block;}
     background:#1D6BC3;
 }
 
-#content ul li{
+#jituangaikuang .jituanrongyu li{
     display: inline-block;
     list-style-type: none;
     /* border:1px solid #999; */
@@ -220,12 +165,12 @@ a img{display: block;}
     margin-bottom: 50px;
     margin-right: 15px;
 }
-#content ul li img{
+#jituangaikuang .jituanrongyu li img{
     /* display:block; */
     
     width:100%;
 }
-#content ul li p{
+#jituangaikuang .jituanrongyu li p{
     width:100%;
     background:#f5f5f5;
     color:#333;
@@ -239,9 +184,9 @@ a img{display: block;}
 }
 
 /* 企业文化 */
-.qywh-wrapper{
+/* .qywh-wrapper{
     margin-top:50px;
-}
+} */
 .title {
     font-size: 36px;
     color: #333;
@@ -271,7 +216,7 @@ a img{display: block;}
 }
 
 /* 成员单位 */
-#content ul li{
+#content .pic_list li{
     display: inline-block;
     width:347px;
     height:272px;
@@ -280,19 +225,19 @@ a img{display: block;}
     padding: 45px 30px 15px;
 }
 
-#content ul li h2{
+#content .pic_list li h2{
     font-size: 22px;
     color: #1d6bc3;
     margin-bottom: 5px;
 }
-#content ul li>.sj{
+#content .pic_list li>.sj{
     width:46px;
     height:43px;
     position: relative;
     top:-240px;
     left:-149px;
 }
-#content ul li p{
+#content .pic_list li p{
     background:none;
     width: 100%;
     color: #333;
@@ -312,19 +257,7 @@ a img{display: block;}
 }
 
 /* 万丰历程 */
-/* #pagination ul{
-    overflow: hidden !important;
-    white-space: nowrap !important;
-} */
-/* #pagination li{
-    font-size: 50px !important;
-    color: #e47916 !important;
-    width:135px !important;
-    line-height: 50px !important;
-    display: inline-block !important;
-    float:none;
-    white-space: nowrap !important;
-} */
+
 
 
 #jituangaikuang{
@@ -334,6 +267,7 @@ a img{display: block;}
     left:0;
     border-bottom:1px solid #C2C2C2;  
     zoom:1;
+    margin-top:80px;
 }
 
 #jituangaikuang .wrapper{
@@ -357,7 +291,7 @@ a img{display: block;}
     padding-top:15px;
 }
 #jituangaikuang .list{
-width:1000px;
+width:900px;
 height:400px;
 position:absolute;
 overflow: hidden;
@@ -435,16 +369,13 @@ display:block;
     color: #e47916 !important;
 }
 
-.wrapper{
-    margin-top:80px;
-}
 
-.wrapper li{
+#jituangaikuang .wrapper li{
     width:auto !important;
     height:auto !important;
 }
 
-.wrapper .time-wrapper{
+#jituangaikuang .wrapper .time-wrapper{
     display: inline-block !important;
     vertical-align: top !important;
     padding: 15px 0 !important;
@@ -455,7 +386,45 @@ display:block;
     margin-right: 50px !important;
 }
 
-.wrapper .text{
+#jituangaikuang .wrapper .text{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 140px);
+    font-size: 16px;
+    color: #666;
+    line-height: 26px;
+    text-indent: 32px;
+}
+
+#jituangaikuang .course li{
+    padding: 35px 32px;
+    border-bottom: 1px solid #E5E5E5;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+#jituangaikuang .course li .time-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px 0;
+    width: 80px;
+    text-align: center;
+    background: #F5F5F5;
+    color: #1d6bc3;
+    margin-right: 50px;
+}
+
+#jituangaikuang .course li .time-wrapper .day {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+#jituangaikuang .course li .time-wrapper .month {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#jituangaikuang .course li .text {
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 140px);

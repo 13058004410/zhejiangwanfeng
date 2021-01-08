@@ -1,48 +1,22 @@
-// (function($) {
-// 	$.fn.exist = function(){ 
-		
-// 	 if($(this).length>=1){
-			
-// 	  return true;
-// 	 }
-// 	 return false;
-
-// 	};
-// })(jQuery);
 
 
 function paomadeng(){
+	
 	var imgCount = 6;
-		var index = 1;		
-		// var span = document.getElementById('jituangaikuang').childNodes;	//htmlCollection 集合
-		var span = document.getElementById('jituangaikuang').children;	//htmlCollection 集合
-		span=span[0].children[0].children;
-		// console.log(span[0].children[0].children)
-		// console.log((span[0].childNodes[0].childNodes));	
-		// var span_1=span[0].childNodes[0].childNodes;
-		// for(var i in span_1){
-		// 	if(i%2!=0){
-		// 		var arr=[];
-		// 		arr.push(span_1[i])
-		// 		// console.log(arr)
-		// 	}
-			
-		// }
-		
+		var index = 1;				
 		var span = document.getElementById('jituangaikuang').children;//htmlCollection 集合
 		span=span[0].children[0].children;
-		console.log(span);
-
+		// console.log(span);
+		
 		//点击下一页 上一页的功能
 		$('#jituangaikuang').on('click','a',function(e){
-			// var id=e.target.id;
-			// console.log($(this));
 			if($(this).attr('id')=='left'){
-				nextPage(true)
+				
+				nextPage(true);
 			}else{
-				nextPage(false)
-			}
-			
+				nextPage(false);
+				
+			}			
 		});			
 			
 		
@@ -54,7 +28,7 @@ function paomadeng(){
 				span[i].onclick = function(){
 					$(span[index-1]).removeClass('on');
 					if($(this).attr('index')==1){
-						index = 11;
+						index = 6;
 					}else{
 						index = $(this).attr('index')-1;
 					}

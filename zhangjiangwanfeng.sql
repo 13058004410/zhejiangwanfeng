@@ -241,8 +241,8 @@ insert into chengyuandanwei values
 -- 万丰历程
 create table wanfenglicheng(id int not null auto_increment primary key,li varchar(65535));
 insert into wanfenglicheng values
-(null,'<li><div class="time-wrapper"><span class="day">30</span> <p class="month">1993-07</p></div><div class="text">1993年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
-(null,'<li><div class="time-wrapper"><span class="day">30</span> <p class="month">1999-07</p></div><div class="text">1999年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
+(null,'<li><div class="time-wrapper"><span class="day">20</span> <p class="month">1993-07</p></div><div class="text">1993年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
+(null,'<li><div class="time-wrapper"><span class="day">10</span> <p class="month">1999-03</p></div><div class="text">1999年3月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
 (null,'<li><div class="time-wrapper"><span class="day">28</span> <p class="month">1999-05</p></div><div class="text">1999年5月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
 (null,'<li><div class="time-wrapper"><span class="day">10</span> <p class="month">2000-04</p></div><div class="text">2000年4月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
 (null,'<li><div class="time-wrapper"><span class="day">28</span> <p class="month">2000-07</p></div><div class="text">2000年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
