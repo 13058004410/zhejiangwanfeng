@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({
 app.get('/about',function(req,res){
     res.sendFile(__dirname+'/src/'+'about.html');
 });
+//页面跳转---新闻资讯
+app.get('/news',function(req,res){
+    res.sendFile(__dirname+'/src/'+'news.html');
+});
 
 
 

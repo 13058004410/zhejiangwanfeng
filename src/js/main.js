@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-
-    
+   
     //手机端导航按钮
     $('.icon').click(function(){
         $('.nav-m').toggle()

@@ -1,5 +1,94 @@
-*{padding:0;margin:0;box-sizing:border-box}
+/* 走进万丰栏目==================================================== */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  html{
+      font-size:16px;
+  }
+  
+  html,body{
+      width:100% !important;
+      font-family: "Microsoft YaHei",'Arial';
+      /* height:100% !important; */
+  }
+  
+  ul li{
+      list-style-type:none;
+      display:list-item;
+      /* overflow: hidden; */
+  }
+  
+  .header{
+      width:100%;
+      /* max-height:76px; */
+      border:1px solid #E4E4E4;
+      /* position: relative; */
+      /* top:10px; */
+      /* z-index: 5; */
+  }
+  
+  .header:after{
+      content:'';
+      display:block;
+      clear:both;
+  }
+  
+  .container {
+    width: 100%;
+    max-width:1120px;
+    margin: 0 auto;
+  }
+  
+  .container:after{
+      content:'';
+      display:block;
+      clear:both;
+  }
+  
+  #nav a{
+      color:#666;
+      text-decoration: none;
+  }
+  
+  
+  
+  .header .container img {
+    float: left;
+    margin-right:20px;
+    max-height:74px;
+  }
+  
+  .container form{
+      float:right;
+      line-height:76px;
+  }
+  
+  .container .search input{
+      width:150px;
+      height:30px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      padding:5px;
+  }
+  
+  .nav {
+    float: left;
+  }
+  .nav > li {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 76px;
+    border-bottom:2px solid whtie;
+  }
+
+
 a{text-decoration: none;}
+
 a img{display: block;}
 /* 大横幅图片 */
 .banner img:nth-child(2){
