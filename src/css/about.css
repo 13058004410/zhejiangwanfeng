@@ -95,6 +95,8 @@ a img{display: block;}
     display:none;
 }
 .banner img{
+    width:100%;
+    height:auto;
     display: block;
 }
 .banner .text{
@@ -243,7 +245,11 @@ a img{display: block;}
     background:#1D6BC3;
 }
 
-#jituangaikuang .jituanrongyu li{
+#container{
+    padding:0 20px;
+}
+
+#container .jituanrongyu li{
     display: inline-block;
     list-style-type: none;
     /* border:1px solid #999; */
@@ -254,12 +260,12 @@ a img{display: block;}
     margin-bottom: 50px;
     margin-right: 15px;
 }
-#jituangaikuang .jituanrongyu li img{
+#container .jituanrongyu li img{
     /* display:block; */
     
     width:100%;
 }
-#jituangaikuang .jituanrongyu li p{
+#container .jituanrongyu li p{
     width:100%;
     background:#f5f5f5;
     color:#333;
@@ -349,7 +355,7 @@ a img{display: block;}
 
 
 
-#jituangaikuang{
+#container{
     display: block;
     /* position: relative; */
     overflow: hidden;
@@ -359,18 +365,18 @@ a img{display: block;}
     margin-top:80px;
 }
 
-#jituangaikuang .wrapper{
+#container .wrapper{
     height:100px;
-    border:1px solid red;
+    border-bottom:1px solid #C2C2C2;
     padding-top:20px;
     position: relative;
 }
 
-#jituangaikuang .wrapper:hover .arrow{
+#container .wrapper:hover .arrow{
     display:block;
 }
 
-#jituangaikuang .container{
+#container .container{
     width:100%;
     max-width:1120px;
     height:80px;
@@ -379,25 +385,25 @@ a img{display: block;}
     margin:0 auto;
     padding-top:15px;
 }
-#jituangaikuang .list{
+#container .list{
 width:900px;
 height:400px;
 position:absolute;
 overflow: hidden;
 display:block;
 }
-#jituangaikuang .list>img{
+#container .list>img{
 float:left;
 width:600px;
 height:400px;
 }
-#jituangaikuang .pointer{
+#container .pointer{
 position:absolute;
 width:100px;
 bottom:20px;
 left:250px;
 }
-#jituangaikuang .pointer>span{
+#container .pointer>span{
 cursor:pointer;
 display:inline-block;
 width:10px;
@@ -407,7 +413,7 @@ border-radius:50%;
 border:1px solid #fff;
 }
 
-#jituangaikuang .arrow{
+#container .arrow{
     position:absolute;
     text-decoration:none;
     width:50px;
@@ -420,27 +426,27 @@ border:1px solid #fff;
     top:25px;
     display:none;
 }
-#jituangaikuang .arrow img{
+#container .arrow img{
     display: inline-block;
     vertical-align: middle;
 }
 
-#jituangaikuang #left{
+#container #left{
 right:-1px;
 }
-#jituangaikuang #right{
+#container #right{
 left:0;
 }
-#jituangaikuang .container:hover #jituangaikuang .arrow{
+#container .container:hover #container .arrow{
 display:block;
 }
-#jituangaikuang .container{
+#container .container{
     border:1px solid red;
 }
-#jituangaikuang .list{
+#container .list{
     vertical-align: middle;
 }
-#jituangaikuang .list span{
+#container .list span{
     display: inline-block;
     width:5%;
     /* background:#ccc; */
@@ -453,18 +459,18 @@ display:block;
     cursor: pointer;
     text-align: center;
 }
-#jituangaikuang .on{
+#container .on{
     font-size: 30px !important;
     color: #e47916 !important;
 }
 
 
-#jituangaikuang .wrapper li{
+#container .wrapper li{
     width:auto !important;
     height:auto !important;
 }
 
-#jituangaikuang .wrapper .time-wrapper{
+#container .wrapper .time-wrapper{
     display: inline-block !important;
     vertical-align: top !important;
     padding: 15px 0 !important;
@@ -475,7 +481,7 @@ display:block;
     margin-right: 50px !important;
 }
 
-#jituangaikuang .wrapper .text{
+#container .wrapper .text{
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 140px);
@@ -485,14 +491,14 @@ display:block;
     text-indent: 32px;
 }
 
-#jituangaikuang .course li{
+#container .course li{
     padding: 35px 32px;
     border-bottom: 1px solid #E5E5E5;
     display: list-item;
     text-align: -webkit-match-parent;
 }
 
-#jituangaikuang .course li .time-wrapper {
+#container .course li .time-wrapper {
     display: inline-block;
     vertical-align: top;
     padding: 15px 0;
@@ -503,17 +509,17 @@ display:block;
     margin-right: 50px;
 }
 
-#jituangaikuang .course li .time-wrapper .day {
+#container .course li .time-wrapper .day {
     font-size: 40px;
     line-height: 40px;
 }
 
-#jituangaikuang .course li .time-wrapper .month {
+#container .course li .time-wrapper .month {
     margin-top: 10px;
     font-size: 14px;
 }
 
-#jituangaikuang .course li .text {
+#container .course li .text {
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 140px);

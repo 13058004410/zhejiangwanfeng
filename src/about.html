@@ -191,17 +191,18 @@
         <div class="menu_2">
             <div class="container">
                 <ul id="menu_2">
-                    <li class="active" onclick=jituangaikuang()>集团概况</li>
-                    <li onclick=dongshizhangzhici()>董事长致辞</li>
-                    <li onclick=zuzhikuangjia()>组织框架</li>
-                    <li onclick=jituanrongyu()>集团荣誉</li>
-                    <li onclick=qiyewenhua()>企业文化</li>
-                    <li onclick=chengyuandanwei()>成员单位</li>
-                    <li onclick=wanfenglicheng()>万丰历程</li>
+                    <li class="active" onclick=yemian1()>集团概况</li>
+                    <li onclick=yemian2()>董事长致辞</li>
+                    <li onclick=yemian3()>组织框架</li>
+                    <li onclick=yemian4()>集团荣誉</li>
+                    <li onclick=yemian5()>企业文化</li>
+                    <li onclick=yemian6()>成员单位</li>
+                    <li onclick=yemian7()>万丰历程</li>
                 </ul>
             </div>
         </div>
-        <div class="container viewport" id="jituangaikuang"></div>
+        <!-- 内容区 -->
+        <div class="container viewport" id="container"></div>
             
             
         <!-- 底部 -->
@@ -224,5 +225,15 @@
         </footer>
         <!-- <script  src="js/drag.js" defer></script>  -->
     </body>
-    
+    <script>
+        var no=0;
+        var arr=['../img/nav.png','../img/close.png'];
+        function fun(){
+            no^=1;
+            $('.icon').css({
+                'background':'url('+arr[no]+')',
+                'background-size':'cover'
+            })
+        }
+    </script>
 </html>

@@ -144,7 +144,7 @@ $(function(){
 })
 
 //走进万丰页面的企业概况
-function jituangaikuang(){
+function yemian1(){
     $.ajax({
         type:'get',
         dataType:'json',
@@ -153,7 +153,7 @@ function jituangaikuang(){
         success:function(data){
             var str=''; 
             str=data[0].content;    
-            $('#jituangaikuang').html(str);
+            $('#container').html(str);
         },
         error:function(e){
             console.log(e.status);
@@ -163,7 +163,7 @@ function jituangaikuang(){
 }
 
 //走进万丰页面的董事长致辞
-function dongshizhangzhici(){
+function yemian2(){
     $.ajax({
         type:'get',
         dataType:'json',
@@ -173,7 +173,7 @@ function dongshizhangzhici(){
             var str='';
             str=data[1].content;
             $('.text-content').remove()
-            $('#jituangaikuang').html(str);   
+            $('#container').html(str);   
         },
         error:function(e){
             console.log(e.status);
@@ -182,7 +182,7 @@ function dongshizhangzhici(){
     })
 }
 //走进万丰页面的组织框架
-function zuzhikuangjia(){
+function yemian3(){
     $.ajax({
         type:'get',
         dataType:'json',
@@ -192,7 +192,7 @@ function zuzhikuangjia(){
             var str='';
             str=data[2].content;
             $('.text-content').remove()
-            $('#jituangaikuang').html(str);   
+            $('#container').html(str);   
         },
         error:function(e){
             console.log(e.status);
@@ -202,7 +202,7 @@ function zuzhikuangjia(){
 }
 
 //走进万丰页面的企业文化
-function qiyewenhua(){
+function yemian4(){
     $.ajax({
         type:'get',
         dataType:'json',
@@ -211,8 +211,8 @@ function qiyewenhua(){
         success:function(data){          
             var str='';
             str=data[4].content;
-            $('#jituangaikuang').children().remove();
-            $('#jituangaikuang').html(str);   
+            $('#container').children().remove();
+            $('#container').html(str);   
         },
         error:function(e){
             console.log(e.status);
@@ -223,9 +223,7 @@ function qiyewenhua(){
 
 
 //走进万丰页面的成员单位
-
-
-function chengyuandanwei(){
+function yemian5(){
         //声明一个变量pno用来传参--->当前页码
         var pno=1;
         var pageSize=12;                
@@ -262,7 +260,7 @@ function chengyuandanwei(){
                 html+=data[i].li;     
             }
             html+='</ul></div>';
-            // $('#jituangaikuang').html(html);
+            // $('#container').html(html);
        
             //生成分页列表============================================
             var str='<div id="pagination"><ul>';
@@ -304,7 +302,7 @@ function chengyuandanwei(){
             };
             str+='</ul></div>';
             html+=str;
-            $('#jituangaikuang').html(html);
+            $('#container').html(html);
     
     
             
@@ -350,7 +348,7 @@ function chengyuandanwei(){
                 html+='</ul></div>';
                 // console.log(str);
                 // $('#content').remove();
-                $('#jituangaikuang').html(html);               
+                $('#container').html(html);               
             });
     
             
@@ -358,12 +356,8 @@ function chengyuandanwei(){
 }
 
 
-//走进万丰页面的万丰历程============================================
-
-
-
-    
-function wanfenglicheng(){
+//走进万丰页面的万丰历程  
+function yemian6(){
     //声明一个变量pno用来传参--->当前页码   
     var pno=1;//全局变量
     var pageSize=6;  //全局变量
@@ -420,7 +414,7 @@ function wanfenglicheng(){
 
         html+=`</div>`;
 
-        $('#jituangaikuang').html(html);
+        $('#container').html(html);
         
         // 开始输出内容=======================
         var str=`<div id="content"><ul class="course">`;
@@ -429,7 +423,7 @@ function wanfenglicheng(){
         }
         str+=`</ul></div>`;
         html+=str;
-        $('#jituangaikuang').html(html);
+        $('#container').html(html);
         // 上一页=======
         $('#right').click(function(){
             pno=pno-1;
@@ -453,11 +447,17 @@ function wanfenglicheng(){
         });
 
         //点击页码=========
-        $('#jituangaikuang span').click(function(){
+        $('#container span').click(function(){
             index=$(this).attr('index');
             pno=index;
             getData(pno,pageSize);
         })
         	
     } 
+}
+
+
+//新闻资讯页面的总部新闻
+function yemian7(){
+    
 }

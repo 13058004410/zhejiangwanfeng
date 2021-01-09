@@ -10,9 +10,9 @@
         <!-- <script src="./js/jquery.min.js"></script> -->
         <script src="./js/jquery-3.5.1.js"></script>
         <script src="./js/news.js"></script>
-        <script src="./js/ajax.js"></script>                
-        <script src="./js/about.js"></script>        
-        <script src="./js/pagination.js"></script>              
+        <!-- <script src="./js/ajax.js"></script> ------------>
+        <!-- <script src="./js/about.js"></script>         -->
+        <!-- <script src="./js/pagination.js"></script>               -->
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/responsive.css">
         <link rel="stylesheet" href="./css/about.css">
@@ -160,5 +160,75 @@
             <img src="./img/5b7b85b26b9eb.jpg" alt="">
         </div>
     </div>
+    <!-- 大横幅图片 -->
+    <div class="banner">
+        <img src="./img/5b6e76f3ef841.jpg" alt="">
+        <img src="./img/5b6e76fdb8b88.jpg" alt="">
+        <div class="text">
+            <h1>新闻资讯</h1>
+            <h2>NEWS</h2>
+        </div>
+    </div>
+    <!-- 二级导航条 -->
+    <div class="menu_2">
+        <div class="container">
+            <ul id="menu_2">
+                <li class="active" onclick=yemian7()>总部新闻</li>
+                <li onclick=yemian8()>企业新闻</li>
+                <li onclick=yemian9()>基层动态</li>
+                <li onclick=yemian10()>文件发布</li>
+                <li onclick=yemian11()>通知公告</li>
+            </ul>
+        </div>
+    </div> 
+    <!-- 内容区 -->
+    <div class="container viewport" id="container">
+        <!-- 轮播图 -->
+        <div class="banner">           
+            <!-- 包着图片的那个大框         -->
+            <div class="list">
+                <a href="#">
+                    <img  src="./img/5cb138c54a8a3.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138d4b6344.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138e160a9d.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138ef67b58.jpg" alt="" >
+                </a>
+                <a href="#">
+                    <img  src="./img/5cb138fd8a742.jpg" alt="" >
+                </a>
+            </div>    
+                   
+ 
+            <!-- 左右箭头a标签 -->
+            <a href="#" class="arrow right" rel="external nofollow">
+                <img src="./img/left.png" alt="" >
+            </a>
+            <a href="#" class="arrow left" re="external nofollow" >
+                <img src="./img/right.png" alt="">
+            </a>
+            <!-- 轮播指示器 -->
+            <ol class="indecate">
+                <li index="1" style="background:url(./img/icon12.png);" class="active"></li>
+                <li index="2" style="background:url(./img/icon13.png);"></li>
+                <li index="3" style="background:url(./img/icon14.png);"></li>
+                <li index="4" style="background:url(./img/icon15.png);"></li>
+                <li index="5" style="background:url(./img/icon16.png);"></li>
+            </ol>
+            <!-- 手机版的轮播指示器 -->
+            <ol class="indecate_m">
+                <li index="1" class="active"></li>
+                <li index="2" ></li>
+                <li index="3" ></li>
+                <li index="4" ></li>
+                <li index="5" ></li>
+            </ol>
+        </div>
+    </div>   
 </body>
 </html>

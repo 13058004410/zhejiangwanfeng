@@ -3,44 +3,37 @@ $(function(){
     $(window).unbind('resize');
 
     //自动加载集团概况页面
-    jituangaikuang();
+    yemian1();
 
     //二级菜单点中变颜色
     $('#menu_2>li').click(function(){
         $(this).addClass('active').siblings().removeClass('active')
     });
 
-
-    
-
-
-
-
-
     //二级菜单点中切换文章内容
         //切换到集团概况
         $('#menu_2>li').eq(0).click(function(){
-            jituangaikuang();
+            yemian1();
         })
         //切换到董事长致辞
         $('#menu_2>li').eq(1).click(function(){
-            dongshizhangzhici();
+            yemian2();
         })
         //切换到组织框架
         $('#menu_2>li').eq(2).click(function(){
-            zuzhikuangjia();
+            yemian3();
         })
         //切换到企业文化
         $('#menu_2>li').eq(4).click(function(){
-            qiyewenhua();
+            yemian4();
         })
         //切换到成员单位
         $('#menu_2>li').eq(5).click(function(){
-            chengyuandanwei();
+            yemian5();
         })
         //切换到万丰历程
         $('#menu_2>li').eq(6).click(function(){           
-            wanfenglicheng();
+            yemian6();
         })
         
 })
