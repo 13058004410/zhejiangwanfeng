@@ -217,19 +217,6 @@ ul li{
     /* zoom:1; */
 }
 
-/* .banner:after{
-    content:'';
-    display:block;
-    clear:both;
-    height:0;
-    overflow: hidden;
-} */
-
-/* .banner-wrapper{
-    width:100%;
-    /* height:710px; */
-    /* position: absolute;
-} */ 
 
 .banner .list{
     width:500%;
