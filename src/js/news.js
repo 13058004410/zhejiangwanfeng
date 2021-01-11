@@ -164,6 +164,7 @@ $(document).ready(function(){
     var index=1;
     var intervalId;
     var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
+    // console.log(buttonLi_m)
 
     //自动轮播功能 使用定时器
     autoNextPage();
@@ -206,6 +207,8 @@ $(document).ready(function(){
                         nextPage(true);
                 };
             }
+            var div=$('.banner').children()[4];
+            console.log(div)
         }
 
         // 图片左右移动
