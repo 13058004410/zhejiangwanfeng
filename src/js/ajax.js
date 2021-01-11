@@ -144,23 +144,23 @@ $(function(){
 })
 
 //走进万丰页面的企业概况
-function yemian1(){
-    $.ajax({
-        type:'get',
-        dataType:'json',
-        contentType:'application/json;utf-8',
-        url:'/luyou/qiyegaikuang',
-        success:function(data){
-            var str=''; 
-            str=data[0].content;    
-            $('#container').html(str);
-        },
-        error:function(e){
-            console.log(e.status);
-            console.log(e.responseText);
-        }
-    })
-}
+// function yemian1(){
+//     $.ajax({
+//         type:'get',
+//         dataType:'json',
+//         contentType:'application/json;utf-8',
+//         url:'/luyou/qiyegaikuang',
+//         success:function(data){
+//             var str=''; 
+//             str=data[0].content;    
+//             $('#container').html(str);
+//         },
+//         error:function(e){
+//             console.log(e.status);
+//             console.log(e.responseText);
+//         }
+//     })
+// }
 
 //走进万丰页面的董事长致辞
 function yemian2(){
@@ -459,5 +459,99 @@ function yemian6(){
 
 //新闻资讯页面的总部新闻
 function yemian7(){
-    
+    //声明一个变量pno用来传参--->当前页码   
+    var pno=1;//全局变量
+    var pageSize=6;  //全局变量
+    //页面默认加载的分页列表---->第一页
+    getData(pno,pageSize);
+    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
+    function getData(curPage,pageSize){           
+        $.ajax({
+            async: false,
+            type:'get',
+            dataType:'json',
+            url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
+            contentType:'application/json;utf-8',  
+            success:function(data){
+                // console.log(data);
+                // $('#pagination').html(data)
+                //拿到数据之后在页面循环输出
+                innerData(data,pno);
+            },
+            error:function(e){
+                console.log(e.staus)
+                console.log(e.responseText)
+            }
+        });           
+    }
+
+    //第二个函数：生成分页列表、生成内容列表
+    function innerData(data,curPage){
+        var totalPage=Math.ceil(data.length);
+        // console.log(totalPage);
+        var html='<div class="wrapper">';
+        html+=`<div class="list" id="list" style="left:250px">`;
+        //循环输出页码================    
+        for(var i=1;i<=totalPage;i++){
+            if(i==curPage){
+                html+=`
+                        <span class="on" index="${i}">${i+2000}</span>
+                `;
+            }else{
+                html+=`
+                        <span class="" index="${i}">${i+2000}</span>
+                `;
+            }                                    
+        }
+        //把左右箭头输出
+        html+=`</div>`;
+        if(curPage!=1){
+            html+=`<a class="arrow " id="right" ><img src="../img/prev.png"></a>`
+        };
+        if(curPage!=totalPage){
+            html+=`<a class="arrow " id="left"><img src="../img/next.png"></a>`;
+        }
+
+
+        html+=`</div>`;
+
+        $('#container').html(html);
+        
+        // 开始输出内容=======================
+        var str=`<div class="banner"><div class="list">`;
+        var a=$('.list').children();
+        console.log(a)
+        str+=`</ul></div>`;
+        html+=str;
+        $('#container').html(html);
+        // 上一页=======
+        $('#right').click(function(){
+            pno=pno-1;
+            if(pno<1){
+                pno==1;
+            }else{
+                getData(pno,pageSize);
+            }
+            
+        });
+        //下一页=======
+        $('#left').click(function(){
+            pno=pno+1;
+            if(pno>totalPage){
+                pno==totalPage;
+                getData(pno,pageSize);
+            }else{
+                getData(pno,pageSize);
+            }
+            console.log(pno)
+        });
+
+        //点击页码=========
+        $('#container span').click(function(){
+            index=$(this).attr('index');
+            pno=index;
+            getData(pno,pageSize);
+        })
+        	
+    }       
 }

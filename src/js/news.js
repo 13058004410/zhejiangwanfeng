@@ -158,6 +158,31 @@ $(document).ready(function(){
         }
     )    
 
+
+    //二级菜单点中切换文章内容
+        //切换到集团概况
+        $('#menu_2>li').eq(0).click(function(){
+            yemian7();
+        })
+        //切换到董事长致辞
+        $('#menu_2>li').eq(1).click(function(){
+            yemian8();
+        })
+        //切换到组织框架
+        $('#menu_2>li').eq(2).click(function(){
+            yemian9();
+        })
+        //切换到企业文化
+        $('#menu_2>li').eq(3).click(function(){
+            yemian10();
+        })
+        $('#menu_2>li').eq(4).click(function(){
+            yemian11();
+        })
+
+
+
+
 })
 
 
