@@ -236,15 +236,7 @@ $(document).ready(function(){
         
     }
     
-    function title(index){
-        var p=$('.text1').children();
-        var _p=[];
-        for(var i=0;i<p.length;i++){                                   
-            _p.push(p[i]);            
-        }
-        // console.log(_p);
-        $('.text1').html(_p[index-1])
-    }
+        
 
 
         // 图片左右移动
@@ -284,7 +276,14 @@ $(document).ready(function(){
             $('.wrapper').animate({left:targetLeft+'px'});
             //更新后的圆点加上样式
             $(buttonLi_m[index-1]).addClass('active');
-            title(index);
+            
+            var p=$('.text1').children();
+            var _p=[];
+            for(var i=0;i<p.length;i++){                                   
+                _p.push(p[i]);            
+            }
+            // console.log(_p);
+            $('.text1').html(_p[index-1])
         }
         
         
