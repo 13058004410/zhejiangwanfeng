@@ -9,14 +9,15 @@
         <meta name="description" content="" />
         <!-- <script src="./js/jquery.min.js"></script> -->
         <script src="./js/jquery-3.5.1.js"></script>
-        <!-- <script src="./js/news.js"></script> -->
-        <!-- <script src="./js/ajax.js"></script>  -->
+        <script src="./js/news.js"></script>
+        <script src="./js/ajax.js"></script> 
         <!-- <script src="./js/about.js"></script>         -->
         <!-- <script src="./js/pagination.js"></script>               -->
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/responsive.css">
         <link rel="stylesheet" href="./css/about.css">
         <link rel="stylesheet" href="./css/about_m.css">
+        <link rel="stylesheet" href="./css/news.css">
         <title>走进万丰</title>
     </head>
 <body>
@@ -173,7 +174,7 @@
     <div class="menu_2">
         <div class="container">
             <ul id="menu_2">
-                <li class="active" onclick=yemian7()>总部新闻</li>
+                <li class="active" onclic=yemian7()>总部新闻</li>
                 <li onclick=yemian8()>企业新闻</li>
                 <li onclick=yemian9()>基层动态</li>
                 <li onclick=yemian10()>文件发布</li>
@@ -184,49 +185,35 @@
     <!-- 内容区 -->
     <div class="container viewport" id="container">
         <!-- 轮播图 -->
-        <div class="banner">           
-            <!-- 包着图片的那个大框         -->
-            <div class="list">
-                <a href="#">
-                    <img  src="./img/5cb138c54a8a3.jpg" alt="" >
-                </a>
-                <a href="#">
-                    <img  src="./img/5cb138d4b6344.jpg" alt="" >
-                </a>
-                <a href="#">
-                    <img  src="./img/5cb138e160a9d.jpg" alt="" >
-                </a>
-                <a href="#">
-                    <img  src="./img/5cb138ef67b58.jpg" alt="" >
-                </a>
-                <a href="#">
-                    <img  src="./img/5cb138fd8a742.jpg" alt="" >
-                </a>
-            </div>                       
- 
-            <!-- 左右箭头a标签 -->
-            <a href="#" class="arrow right" rel="external nofollow">
-                <img src="./img/left.png" alt="" >
-            </a>
-            <a href="#" class="arrow left" re="external nofollow" >
-                <img src="./img/right.png" alt="">
-            </a>
-            <!-- 轮播指示器 -->
-            <ol class="indecate">
-                <li index="1" style="background:url(./img/icon12.png);" class="active"></li>
-                <li index="2" style="background:url(./img/icon13.png);"></li>
-                <li index="3" style="background:url(./img/icon14.png);"></li>
-                <li index="4" style="background:url(./img/icon15.png);"></li>
-                <li index="5" style="background:url(./img/icon16.png);"></li>
-            </ol>
-            <!-- 手机版的轮播指示器 -->
-            <ol class="indecate_m">
-                <li index="1" class="active"></li>
-                <li index="2" ></li>
-                <li index="3" ></li>
-                <li index="4" ></li>
-                <li index="5" ></li>
-            </ol>
+        <div class="banner">
+            <!-- 要轮播的图片            -->
+            <div class="viewport">
+                <!-- 包着图片的那个大框         -->
+                <div class="wrapper" style="left:0px">
+                    <a href="#">
+                        <img  src="./img/5f891170ab9bb.jpg" alt="" >
+                    </a>
+                    <a href="#">
+                        <img  src="./img/5f2a068045eba.jpg" alt="" >
+                    </a>
+                    <a href="#">
+                        <img  src="./img/5f236d18706df.jpg" alt="" >
+                    </a>
+                </div>
+            </div>    
+            <!-- 右边标题和轮播指示器        -->
+            <div class="text1">
+                <!-- <p>省供销社监事会主任张悦专程来萧调研</p>
+                <p>区供销联社领导分组慰问基层一线劳动者</p>
+                <p>全区供销系统办公室主任业务能力提升班干货满满</p> -->
+            </div>
+            <div>
+                <ol class="indecate_1">
+                    <li index="1" class="active"></li>
+                    <li index="2" ></li>
+                    <li index="3" ></li>
+                </ol>
+            </div>
         </div>
     </div>   
 </body>

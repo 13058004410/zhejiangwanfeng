@@ -460,33 +460,34 @@ function yemian6(){
 //新闻资讯页面的总部新闻
 function yemian7(){
     //声明一个变量pno用来传参--->当前页码   
-    var pno=1;//全局变量
-    var pageSize=6;  //全局变量
+    // var pno=1;//全局变量
+    // var pageSize=6;  //全局变量
     //页面默认加载的分页列表---->第一页
-    getData(pno,pageSize);
+    getData();
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
-    function getData(curPage,pageSize){           
+    function getData(){           
         $.ajax({
             async: false,
             type:'get',
             dataType:'json',
-            url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
+            url:'/luyou/zongbuxinwen',
             contentType:'application/json;utf-8',  
             success:function(data){
                 // console.log(data);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
-                innerData(data,pno);
+                innerData();
             },
             error:function(e){
                 console.log(e.staus)
                 console.log(e.responseText)
             }
-        });           
+        });   
+        return data;        
     }
 
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(data,curPage){
+    function innerData(){
         var totalPage=Math.ceil(data.length);
         // console.log(totalPage);
         var html='<div class="wrapper">';

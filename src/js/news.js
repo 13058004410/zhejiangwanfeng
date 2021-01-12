@@ -158,32 +158,127 @@ $(document).ready(function(){
         }
     )    
 
+//二级菜单点中切换文章内容
+    //切换到集团概况
+    $('#menu_2>li').eq(0).click(function(){
+        yemian7();
+    })
+    //切换到董事长致辞
+    // $('#menu_2>li').eq(1).click(function(){
+    //     yemian2();
+    // })
+    // //切换到组织框架
+    // $('#menu_2>li').eq(2).click(function(){
+    //     yemian3();
+    // })
+    // //切换到企业文化
+    // $('#menu_2>li').eq(4).click(function(){
+    //     yemian4();
+    // })
+    // //切换到成员单位
+    // $('#menu_2>li').eq(5).click(function(){
+    //     yemian5();
+    // })
+    // //切换到万丰历程
+    // $('#menu_2>li').eq(6).click(function(){           
+    //     yemian6();
+    // })
 
-    //二级菜单点中切换文章内容
-        //切换到集团概况
-        $('#menu_2>li').eq(0).click(function(){
-            yemian7();
-        })
-        //切换到董事长致辞
-        $('#menu_2>li').eq(1).click(function(){
-            yemian8();
-        })
-        //切换到组织框架
-        $('#menu_2>li').eq(2).click(function(){
-            yemian9();
-        })
-        //切换到企业文化
-        $('#menu_2>li').eq(3).click(function(){
-            yemian10();
-        })
-        $('#menu_2>li').eq(4).click(function(){
-            yemian11();
-        })
 
 
+    // 轮播图==================================
+    var imgCount=3;
+    var index=1;
+    var intervalId;
+    var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
+    // console.log(buttonLi_m[0])
 
+    //自动轮播功能 使用定时器
+    autoNextPage();
+    function autoNextPage(){
+        // console.log('开始轮播')
+        intervalId=setInterval(function(){
+                nextPage(true);
+        },3000);
+    }
 
+    //当鼠标移入 停止轮播
+    $('.banner').mouseover(function(){
+        // console.log('鼠标移入，停止轮播');
+        clearInterval(intervalId);
+    });
+
+    //当鼠标移出 开始轮播
+    $('.banner').mouseout(function(){
+        // console.log('鼠标移出，开始轮播');
+        autoNextPage(true);
+    });
+
+    
+
+    
+    
+        var _width=$(window).width();
+        // console.log(_width);
+        clickButton();
+        function clickButton(){
+            var length=buttonLi_m.length;
+            for(var i=0;i<length;i++){
+                buttonLi_m[i].onclick=function(){
+                    $(buttonLi_m[index-1]).removeClass('active');
+                    if($(this).attr('index')==1){
+                        index=3;
+                    }else{
+                        index=$(this).attr('index')-1;
+                    }
+                        nextPage(true);
+                };
+            }
+            var p=$('.text1').children();
+            // console.log(p);
+            var _p=[];
+            for(var i=0;i<p.length;i++){ 
+                              
+                _p.push(p[i]);
+                // console.log(_p);
+            }
+            console.log(_p);
+            // $('.text1').html(_p[0])
+        }
+
+        // 图片左右移动
+        function nextPage(next){
+            var imgWidth=$('.wrapper img').css('width');
+            var imgWidth_num=imgWidth.replace('px','');
+            var targetLeft=0;
+            //当前的圆点去掉active样式
+            $(buttonLi_m[index-1]).removeClass('active');
+            if(next){//往后走
+                if(index==3){//如果是最后一张 直接跳到第一张
+                    targetLeft=0;
+                    index=1;
+                    // console.log('自动轮播')
+                }else{
+                    index++;
+                    targetLeft=-imgWidth_num*(index-1);
+                }
+            }else{//往前走
+                if(index==1){//如果是在第一张 直接跳到第五张
+                    index=3;
+                    targetLeft=-imgWidth_num*(imgCount-1);
+                }else{
+                    index--;
+                    targetLeft=-imgWidth_num*(index-1);
+                }
+            }
+            $('.wrapper').animate({left:targetLeft+'px'});
+            //更新后的圆点加上样式
+            $(buttonLi_m[index-1]).addClass('active');
+        }
 })
+
+
+
 
 
 
