@@ -459,9 +459,6 @@ function yemian6(){
 
 //新闻资讯页面的总部新闻
 function yemian7(){
-    //声明一个变量pno用来传参--->当前页码   
-    // var pno=1;//全局变量
-    // var pageSize=6;  //全局变量
     //页面默认加载的分页列表---->第一页
     getData();
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
@@ -476,83 +473,69 @@ function yemian7(){
                 // console.log(data);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
-                innerData();
+                innerData(data);
             },
             error:function(e){
                 console.log(e.staus)
                 console.log(e.responseText)
             }
         });   
-        return data;        
     }
 
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(){
-        var totalPage=Math.ceil(data.length);
-        // console.log(totalPage);
-        var html='<div class="wrapper">';
-        html+=`<div class="list" id="list" style="left:250px">`;
-        //循环输出页码================    
-        for(var i=1;i<=totalPage;i++){
-            if(i==curPage){
-                html+=`
-                        <span class="on" index="${i}">${i+2000}</span>
-                `;
-            }else{
-                html+=`
-                        <span class="" index="${i}">${i+2000}</span>
-                `;
-            }                                    
-        }
-        //把左右箭头输出
-        html+=`</div>`;
-        if(curPage!=1){
-            html+=`<a class="arrow " id="right" ><img src="../img/prev.png"></a>`
-        };
-        if(curPage!=totalPage){
-            html+=`<a class="arrow " id="left"><img src="../img/next.png"></a>`;
-        }
-
-
-        html+=`</div>`;
-
-        $('#container').html(html);
+    function innerData(data){
+        
         
         // 开始输出内容=======================
-        var str=`<div class="banner"><div class="list">`;
-        var a=$('.list').children();
-        console.log(a)
-        str+=`</ul></div>`;
-        html+=str;
-        $('#container').html(html);
-        // 上一页=======
-        $('#right').click(function(){
-            pno=pno-1;
-            if(pno<1){
-                pno==1;
-            }else{
-                getData(pno,pageSize);
-            }
+        var html;
+         
+        var str=`        
+                <div class="banner">
+                    <!-- 要轮播的图片            -->
+                    <div class="viewport">
+                        <!-- 包着图片的那个大框         -->
+                        <div class="wrapper" style="left:0px">
+            `;
             
-        });
-        //下一页=======
-        $('#left').click(function(){
-            pno=pno+1;
-            if(pno>totalPage){
-                pno==totalPage;
-                getData(pno,pageSize);
-            }else{
-                getData(pno,pageSize);
-            }
-            console.log(pno)
-        });
 
-        //点击页码=========
-        $('#container span').click(function(){
-            index=$(this).attr('index');
-            pno=index;
-            getData(pno,pageSize);
-        })
+                for(var i in data){
+                    str+=`${data[i].a}`;
+                    
+                }
+                
+                                                              
+            str+=`
+                        </div>
+                    </div>
+                       
+                    <!-- 右边标题和轮播指示器        -->
+                    <div class="text1">
+            `; 
+            
+                        for(i in data){
+                            str+=`${data[i].p}`;
+                        }
+            str+=`
+                    </div>
+                    <div>
+                        <ol class="indecate_1">
+            `;            
+                        for(i in data){
+                            str+=`${data[i].pot}`;
+                        }      
+                            
+                            
+            str+=`
+                        </ol>
+                    </div>    
+                </div>
+            </div> 
+            `;
+            $('#container').html(str);                
+            
+
+
+        
         	
     }       
 }

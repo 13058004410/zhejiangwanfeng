@@ -159,6 +159,7 @@ $(document).ready(function(){
     )    
 
 //二级菜单点中切换文章内容
+    yemian7();   
     //切换到集团概况
     $('#menu_2>li').eq(0).click(function(){
         yemian7();
@@ -192,7 +193,6 @@ $(document).ready(function(){
     var intervalId;
     var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
     // console.log(buttonLi_m[0])
-
     //自动轮播功能 使用定时器
     autoNextPage();
     function autoNextPage(){
@@ -213,68 +213,78 @@ $(document).ready(function(){
         // console.log('鼠标移出，开始轮播');
         autoNextPage(true);
     });
-
     
 
-    
-    
-        var _width=$(window).width();
-        // console.log(_width);
-        clickButton();
-        function clickButton(){
-            var length=buttonLi_m.length;
-            for(var i=0;i<length;i++){
-                buttonLi_m[i].onclick=function(){
-                    $(buttonLi_m[index-1]).removeClass('active');
-                    if($(this).attr('index')==1){
-                        index=3;
-                    }else{
-                        index=$(this).attr('index')-1;
-                    }
-                        nextPage(true);
-                };
-            }
-            var p=$('.text1').children();
-            // console.log(p);
-            var _p=[];
-            for(var i=0;i<p.length;i++){ 
-                              
-                _p.push(p[i]);
-                // console.log(_p);
-            }
-            console.log(_p);
-            // $('.text1').html(_p[0])
+    clickButton();
+    function clickButton(){       
+        var length=buttonLi_m.length;
+        for(var i=0;i<length;i++){
+            buttonLi_m[i].onclick=function(){
+                $(buttonLi_m[index-1]).removeClass('active');
+                if($(this).attr('index')==1){
+                    index=3;
+                    title(index);
+                }else{
+                    index=$(this).attr('index')-1;
+                }
+                    nextPage(true);
+                    title(index);
+            };
         }
+        
+    }
+    
 
         // 图片左右移动
         function nextPage(next){
             var imgWidth=$('.wrapper img').css('width');
             var imgWidth_num=imgWidth.replace('px','');
-            var targetLeft=0;
+            var targetLeft=0;           
             //当前的圆点去掉active样式
             $(buttonLi_m[index-1]).removeClass('active');
             if(next){//往后走
                 if(index==3){//如果是最后一张 直接跳到第一张
                     targetLeft=0;
                     index=1;
+                    title(index);
                     // console.log('自动轮播')
                 }else{
                     index++;
                     targetLeft=-imgWidth_num*(index-1);
+                    title(index);
                 }
             }else{//往前走
-                if(index==1){//如果是在第一张 直接跳到第五张
+                if(index==1){//如果是在第一张 直接跳到第三张
                     index=3;
                     targetLeft=-imgWidth_num*(imgCount-1);
+                    title(index);
                 }else{
                     index--;
                     targetLeft=-imgWidth_num*(index-1);
+                    title(index);
                 }
             }
+
+            
+            
+            
+
             $('.wrapper').animate({left:targetLeft+'px'});
             //更新后的圆点加上样式
             $(buttonLi_m[index-1]).addClass('active');
         }
+
+
+        function title(index){
+            var p=$('.text1').children();
+            var _p=[];
+            for(var i=0;i<p.length;i++){                                   
+                _p.push(p[i]);            
+            }
+            // console.log(_p);
+            $('.text1').html(_p[index-1])
+        }
+        
 })
 
 

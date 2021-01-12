@@ -123,7 +123,7 @@ luyou.get('/wanfenglicheng',function(req,res){
 
 //总部新闻
 luyou.get('/zongbuxinwen',function(req,res){    
-    var sql='select*from zongbuxinwen';
+    var sql='select*from zongbuxinwen1';
     pool.query(sql,function(err,result){  
         console.log(result)     
         res.send(result)
