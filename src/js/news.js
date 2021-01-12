@@ -223,17 +223,29 @@ $(document).ready(function(){
                 $(buttonLi_m[index-1]).removeClass('active');
                 if($(this).attr('index')==1){
                     index=3;
-                    title(index);
                 }else{
                     index=$(this).attr('index')-1;
-                }
+                }   
+                    
+                    
                     nextPage(true);
-                    title(index);
+                    
             };
         }
         
+        
     }
     
+    function title(index){
+        var p=$('.text1').children();
+        var _p=[];
+        for(var i=0;i<p.length;i++){                                   
+            _p.push(p[i]);            
+        }
+        // console.log(_p);
+        $('.text1').html(_p[index-1])
+    }
+
 
         // 图片左右移动
         function nextPage(next){
@@ -244,46 +256,38 @@ $(document).ready(function(){
             $(buttonLi_m[index-1]).removeClass('active');
             if(next){//往后走
                 if(index==3){//如果是最后一张 直接跳到第一张
-                    targetLeft=0;
-                    index=1;
-                    title(index);
+                    targetLeft=0;                    
+                    // title(index);
+                    index=1;                   
                     // console.log('自动轮播')
                 }else{
                     index++;
                     targetLeft=-imgWidth_num*(index-1);
-                    title(index);
+                    
+                    // title(index);
                 }
             }else{//往前走
                 if(index==1){//如果是在第一张 直接跳到第三张
+                    // title(index);
                     index=3;
                     targetLeft=-imgWidth_num*(imgCount-1);
-                    title(index);
+                    
                 }else{
                     index--;
                     targetLeft=-imgWidth_num*(index-1);
-                    title(index);
+                    // title(index);
                 }
             }
 
             
             
-            
-
             $('.wrapper').animate({left:targetLeft+'px'});
             //更新后的圆点加上样式
             $(buttonLi_m[index-1]).addClass('active');
+            title(index);
         }
-
-
-        function title(index){
-            var p=$('.text1').children();
-            var _p=[];
-            for(var i=0;i<p.length;i++){                                   
-                _p.push(p[i]);            
-            }
-            // console.log(_p);
-            $('.text1').html(_p[index-1])
-        }
+        
+        
         
 })
 
