@@ -123,10 +123,10 @@ a img{display: block;}
 }
 
 /* 二级导航菜单 */
-.menu_2{
+.nav_2{
     border-bottom:1px solid #e5e5e5;
 }
-.menu_2 .container ul li{
+.nav_2 .container ul li{
     float:left;
     line-height: 67px;
     white-space: nowrap;
@@ -137,10 +137,10 @@ a img{display: block;}
     text-align: center;
     cursor: pointer;
 }
-.menu_2 .container ul li:first-child{
+.nav_2 .container ul li:first-child{
     border-left:1px solid #e5e5e5;
 }
-.menu_2 .container ul li.active{
+.nav_2 .container ul li.active{
     background:#1D6BC3;
     color:#fff;
 }
