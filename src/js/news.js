@@ -225,10 +225,19 @@ $(document).ready(function(){
                     index=3;
                 }else{
                     index=$(this).attr('index')-1;
-                }   
-                    
-                    
+                }                         
                     nextPage(true);
+                    var p1=$('.p1')
+                    var p2=$('.p2')
+                    var p3=$('.p3')
+                    // var p=$('.text1').children()
+                    
+                    // p=p[1]
+                    // console.log(p)
+                    swap(p1,p2)
+                    function swap(a,b){//a是目标元素，b是将要操作的元素
+                        b.insertBefore(a)
+                    }
                     
             };
         }
@@ -277,13 +286,6 @@ $(document).ready(function(){
             //更新后的圆点加上样式
             $(buttonLi_m[index-1]).addClass('active');
             
-            var p=$('.text1').children();
-            var _p=[];
-            for(var i=0;i<p.length;i++){                                   
-                _p.push(p[i]);            
-            }
-            // console.log(_p);
-            $('.text1').html(_p[index-1])
         }
         
         
