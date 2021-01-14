@@ -31,8 +31,7 @@ function paomadeng(){
 						index = 6;
 					}else{
 						index = $(this).attr('index')-1;
-					}
-					
+					}					
 					nextPage(true);			   
 				};
 			}			

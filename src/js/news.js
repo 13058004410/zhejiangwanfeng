@@ -158,14 +158,21 @@ $(document).ready(function(){
         }
     )    
 
+//二级菜单点中切换文章内容
+    yemian7();   
+    //切换到集团概况
+    $('#menu_2>li').eq(0).click(function(){
+        yemian7();
+    })
+   
+
 
     // 轮播图==================================
     var imgCount=3;
     var index=1;
     var intervalId;
     var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
-    // console.log(buttonLi_m)
-
+    // console.log(buttonLi_m[0])
     //自动轮播功能 使用定时器
     autoNextPage();
     function autoNextPage(){
@@ -187,64 +194,91 @@ $(document).ready(function(){
         autoNextPage(true);
     });
 
-    
 
-    
-    
-        var _width=$(window).width();
-        // console.log(_width);
-        clickButton();
-        function clickButton(){
-            var length=buttonLi_m.length;
-            for(var i=0;i<length;i++){
-                buttonLi_m[i].onclick=function(){
-                    $(buttonLi_m[index-1]).removeClass('active');
-                    if($(this).attr('index')==1){
-                        index=3;
-                    }else{
-                        index=$(this).attr('index')-1;
-                    }
-                        nextPage(true);
-                };
-            }
-            var div=$('.banner').children()[4];
-            console.log(div)
-        }
-
-        // 图片左右移动
-        function nextPage(next){
-            var imgWidth=$('.wrapper img').css('width');
-            var imgWidth_num=imgWidth.replace('px','');
-            var targetLeft=0;
-            //当前的圆点去掉active样式
-            $(buttonLi_m[index-1]).removeClass('active');
-            if(next){//往后走
-                if(index==3){//如果是最后一张 直接跳到第一张
-                    targetLeft=0;
-                    index=1;
-                    // console.log('自动轮播')
-                }else{
-                    index++;
-                    targetLeft=-imgWidth_num*(index-1);
-                }
-            }else{//往前走
-                if(index==1){//如果是在第一张 直接跳到第五张
+    clickButton();
+    function clickButton(){       
+        var length=buttonLi_m.length;
+        for(var i=0;i<length;i++){
+            buttonLi_m[i].onclick=function(){
+                $(buttonLi_m[index-1]).removeClass('active');
+                if($(this).attr('index')==1){
                     index=3;
-                    targetLeft=-imgWidth_num*(imgCount-1);
                 }else{
-                    index--;
-                    targetLeft=-imgWidth_num*(index-1);
-                }
-            }
-            $('.wrapper').animate({left:targetLeft+'px'});
-            //更新后的圆点加上样式
-            $(buttonLi_m[index-1]).addClass('active');
+                    index=$(this).attr('index')-1;
+                }   
+                    nextPage(true);                   
+            };
         }
-    })
+        
+        
+    }
+
+    
+
+    // 图片左右移动
+    function nextPage(next){
+        // var imgWidth=$('.wrapper img').css('width');
+        var imgWidth=$('.wrapper img').outerWidth(true)
+        var pWidth=$('.wrapper p').outerWidth(true);
+        // console.log(typeof(pWidth))
+        // var imgWidth_num=imgWidth.replace('px','');
+        var imgWidth_num=imgWidth+pWidth;
+        var targetLeft=0;           
+        //当前的圆点去掉active样式
+        $(buttonLi_m[index-1]).removeClass('active');
+        if(next){//往后走
+            if(index==3){//如果是最后一张 直接跳到第一张
+                targetLeft=0;                    
+                index=1;                   
+                // console.log('自动轮播')
+            }else{
+                index++;
+                targetLeft=-imgWidth_num*(index-1);
+            }
+        }else{//往前走
+            if(index==1){//如果是在第一张 直接跳到第三张
+                index=3;
+                targetLeft=-imgWidth_num*(imgCount-1);
+                
+            }else{
+                index--;
+                targetLeft=-imgWidth_num*(index-1);
+            }
+        }
+
+        
+        
+        $('.wrapper').animate({left:targetLeft+'px'});
+        //更新后的圆点加上样式
+        $(buttonLi_m[index-1]).addClass('active');
+        
+        // var p=$('.text1').children();
+        // var _p=[];
+        // for(var i=0;i<p.length;i++){                                   
+        //     _p.push(p[i]);  
+            
+                      
+        // }
+        
+        // var z=index-1;
+        // var text=document.getElementById('text1');
+        // console.log(text.innerHTML=_p[z]);
+    }
+    
 
 
 
 
 
+
+
+
+
+   
+})
+
+
+
+    
 
 

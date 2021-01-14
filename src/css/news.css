@@ -6,16 +6,14 @@
     border-bottom: 1px solid #E5E5E5;
 }
 
-#container .banner div{
-    /* border:1px solid red; */
-}
 
-#container .banner div:nth-child(2){
+
+#container .banner .text1{
     width:55%;
     height:71px;
     overflow: hidden;
 }
-#container .banner div:nth-child(2) p{
+#container .banner .text1 p{
     font-size: 24px;
     color: #1d6bc3;
     margin-top: 40px;
@@ -44,12 +42,12 @@
     background:red;
 }
 
-#container .banner>*{
+/* #container .banner>*{
     float:left;
-}
+} */
 
 #container .banner .viewport{
-    max-width:38%;
+    max-width:80%;
     overflow: hidden;
     /* border:1px solid yellow; */
     margin-right:2%;
@@ -60,13 +58,13 @@
     padding-top:0;  
     overflow:hidden;
     display:block;
-    width:1270px;
+    width:2568px;
     height:268px;
     position: relative;
     left:0px;
     zoom:1; 
     /* display:flex; */
-    justify-content:space-between;
+    /* justify-content:space-between; */
 }
 
 #container .banner .wrapper:after{
@@ -77,8 +75,25 @@
     display:block;
 }
 
+#container .banner .wrapper>*{
+    float:left;
+}
+
+#container .banner .wrapper a{
+    max-width:448px;
+}
+
+#container .banner .wrapper p{
+    font-size: 24px;
+    color: #1d6bc3;
+    margin-bottom: 40px;
+    margin-right: 1%;
+    width:432px;
+    height:100%;
+}
+
 #container .banner .wrapper img{
-    max-width: 33%;
+    max-width:100%;
     display:block;
     height:268px;
     float:left;

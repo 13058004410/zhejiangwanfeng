@@ -277,3 +277,14 @@ insert into wanfenglicheng values
 (null,'<li><div class="time-wrapper"><span class="day">30</span> <p class="month">1993-07</p></div><div class="text">2018年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
 (null,'<li><div class="time-wrapper"><span class="day">30</span> <p class="month">1993-07</p></div><div class="text">2018年7月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>'),
 (null,'<li><div class="time-wrapper"><span class="day">30</span> <p class="month">1993-04</p></div><div class="text">2019年4月，浙江万丰企业集团公司作为全省供销社系统第一家省批县（区）级企业集团，依托萧山区供销联社应运而生。 集团在创立初期，对萧山供销社这样一家有着50年计划经济沉淀的老企业进行了一定的机制革新，但随即就遭遇了供销社的股金风波，各种矛盾反复交汇，生产经营难以为继，集团陷入重重困难。</div></li>');
+
+
+-- 总部新闻1
+create table zongbuxinwen1(id int not null auto_increment primary key,a varchar(65535),pot varchar(65535));
+insert into zongbuxinwen1 values
+(null,'<a href="#"><img src="./img/5f891170ab9bb.jpg" alt="" ></a><p>省供销社监事会主任张悦专程来萧调研</p>',
+'<li index="1" class="active"></li>'),
+(null,'<a href="#"><img src="./img/5f2a068045eba.jpg" alt="" ></a><p>区供销联社领导分组慰问基层一线劳动者</p>',
+'<li index="2" ></li>'),
+(null,'<a href="#"><img src="./img/5f236d18706df.jpg" alt="" ></a><p>全区供销系统办公室主任业务能力提升班干货满满</p>',
+'<li index="3" ></li>');

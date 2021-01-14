@@ -144,23 +144,23 @@ $(function(){
 })
 
 //走进万丰页面的企业概况
-function yemian1(){
-    $.ajax({
-        type:'get',
-        dataType:'json',
-        contentType:'application/json;utf-8',
-        url:'/luyou/qiyegaikuang',
-        success:function(data){
-            var str=''; 
-            str=data[0].content;    
-            $('#container').html(str);
-        },
-        error:function(e){
-            console.log(e.status);
-            console.log(e.responseText);
-        }
-    })
-}
+// function yemian1(){
+//     $.ajax({
+//         type:'get',
+//         dataType:'json',
+//         contentType:'application/json;utf-8',
+//         url:'/luyou/qiyegaikuang',
+//         success:function(data){
+//             var str=''; 
+//             str=data[0].content;    
+//             $('#container').html(str);
+//         },
+//         error:function(e){
+//             console.log(e.status);
+//             console.log(e.responseText);
+//         }
+//     })
+// }
 
 //走进万丰页面的董事长致辞
 function yemian2(){
@@ -458,6 +458,80 @@ function yemian6(){
 
 
 //新闻资讯页面的总部新闻
-function yemian7(){
-    
+function yemian7(index){
+    // console.log(index)
+    //页面默认加载的分页列表---->第一页
+    getData();
+    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
+    function getData(){           
+        $.ajax({
+            async: false,
+            type:'get',
+            dataType:'json',
+            url:'/luyou/zongbuxinwen',
+            contentType:'application/json;utf-8',  
+            success:function(data){
+                // console.log(data);
+                // $('#pagination').html(data)
+                //拿到数据之后在页面循环输出
+                innerData(data);
+            },
+            error:function(e){
+                console.log(e.staus)
+                console.log(e.responseText)
+            }
+        });   
+    }
+
+    //第二个函数：生成分页列表、生成内容列表
+    function innerData(data){
+                
+        // 开始输出内容=======================
+        var html;         
+        var str=`        
+                <div class="banner">
+                    <!-- 要轮播的图片            -->
+                    <div class="viewport">
+                        <!-- 包着图片的那个大框         -->
+                        <div class="wrapper" style="left:0px">
+            `;
+            
+
+                for(var i in data){
+                    str+=`${data[i].a}`;
+                    
+                }
+                
+                                                              
+            str+=`
+                        </div>
+                    </div>
+                       
+                   
+            `; 
+                        
+                        
+            str+=`
+                    
+                    <div>
+                        <ol class="indecate_1">
+            `;            
+                        for(i in data){
+                            str+=`${data[i].pot}`;
+                        }      
+                            
+                            
+            str+=`
+                        </ol>
+                    </div>    
+                </div>
+            </div> 
+            `;
+           
+            $('#container').html(str);    
+
+
+        
+        	
+    }       
 }
