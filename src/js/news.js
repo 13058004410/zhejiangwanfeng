@@ -162,7 +162,7 @@ $(document).ready(function(){
     yemian7();   
     //切换到集团概况
     $('#menu_2>li').eq(0).click(function(){
-        yemian7();
+        yemian7();       
     })
     //切换到董事长致辞
     // $('#menu_2>li').eq(1).click(function(){
@@ -214,7 +214,7 @@ $(document).ready(function(){
         autoNextPage(true);
     });
     
-
+    
     clickButton();
     function clickButton(){       
         var length=buttonLi_m.length;
@@ -226,26 +226,25 @@ $(document).ready(function(){
                 }else{
                     index=$(this).attr('index')-1;
                 }                         
-                    nextPage(true);
+                    nextPage(true);    
+
                     var p1=$('.p1')
                     var p2=$('.p2')
                     var p3=$('.p3')
-                    // var p=$('.text1').children()
-                    
-                    // p=p[1]
-                    // console.log(p)
-                    swap(p1,p2)
+                    var p=$('.text1').children()  
+                    console.log(index) 
+                    swap(p1,p.eq(index-1))
                     function swap(a,b){//a是目标元素，b是将要操作的元素
                         b.insertBefore(a)
                     }
-                    
             };
+            
         }
         
         
     }
     
-        
+
 
 
         // 图片左右移动
