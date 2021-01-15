@@ -218,11 +218,10 @@ $(document).ready(function(){
     // 图片左右移动
     function nextPage(next){
         // var imgWidth=$('.wrapper img').css('width');
-        var imgWidth=$('.wrapper img').outerWidth(true)
-        var pWidth=$('.wrapper p').outerWidth(true);
+        var itemWidth=$('.wrapper .item').outerWidth(true)
         // console.log(typeof(pWidth))
         // var imgWidth_num=imgWidth.replace('px','');
-        var imgWidth_num=imgWidth+pWidth;
+        var imgWidth_num=itemWidth;
         var targetLeft=0;           
         //当前的圆点去掉active样式
         $(buttonLi_m[index-1]).removeClass('active');

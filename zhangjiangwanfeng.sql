@@ -282,9 +282,24 @@ insert into wanfenglicheng values
 -- 总部新闻1
 create table zongbuxinwen1(id int not null auto_increment primary key,a varchar(65535),pot varchar(65535));
 insert into zongbuxinwen1 values
-(null,'<a href="#"><img src="./img/5f891170ab9bb.jpg" alt="" ></a><p>省供销社监事会主任张悦专程来萧调研</p>',
+(null,'<div class="item">
+                        <a href="#">
+                            <img  src="./img/5f891170ab9bb.jpg" alt="" >
+                        </a>
+                        <p>省供销社监事会主任张悦专程来萧调研</p>
+                    </div>',
 '<li index="1" class="active"></li>'),
-(null,'<a href="#"><img src="./img/5f2a068045eba.jpg" alt="" ></a><p>区供销联社领导分组慰问基层一线劳动者</p>',
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
 '<li index="2" ></li>'),
-(null,'<a href="#"><img src="./img/5f236d18706df.jpg" alt="" ></a><p>全区供销系统办公室主任业务能力提升班干货满满</p>',
+(null,'<div class="item">
+                        <a href="#">
+                            <img  src="./img/5f236d18706df.jpg" alt="" >
+                        </a>
+                        <p>全区供销系统办公室主任业务能力提升班干货满满</p>
+                    </div>',
 '<li index="3" ></li>');

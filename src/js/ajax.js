@@ -524,8 +524,7 @@ function yemian7(index){
             str+=`
                         </ol>
                     </div>    
-                </div>
-            </div> 
+                </div> 
             `;
            
             $('#container').html(str);    
