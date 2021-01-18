@@ -144,23 +144,23 @@ $(function(){
 })
 
 //走进万丰页面的企业概况
-// function yemian1(){
-//     $.ajax({
-//         type:'get',
-//         dataType:'json',
-//         contentType:'application/json;utf-8',
-//         url:'/luyou/qiyegaikuang',
-//         success:function(data){
-//             var str=''; 
-//             str=data[0].content;    
-//             $('#container').html(str);
-//         },
-//         error:function(e){
-//             console.log(e.status);
-//             console.log(e.responseText);
-//         }
-//     })
-// }
+function yemian1(){
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        contentType:'application/json;utf-8',
+        url:'/luyou/qiyegaikuang',
+        success:function(data){
+            var str=''; 
+            str=data[0].content;    
+            $('#container').html(str);
+        },
+        error:function(e){
+            console.log(e.status);
+            console.log(e.responseText);
+        }
+    })
+}
 
 //走进万丰页面的董事长致辞
 function yemian2(){
@@ -201,8 +201,144 @@ function yemian3(){
     })
 }
 
-//走进万丰页面的企业文化
+//走进万丰页面的集团荣誉
 function yemian4(){
+    //声明一个变量pno用来传参--->当前页码
+    var pno=1;
+    var pageSize=12;                
+    //页面默认加载的分页列表---->第一页
+    getData(pno,pageSize);
+
+    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
+    function getData(curPage,pageSize){           
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            url:'/luyou/jituanrongyu?pno='+curPage+'&psize='+pageSize,
+            contentType:'application/json;utf-8',  
+            success:function(data){
+                // console.log(data);
+                // $('#pagination').html(data)
+                //拿到数据之后在页面循环输出
+                innerData(data,pno);
+            },
+            error:function(e){
+                console.log(e.staus)
+                console.log(e.responseText)
+            }
+        });           
+    }
+   
+    //第二个函数：生成分页列表、生成内容列表
+    function innerData(data,curPage){
+        var totalPage=Math.ceil(data.length/4);
+
+        //生成内容列表=======================================
+        var html='<div id="content"><ul class="jituanrongyu">';
+        for(var i=0;i<Math.ceil(data.length);i++){
+            html+=`<li><img src=${data[i].img}><p>${data[i].p}</p></li>`;    
+            console.log(data[i]) 
+        }
+        html+='</ul></div>';
+        $('#container').html(html);
+   
+        //生成分页列表============================================
+        var str='<div id="pagination"><ul>';
+        //把首页按钮输出来
+        if(curPage!=1){
+            str+=`
+                <li class='' id='home'>首页</li>
+            `;      
+        };
+        //把上一页输出
+        if(curPage!=1){
+            str+=`
+                <li class='' id='pre'>上一页</li>
+            `;
+        }
+        //循环输出页码================    
+        for(var i=1;i<=totalPage;i++){
+            if(i==curPage){
+                str+=`
+                    <li class="li active" index="${i}">${i}</li>
+                `;
+            }else{
+                str+=`
+                    <li class="li" index="${i}">${i}</li>
+                `;
+            }                                    
+        }
+        //把下一页输出
+        if(curPage!=totalPage){
+            str+=`
+                <li class='' id='next'>下一页</li>
+            `;
+        }
+        //把末页按钮输出来
+        if(curPage!=totalPage){
+            str+=`
+                <li class='' id='total'>末页</li>
+            `;
+        };
+        str+='</ul></div>';
+        html+=str;
+        $('#container').html(html);
+
+
+        
+        //点击首页
+        $('#home').click(function(){
+            console.log(pno);
+            pno=1;
+            getData(pno,pageSize);
+        })
+        //点击上一页
+        $('#pre').click(function(){
+            console.log(pno);
+            pno=pno-1;
+            if(pno<1){
+                pno==1;
+            };
+            getData(pno,pageSize);
+        })
+        //点击下一页
+        $('#next').click(function(){
+            pno=pno+1;
+            if(pno>totalPage){
+                pno==totalPage;
+            };
+            getData(pno,pageSize);
+        })
+        //点击末页
+        $('#total').click(function(){
+            console.log(pno);
+            pno=totalPage;
+            getData(pno,pageSize);
+        })
+        //点击切换内容页
+        $('.li').click(function(){                  
+            pno=$(this).attr('index');
+            //获取pno发再次发ajax请求
+            getData(pno,pageSize);                
+            var html='<div id="content"><ul>';
+            for(var i=0;i<Math.ceil(data.length);i++){  
+                // console.log(11168);                  
+                html+=data[i];                         
+            }
+            html+='</ul></div>';
+            // console.log(str);
+            // $('#content').remove();
+            $('#container').html(html);               
+        });
+
+        
+    }    
+}
+
+
+
+//走进万丰页面的企业文化
+function yemian5(){
     $.ajax({
         type:'get',
         dataType:'json',
@@ -223,7 +359,7 @@ function yemian4(){
 
 
 //走进万丰页面的成员单位
-function yemian5(){
+function yemian6(){
         //声明一个变量pno用来传参--->当前页码
         var pno=1;
         var pageSize=12;                
@@ -255,7 +391,7 @@ function yemian5(){
             var totalPage=Math.ceil(data.length/4);
     
             //生成内容列表=======================================
-            var html='<div id="content"><ul class="pic_list">';
+            var html='<div id="content"><ul class="chengyuandanwei">';
             for(var i=0;i<Math.ceil(data.length);i++){
                 html+=data[i].li;     
             }
@@ -357,7 +493,7 @@ function yemian5(){
 
 
 //走进万丰页面的万丰历程  
-function yemian6(){
+function yemian7(){
     //声明一个变量pno用来传参--->当前页码   
     var pno=1;//全局变量
     var pageSize=6;  //全局变量
@@ -456,86 +592,150 @@ function yemian6(){
     } 
 }
 
+// news页面==================================================
 
 //新闻资讯页面的总部新闻
-function yemian7(){
+function yemian8(){
+    //声明一个变量pno用来传参--->当前页码
+    var pno=1;
+    var pageSize=12;                
     //页面默认加载的分页列表---->第一页
-    getData();
+    getData(pno,pageSize);
+
     //第一个函数：发ajax请求获取后端数据，调用第二个函数       
-    function getData(){           
+    function getData(curPage,pageSize){           
         $.ajax({
-            async: false,
             type:'get',
             dataType:'json',
-            url:'/luyou/zongbuxinwen',
+            url:'/luyou/zongbuxinwen?pno='+curPage+'&psize='+pageSize,
             contentType:'application/json;utf-8',  
             success:function(data){
-                // console.log(data);
+                console.log(data.length);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
-                innerData(data);
+                innerData(data,pno);
             },
             error:function(e){
                 console.log(e.staus)
                 console.log(e.responseText)
             }
-        });   
+        });           
     }
-
+   
     //第二个函数：生成分页列表、生成内容列表
-    function innerData(data){
-        
-        
-        // 开始输出内容=======================
-        var html;
-         
-        var str=`        
-                <div class="banner">
-                    <!-- 要轮播的图片            -->
-                    <div class="viewport">
-                        <!-- 包着图片的那个大框         -->
-                        <div class="wrapper" style="left:0px">
-            `;
-            
-
-                for(var i in data){
-                    str+=`${data[i].a}`;
-                    
+    function innerData(data,curPage){
+        var totalPage=Math.ceil(data.length/6);
+        console.log(data.length)
+        //生成内容列表=======================================
+        var html=`<div class="banner">
+        <!-- 要轮播的图片            -->
+        <div class="viewport">
+            <!-- 包着图片的那个大框         -->
+            <div class="wrapper" style="left:0px">`;
+                for(i in data){
+                    html+=`${data[i].a}`;
                 }
-                
-                                                              
+        html+=    
+            `</div>
+        </div> `;
+        html+='<div id="content"><ul class="zongbuxinwen">';
+        for(var i=0;i<Math.ceil(data.length);i++){
+            html+=`<li>${data[i].title}</li>`;    
+            // console.log(data[i]) 
+        }
+        html+='</ul></div>';
+        $('#container').html(html);
+   
+        //生成分页列表============================================
+        var str='<div id="pagination"><ul>';
+        //把首页按钮输出来
+        if(curPage!=1){
             str+=`
-                        </div>
-                    </div>
-                       
-                    <!-- 右边标题和轮播指示器        -->
-                    <div class="text1">
-            `; 
-            
-                        for(i in data){
-                            str+=`${data[i].p}`;
-                        }
+                <li class='' id='home'>首页</li>
+            `;      
+        };
+        //把上一页输出
+        if(curPage!=1){
             str+=`
-                    </div>
-                    <div>
-                        <ol class="indecate_1">
-            `;            
-                        for(i in data){
-                            str+=`${data[i].pot}`;
-                        }      
-                            
-                            
-            str+=`
-                        </ol>
-                    </div>    
-                </div>
-            </div> 
+                <li class='' id='pre'>上一页</li>
             `;
-            $('#container').html(str);                
-                    
+        }
+        //循环输出页码================  
+        // console.log(data.length)  
+        for(var i=1;i<=totalPage;i++){
+            if(i==curPage){
+                str+=`
+                    <li class="li active" index="${i}">${i}</li>
+                `;
+            }else{
+                str+=`
+                    <li class="li" index="${i}">${i}</li>
+                `;
+            }                                    
+        }
+        //把下一页输出
+        if(curPage!=totalPage){
+            str+=`
+                <li class='' id='next'>下一页</li>
+            `;
+        }
+        //把末页按钮输出来
+        if(curPage!=totalPage){
+            str+=`
+                <li class='' id='total'>末页</li>
+            `;
+        };
+        str+='</ul></div>';
+        html+=str;
+        $('#container').html(html);
 
 
         
-        	
-    }       
+        //点击首页
+        $('#home').click(function(){
+            // console.log(pno);
+            pno=1;
+            getData(pno,pageSize);
+        })
+        //点击上一页
+        $('#pre').click(function(){
+            // console.log(pno);
+            pno=pno-1;
+            if(pno<1){
+                pno==1;
+            };
+            getData(pno,pageSize);
+        })
+        //点击下一页
+        $('#next').click(function(){
+            pno=pno+1;
+            if(pno>totalPage){
+                pno==totalPage;
+            };
+            getData(pno,pageSize);
+        })
+        //点击末页
+        $('#total').click(function(){
+            // console.log(pno);
+            pno=totalPage;
+            getData(pno,pageSize);
+        })
+        //点击切换内容页
+        $('.li').click(function(){                  
+            pno=$(this).attr('index');
+            //获取pno发再次发ajax请求
+            getData(pno,pageSize);                
+            var html='<div id="content"><ul>';
+            for(var i=0;i<Math.ceil(data.length);i++){  
+                // console.log(11168);                  
+                html+=data[i];                         
+            }
+            html+='</ul></div>';
+            // console.log(str);
+            // $('#content').remove();
+            $('#container').html(html);               
+        });
+
+        
+    }    
 }

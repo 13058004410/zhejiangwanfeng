@@ -34,10 +34,10 @@
     }
 
     /* 二级导航菜单 */
-    .menu_2{
+    .nav_2{
         border-bottom:1px solid #e5e5e5;
     }
-    .menu_2 .container ul li{
+    .nav_2 .container ul li{
         float:left;
         line-height: 34px;
         white-space: nowrap;
@@ -49,7 +49,7 @@
         cursor: pointer;
         border-bottom:1px solid #e5e5e5;
     }
-    .menu_2 .container ul li:first-child{
+    .nav_2 .container ul li:first-child{
         border-left:1px solid #e5e5e5;
     }
 

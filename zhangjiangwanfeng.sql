@@ -18,7 +18,14 @@ insert into zongbuxinwen values
 (10,'全区供销系统安全参观体验活动顺利开展','2020-10-3'),
 (11,'区人大常委会主任裘超视察指导大江东种子种苗科技示范基地','2020-10-2'),
 (12,'区供销联社积极参加2020年萧山区水库防洪应急演练','2020-10-24'),
-(13,'区政协专题视察区供销联社大件垃圾收运处置工作','2020-10-1');
+(13,'区供销联社机关支部开展固定主题党日活动','2020-10-14'),
+(14,'区供销联社机关妇联开展“迎端午·包粽子”活动','2020-10-14'),
+(15,'萧山区供销联社机关志愿服务队走进田间地头','2020-10-04'),
+(16,'区供销联社直面挑战，全力开展大件垃圾清运工作','2020-10-04'),
+(17,'全区供销系统安全参观体验活动顺利开展','2020-10-3'),
+(18,'区人大常委会主任裘超视察指导大江东种子种苗科技示范基地','2020-10-2'),
+(19,'区供销联社积极参加2020年萧山区水库防洪应急演练','2020-10-24'),
+(20,'区政协专题视察区供销联社大件垃圾收运处置工作','2020-10-1');
 
 -- 第二个表
 create table hexinyewu(uid int,title varchar(32),img varchar(128));
@@ -280,14 +287,173 @@ insert into wanfenglicheng values
 
 
 -- 总部新闻1
-create table zongbuxinwen1(id int not null auto_increment primary key,a varchar(65535),p varchar(65535),pot varchar(65535));
+create table zongbuxinwen1(id int not null auto_increment primary key,a varchar(65535),pot varchar(65535));
 insert into zongbuxinwen1 values
-(null,'<a href="#"><img src="./img/5f891170ab9bb.jpg" alt="" ></a>',
-'<p class="p1">省供销社监事会主任张悦专程来萧调研</p>',
+(null,'<div class="item">
+                        <a href="#">
+                            <img  src="./img/5f891170ab9bb.jpg" alt="" >
+                        </a>
+                        <p>省供销社监事会主任张悦专程来萧调研</p>
+                    </div>',
 '<li index="1" class="active"></li>'),
-(null,'<a href="#"><img src="./img/5f2a068045eba.jpg" alt="" ></a>',
-'<p class="p2">区供销联社领导分组慰问基层一线劳动者</p>',
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
 '<li index="2" ></li>'),
-(null,'<a href="#"><img src="./img/5f236d18706df.jpg" alt="" ></a>',
-'<p class="p3">全区供销系统办公室主任业务能力提升班干货满满</p>',
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="3" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="3" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,' <div class="item">
+                        <a href="#">
+                            <img  src="./img/5f2a068045eba.jpg" alt="" >
+                        </a>
+                        <p>区供销联社领导分组慰问基层一线劳动者</p>
+                    </div>',
+'<li index="2" ></li>'),
+(null,'<div class="item">
+                        <a href="#">
+                            <img  src="./img/5f236d18706df.jpg" alt="" >
+                        </a>
+                        <p>全区供销系统办公室主任业务能力提升班干货满满</p>
+                    </div>',
 '<li index="3" ></li>');

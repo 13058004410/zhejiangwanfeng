@@ -123,10 +123,10 @@ a img{display: block;}
 }
 
 /* 二级导航菜单 */
-.menu_2{
+.nav_2{
     border-bottom:1px solid #e5e5e5;
 }
-.menu_2 .container ul li{
+.nav_2 .container ul li{
     float:left;
     line-height: 67px;
     white-space: nowrap;
@@ -137,10 +137,10 @@ a img{display: block;}
     text-align: center;
     cursor: pointer;
 }
-.menu_2 .container ul li:first-child{
+.nav_2 .container ul li:first-child{
     border-left:1px solid #e5e5e5;
 }
-.menu_2 .container ul li.active{
+.nav_2 .container ul li.active{
     background:#1D6BC3;
     color:#fff;
 }
@@ -258,14 +258,17 @@ a img{display: block;}
     text-align: center;
     cursor: pointer;
     margin-bottom: 50px;
-    margin-right: 15px;
+    margin-right: 10px;
 }
-#container .jituanrongyu li img{
+
+#content .jituanrongyu li img{
     /* display:block; */
-    
+    vertical-align:top;
+    height:87%;
     width:100%;
 }
-#container .jituanrongyu li p{
+
+#content .jituanrongyu li p{
     width:100%;
     background:#f5f5f5;
     color:#333;
@@ -311,28 +314,30 @@ a img{display: block;}
 }
 
 /* 成员单位 */
-#content .pic_list li{
+#content .chengyuandanwei li{
     display: inline-block;
     width:347px;
     height:272px;
     border: 1px solid #F5F5F5;
     box-shadow: 2px 2px 3px #ccc;
+    margin-right:1%;
+    margin-bottom:2%;
     padding: 45px 30px 15px;
 }
 
-#content .pic_list li h2{
+#content .chengyuandanwei li h2{
     font-size: 22px;
     color: #1d6bc3;
     margin-bottom: 5px;
 }
-#content .pic_list li>.sj{
+#content .chengyuandanwei li>.sj{
     width:46px;
     height:43px;
     position: relative;
-    top:-240px;
-    left:-149px;
+    top:-255px;
+    left:-30px;
 }
-#content .pic_list li p{
+#content .chengyuandanwei li p{
     background:none;
     width: 100%;
     color: #333;
@@ -341,9 +346,10 @@ a img{display: block;}
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 27px;
     text-align: left;
+    /* background:#c2c4c7; */
 }
 #content .ellipsis {
     text-overflow: ellipsis;
@@ -352,8 +358,6 @@ a img{display: block;}
 }
 
 /* 万丰历程 */
-
-
 
 #container{
     display: block;
