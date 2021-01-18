@@ -159,10 +159,10 @@ $(document).ready(function(){
     )    
 
 //二级菜单点中切换文章内容
-    yemian7();   
+    yemian8();   
     //切换到集团概况
     $('#menu_2>li').eq(0).click(function(){
-        yemian7();
+        yemian8();
     })
    
 
@@ -172,6 +172,7 @@ $(document).ready(function(){
     var index=1;
     var intervalId;
     var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
+    console.log(buttonLi_m[0])
     // console.log(buttonLi_m[0])
     //自动轮播功能 使用定时器
     autoNextPage();
@@ -200,6 +201,7 @@ $(document).ready(function(){
         var length=buttonLi_m.length;
         for(var i=0;i<length;i++){
             buttonLi_m[i].onclick=function(){
+                
                 $(buttonLi_m[index-1]).removeClass('active');
                 if($(this).attr('index')==1){
                     index=3;

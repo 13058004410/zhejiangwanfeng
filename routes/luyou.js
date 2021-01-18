@@ -104,7 +104,7 @@ luyou.get('/chengyuandanwei',function(req,res){
     var start=(pno-1)*count;
     var sql='select*from chengyuandanwei limit ?,?';
     pool.query(sql,[start,count],function(err,result){
-        console.log(result);
+        // console.log(result);
         res.send(result)
     })
 })
@@ -125,7 +125,7 @@ luyou.get('/wanfenglicheng',function(req,res){
 luyou.get('/zongbuxinwen',function(req,res){    
     var sql='select*from zongbuxinwen1';
     pool.query(sql,function(err,result){  
-        console.log(result)     
+        // console.log(result)     
         res.send(result)
     })    
 })

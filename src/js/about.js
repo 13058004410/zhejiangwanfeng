@@ -23,18 +23,26 @@ $(function(){
         $('#menu_2>li').eq(2).click(function(){
             yemian3();
         })
+        //切换到集团荣誉
+        $('#menu_2>li').eq(3).click(function(){
+            yemian4();
+        })
         //切换到企业文化
         $('#menu_2>li').eq(4).click(function(){
-            yemian4();
+            yemian5();
         })
         //切换到成员单位
         $('#menu_2>li').eq(5).click(function(){
-            yemian5();
+            yemian6();
         })
         //切换到万丰历程
         $('#menu_2>li').eq(6).click(function(){           
-            yemian6();
+            yemian7();
         })
+        // //切换到万丰历程
+        // $('#menu_2>li').eq(6).click(function(){           
+        //     yemian6();
+        // })
         
 })
 
