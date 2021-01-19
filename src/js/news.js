@@ -162,7 +162,7 @@ $(document).ready(function(){
     yemian8();   
     //切换到集团概况
     $('#menu_2>li').eq(0).click(function(){
-        yemian8();
+        yemian8();       
     })
    
 
@@ -172,8 +172,7 @@ $(document).ready(function(){
     var index=1;
     var intervalId;
     var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
-    console.log(buttonLi_m[0])
-    // console.log(buttonLi_m[0])
+    // console.log(buttonLi_m[2])
     //自动轮播功能 使用定时器
     autoNextPage();
     function autoNextPage(){
@@ -194,8 +193,8 @@ $(document).ready(function(){
         // console.log('鼠标移出，开始轮播');
         autoNextPage(true);
     });
-
-
+    
+    
     clickButton();
     function clickButton(){       
         var length=buttonLi_m.length;
@@ -207,13 +206,13 @@ $(document).ready(function(){
                     index=3;
                 }else{
                     index=$(this).attr('index')-1;
-                }   
-                    nextPage(true);                   
-            };
-        }
-        
-        
+                }                         
+                    nextPage(true);    
+            };            
+        }                
     }
+    
+
 
     
 
@@ -221,7 +220,6 @@ $(document).ready(function(){
     function nextPage(next){
         // var imgWidth=$('.wrapper img').css('width');
         var itemWidth=$('.wrapper .item').outerWidth(true)
-        // console.log(typeof(pWidth))
         // var imgWidth_num=imgWidth.replace('px','');
         var imgWidth_num=itemWidth;
         var targetLeft=0;           
@@ -253,29 +251,11 @@ $(document).ready(function(){
         //更新后的圆点加上样式
         $(buttonLi_m[index-1]).addClass('active');
         
-        // var p=$('.text1').children();
-        // var _p=[];
-        // for(var i=0;i<p.length;i++){                                   
-        //     _p.push(p[i]);  
-            
-                      
-        // }
-        
-        // var z=index-1;
-        // var text=document.getElementById('text1');
-        // console.log(text.innerHTML=_p[z]);
     }
     
 
 
 
-
-
-
-
-
-
-   
 })
 
 

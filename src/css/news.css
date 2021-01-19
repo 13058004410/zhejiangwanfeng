@@ -58,7 +58,8 @@
     padding-top:0;  
     overflow:hidden;
     display:block;
-    width:3039px;
+    /* width:3039px; */
+    width:400%;
     height:268px;
     position: relative;
     left:0px;
@@ -77,7 +78,8 @@
 
 #container .banner .wrapper .item{
     width:30%;
-    border:1px solid red;
+    height:100%;
+    /* border:1px solid red; */
 }
 
 #container .banner .wrapper>*{
@@ -86,9 +88,9 @@
 
 #container .banner .wrapper a{
     /* max-width:448px; */
-    width:50%;
-    height:100%;
-    display:block;
+    /* width:50%;
+    height:100%; */
+    /* display:block; */
 }
 
 #container .banner .wrapper p{
@@ -105,9 +107,9 @@
 }
 
 #container .banner .wrapper img{
-    width:100%;
+    width:45%;
     display:block;
-    height:100%;
+    /* height:100%; */
     float:left;
 }
 
@@ -124,44 +126,13 @@
     /* border:1px solid red; */
 }
 
-/* 轮播指示器 */
-/* .indecate_1{
-    width:100%;
-    position: absolute;
-    background:transparent;
-    text-align:center;
-    bottom:5px;
-    z-index:2;
-} */
-
-/* .indecate_1>li{
-    width:3rem;
-    height:3rem;
-    display:inline-block;   
-    background-size:cover !important; 
-    margin:0 5px;
-} */
-
-/* .indecate_1>li:nth-child(1).active{
-    background:url(../img/icon2.png) !important;
-    background-size:cover !important;
+#container ul li{
+    border-bottom: 1px dashed #ccc;
+    line-height: 30px;
+    font-size:14px;
+    color: #333;
+    /* width: calc(100% - 100px); */
 }
-.indecate_1>li:nth-child(2).active{
-    background:url(../img/icon3.png) !important;
-    background-size:cover !important;
-}
-.indecate_1>li:nth-child(3).active{
-    background:url(../img/icon4.png) !important;
-    background-size:cover !important;
-}
-.indecate_1>li:nth-child(4).active{
-    background:url(../img/icon5.png) !important;
-    background-size:cover !important;
-}
-.indecate_1>li:nth-child(5).active{
-    background:url(../img/icon6.png) !important;
-    background-size:cover !important;
-} */
 
 /* 手机端轮播指示器 */
 .indecate_1_m{

@@ -112,7 +112,7 @@ $(document).ready(function(){
         //手机端轮播指示器的相应功能 事件委托
         $(function(){
             var _width=$(window).width();
-            console.log(_width);
+            // console.log(_width);
             if(_width<768){
                 clickButton();
                 function clickButton(){
@@ -135,8 +135,10 @@ $(document).ready(function(){
 
         // 图片左右移动
         function nextPage(next){
-            var imgWidth=$('.list img').css('width');
-            var imgWidth_num=imgWidth.replace('px','');
+            // var imgWidth=$('.list img').css('width');
+            // var imgWidth_num=imgWidth.replace('px','');
+            var imgWidth=$('.list img').outerWidth(true);
+            var imgWidth_num=imgWidth;
             var targetLeft=0;
             //当前的圆点去掉active样式
             $(buttonLi[index-1]).removeClass('active');
@@ -265,9 +267,6 @@ $(function(){
     )
 
  
-
-
-
 
 })
  

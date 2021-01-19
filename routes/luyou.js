@@ -70,13 +70,16 @@ luyou.get('/zuzhikuangjia',function(req,res){
     });
 });
 //走进万丰集团荣誉数据
-// luyou.get('/jituanrongyu',function(req,res){
-//     pool.query('select*from jituanrongyu limit 0,12',function(err,result){
-        
-//         if(err)throw err;
-//         res.send(result);
-//     });
-// });
+luyou.get('/jituanrongyu',function(req,res){
+    var pno=req.query.pno;
+    var start=(pno-1)*12;
+    console.log(pno)
+    var sql='select*from jituanrongyu limit ?,12';
+    pool.query(sql,[start],function(err,result){       
+        if(err)throw err;
+        res.send(result);
+    });
+});
 
 //集团荣誉分页列表
 luyou.get('/huoqu_6',function(req,res){
@@ -122,12 +125,25 @@ luyou.get('/wanfenglicheng',function(req,res){
 
 
 //总部新闻
-luyou.get('/zongbuxinwen',function(req,res){    
+luyou.get('/zongbuxinwen1',function(req,res){    
     var sql='select*from zongbuxinwen1';
     pool.query(sql,function(err,result){  
-        // console.log(result)     
+           
         res.send(result)
     })    
+})
+//总部新闻1
+luyou.get('/zongbuxinwen',function(req,res){    
+    var pno=req.query.pno;
+    console.log(pno)  
+    var psize=req.query.psize;
+    var count=parseInt(psize);
+    var start=(pno-1)*count;
+    var sql='select*from zongbuxinwen limit ?,?';
+    pool.query(sql,[start,count],function(err,result){
+        console.log(result);
+        res.send(result)
+    }) 
 })
 
 

@@ -6,7 +6,8 @@ $(function(){
     yemian1();
 
     //二级菜单点中变颜色
-    $('#menu_2>li').click(function(){
+    $('.nav_2 li').click(function(){
+        // console.log(1344)
         $(this).addClass('active').siblings().removeClass('active')
     });
 

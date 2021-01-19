@@ -41,7 +41,6 @@ function jituanrongyu(){
             `;     
         }
         html+='</ul></div>';
-        // $('#jituangaikuang').html(html);
 
 
 

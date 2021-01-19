@@ -8,7 +8,7 @@ function paomadeng(){
 		span=span[0].children[0].children;
 		// console.log(span);
 		
-		//点击下一页 上一页的功能
+		//点击下一页 上一页的功能 事件委托
 		$('#jituangaikuang').on('click','a',function(e){
 			if($(this).attr('id')=='left'){
 				
