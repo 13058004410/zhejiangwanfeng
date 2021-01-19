@@ -166,13 +166,13 @@ $(document).ready(function(){
     })
    
 
-
     // 轮播图==================================
     var imgCount=3;
     var index=1;
     var intervalId;
-    var buttonLi_m=$('.indecate_1').children();//htmlCollection集合
-    // console.log(buttonLi_m[2])
+    var buttonLi_m=$('.indecate_1').find('li');//htmlCollection集合
+    // var buttonLi_m=document.getElementsByClassName('indecate_1')
+    // console.log(buttonLi_m)
     //自动轮播功能 使用定时器
     autoNextPage();
     function autoNextPage(){
@@ -196,19 +196,24 @@ $(document).ready(function(){
     
     
     clickButton();
-    function clickButton(){       
+    function clickButton(){   
+           
         var length=buttonLi_m.length;
         for(var i=0;i<length;i++){
             buttonLi_m[i].onclick=function(){
+<<<<<<< HEAD
                 
+=======
+                console.log(buttonLi_m[i])
+>>>>>>> 6d3531800671df90ea77312a8505bfcad0eab045
                 $(buttonLi_m[index-1]).removeClass('active');
                 if($(this).attr('index')==1){
                     index=3;
                 }else{
-                    index=$(this).attr('index')-1;
+                    index=$(this).attr('index')-1;                   
                 }                         
-                    nextPage(true);    
-            };            
+                nextPage(true);        
+            }            
         }                
     }
     
@@ -245,9 +250,9 @@ $(document).ready(function(){
             }
         }
 
-        
-        
+               
         $('.wrapper').animate({left:targetLeft+'px'});
+        // console.log($('.wrapper'))
         //更新后的圆点加上样式
         $(buttonLi_m[index-1]).addClass('active');
         

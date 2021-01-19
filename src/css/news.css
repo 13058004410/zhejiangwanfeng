@@ -155,3 +155,75 @@
 .indecate_1_m>li.active{
     background:red;
 }
+
+#container .news-detail .title{
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: normal;
+}
+
+#container .news-detail .res{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #BFBFBF;
+    font-size: 14px;
+    font-family: "Microsoft YaHei",'Arial';
+    color: #666;
+    background: #fff;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+#container .news-detail .res span{
+    margin-right:2%;
+}
+
+#container .news-detail .content{
+    border-bottom: 1px dashed #666;;
+}
+
+#container .news-detail .content .print_info p{
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-indent: 32px;
+    text-indent: 40px;
+    line-height: 1.75em;
+    color: #666;
+}
+
+#container .news-detail .slip-tab{
+    margin-top:3%;
+}
+
+#container .news-detail .slip-tab p{
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+}
+
+#container .news-detail .slip-tab p a{
+    outline: none;
+    text-decoration: none;
+    color: #666;
+    background: transparent;
+}
+
+#container .news-detail .back-wrapper{
+    margin-top: 20px;
+    text-align: right;
+}
+
+#container .news-detail  .back-wrapper .back{
+    display: inline-block;
+    width: 104px;
+    height: 50px;
+    border: 1px solid #1D6BC3;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #1d6bc3;
+}
