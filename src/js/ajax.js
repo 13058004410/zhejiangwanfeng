@@ -607,10 +607,11 @@ function yemian8(){
         $.ajax({
             type:'get',
             dataType:'json',
-            url:'/luyou/zongbuxinwen?pno='+curPage+'&psize='+pageSize,
-            contentType:'application/json;utf-8',  
+            url:'/luyou/zongbuxinwen1?pno='+curPage+'&psize='+pageSize,
+            contentType:'application/json;utf-8',
+            async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
             success:function(data){
-                console.log(data.length);
+                // console.log(data.length);
                 // $('#pagination').html(data)
                 //拿到数据之后在页面循环输出
                 innerData(data,pno);
@@ -625,26 +626,39 @@ function yemian8(){
     //第二个函数：生成分页列表、生成内容列表
     function innerData(data,curPage){
         var totalPage=Math.ceil(data.length/6);
-        console.log(data.length)
+        // console.log(data.length)
         //生成内容列表=======================================
-        var html=`<div class="banner">
-        <!-- 要轮播的图片            -->
-        <div class="viewport">
-            <!-- 包着图片的那个大框         -->
-            <div class="wrapper" style="left:0px">`;
-                for(i in data){
-                    html+=`${data[i].a}`;
-                }
-        html+=    
-            `</div>
-        </div> `;
+        var html=`
+                    <div class="banner">
+                        <!-- 要轮播的图片            -->
+                        <div class="viewport">
+                            <!-- 包着图片的那个大框         -->
+                            <div class="wrapper" style="left:0px">`;
+                                for(var i=0;i<3;i++){
+                                    html+=`${data[i].a}`
+                                }
+            html+=    
+                            `</div>
+                        </div> 
+                        <div>
+                            <ol class="indecate_1">`;
+                                for(var i=0;i<3;i++){
+                                    html+=`
+                                        ${data[i].pot}
+                                    `;
+                                }
+        html+= 
+                            `</ol>
+                         </div>
+                    </div> `; 
+                           
         html+='<div id="content"><ul class="zongbuxinwen">';
         for(var i=0;i<Math.ceil(data.length);i++){
             html+=`<li>${data[i].title}</li>`;    
             // console.log(data[i]) 
         }
         html+='</ul></div>';
-        $('#container').html(html);
+        // $('#container').html(html);
    
         //生成分页列表============================================
         var str='<div id="pagination"><ul>';
@@ -687,7 +701,7 @@ function yemian8(){
         };
         str+='</ul></div>';
         html+=str;
-        $('#container').html(html);
+        // $('#container').html(html);
 
 
         
@@ -733,7 +747,7 @@ function yemian8(){
             html+='</ul></div>';
             // console.log(str);
             // $('#content').remove();
-            $('#container').html(html);               
+            // $('#container').html(html);               
         });
 
         
