@@ -201,11 +201,7 @@ $(document).ready(function(){
         var length=buttonLi_m.length;
         for(var i=0;i<length;i++){
             buttonLi_m[i].onclick=function(){
-<<<<<<< HEAD
-                
-=======
                 console.log(buttonLi_m[i])
->>>>>>> 6d3531800671df90ea77312a8505bfcad0eab045
                 $(buttonLi_m[index-1]).removeClass('active');
                 if($(this).attr('index')==1){
                     index=3;

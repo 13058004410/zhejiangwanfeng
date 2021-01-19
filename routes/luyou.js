@@ -132,6 +132,11 @@ luyou.get('/zongbuxinwen1',function(req,res){
         res.send(result)
     })    
 })
+
+
+
+
+
 //总部新闻1
 // luyou.get('/zongbuxinwen',function(req,res){    
 //     var pno=req.query.pno;
