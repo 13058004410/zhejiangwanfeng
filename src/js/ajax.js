@@ -630,7 +630,7 @@ function yemian8(){
     function innerData(data,curPage){
         var totalPage=Math.ceil(data.length/6);
         // console.log(data.length)
-        //生成内容列表=======================================
+        //生成轮播图=======================================
         var html=`
                     <div class="banner">
                         <!-- 要轮播的图片            -->
@@ -653,18 +653,63 @@ function yemian8(){
         html+= 
                             `</ol>
                          </div>
-                    </div> `; 
-                           
-        html+='<div id="content"><ul class="zongbuxinwen">';
+                    </div>     
+                    <div id="content">
+                        <ul class="zongbuxinwen"></ul>
+                        <div id="pagination">
+                            <ul></ul> 
+                        </div>   
+                    </div>
+                     `; 
+        $('#container').html(html)                            
+        
+        
+    }    
+}
+
+//新闻资讯页面的总部新闻---新闻列表部分
+function yemian8_1(){
+    //声明一个变量pno用来传参--->当前页码
+    var pno=1;
+    var pageSize=10;                
+    //页面默认加载的分页列表---->第一页
+    getData(pno,pageSize);
+
+    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
+    function getData(curPage,pageSize){           
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            url:'/luyou/zongbuxinwen?pno='+curPage+'&psize='+pageSize,
+            contentType:'application/json;utf-8',
+            async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
+            success:function(data){
+                // console.log(data.length);
+                // $('#pagination').html(data)
+                //拿到数据之后在页面循环输出
+                innerData(data,pno);
+            },
+            error:function(e){
+                console.log(e.staus)
+                console.log(e.responseText)
+            }
+        });           
+    }
+   
+    //第二个函数：生成分页列表、生成内容列表
+    function innerData(data,curPage){
+        var totalPage=Math.ceil(data.length/6);
+        
+        //生成新闻列表===========================================                  
+        var html='';
         for(var i=0;i<Math.ceil(data.length);i++){
             html+=`<li>${data[i].title}</li>`;    
             // console.log(data[i]) 
         }
-        html+='</ul></div>';
-        // $('#container').html(html);
+        $('#content .zongbuxinwen').html(html);
    
         //生成分页列表============================================
-        var str='<div id="pagination"><ul>';
+        var str='';
         //把首页按钮输出来
         if(curPage!=1){
             str+=`
@@ -702,169 +747,7 @@ function yemian8(){
                 <li class='' id='total'>末页</li>
             `;
         };
-        str+='</ul></div>';
-        html+=str;
-        // $('#container').html(html);
-
-
-        
-        //点击首页
-        $('#home').click(function(){
-            // console.log(pno);
-            pno=1;
-            getData(pno,pageSize);
-        })
-        //点击上一页
-        $('#pre').click(function(){
-            // console.log(pno);
-            pno=pno-1;
-            if(pno<1){
-                pno==1;
-            };
-            getData(pno,pageSize);
-        })
-        //点击下一页
-        $('#next').click(function(){
-            pno=pno+1;
-            if(pno>totalPage){
-                pno==totalPage;
-            };
-            getData(pno,pageSize);
-        })
-        //点击末页
-        $('#total').click(function(){
-            // console.log(pno);
-            pno=totalPage;
-            getData(pno,pageSize);
-        })
-        //点击切换内容页
-        $('.li').click(function(){                  
-            pno=$(this).attr('index');
-            //获取pno发再次发ajax请求
-            getData(pno,pageSize);                
-            var html='<div id="content"><ul>';
-            for(var i=0;i<Math.ceil(data.length);i++){  
-                // console.log(11168);                  
-                html+=data[i];                         
-            }
-            html+='</ul></div>';
-            // console.log(str);
-            // $('#content').remove();
-            // $('#container').html(html);               
-        });
-
-        
-    }    
-}
-
-//新闻资讯页面的总部新闻---内容页
-function yemian8_1(){
-    //声明一个变量pno用来传参--->当前页码
-    var pno=1;
-    var pageSize=12;                
-    //页面默认加载的分页列表---->第一页
-    getData(pno,pageSize);
-
-    //第一个函数：发ajax请求获取后端数据，调用第二个函数       
-    function getData(uid,pageSize){           
-        $.ajax({
-            type:'get',
-            dataType:'json',
-            url:'/luyou/zongbuxinwen1?id='+uid,
-            contentType:'application/json;utf-8',
-            async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
-            success:function(data){
-                // console.log(data.length);
-                // $('#pagination').html(data)
-                //拿到数据之后在页面循环输出
-                innerData(data,pno);
-            },
-            error:function(e){
-                console.log(e.staus)
-                console.log(e.responseText)
-            }
-        });           
-    }
-   
-    //第二个函数：生成分页列表、生成内容列表
-    function innerData(data,uid){
-        var totalPage=Math.ceil(data.length/6);
-        // console.log(data.length)
-        //生成内容列表=======================================
-        var html=`
-                    <div class="banner">
-                        <!-- 要轮播的图片            -->
-                        <div class="viewport">
-                            <!-- 包着图片的那个大框         -->
-                            <div class="wrapper" style="left:0px">`;
-                                for(var i=0;i<3;i++){
-                                    html+=`${data[i].a}`
-                                }
-            html+=    
-                            `</div>
-                        </div> 
-                        <div>
-                            <ol class="indecate_1">`;
-                                for(var i=0;i<3;i++){
-                                    html+=`
-                                        ${data[i].pot}
-                                    `;
-                                }
-        html+= 
-                            `</ol>
-                         </div>
-                    </div> `; 
-                           
-        html+='<div id="content"><ul class="zongbuxinwen">';
-        for(var i=0;i<Math.ceil(data.length);i++){
-            html+=`<li>${data[i].title}</li>`;    
-            // console.log(data[i]) 
-        }
-        html+='</ul></div>';
-        // $('#container').html(html);
-   
-        //生成分页列表============================================
-        var str='<div id="pagination"><ul>';
-        //把首页按钮输出来
-        if(uid!=1){
-            str+=`
-                <li class='' id='home'>首页</li>
-            `;      
-        };
-        //把上一页输出
-        if(uid!=1){
-            str+=`
-                <li class='' id='pre'>上一页</li>
-            `;
-        }
-        //循环输出页码================  
-        // console.log(data.length)  
-        for(var i=1;i<=totalPage;i++){
-            if(i==uid){
-                str+=`
-                    <li class="li active" index="${i}">${i}</li>
-                `;
-            }else{
-                str+=`
-                    <li class="li" index="${i}">${i}</li>
-                `;
-            }                                    
-        }
-        //把下一页输出
-        if(uid!=totalPage){
-            str+=`
-                <li class='' id='next'>下一页</li>
-            `;
-        }
-        //把末页按钮输出来
-        if(uid!=totalPage){
-            str+=`
-                <li class='' id='total'>末页</li>
-            `;
-        };
-        str+='</ul></div>';
-        html+=str;
-        // $('#container').html(html);
+        $('#pagination ul').html(str);
 
 
         

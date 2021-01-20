@@ -4,7 +4,7 @@ create database zhejiangwanfeng;
 use zhejiangwanfeng;
 
 -- 第一个表
-create table zongbuxinwen(uid int,title varchar(1024),date varchar(32),img varchar(1024),content varchar(65535));
+create table zongbuxinwen(id int,title varchar(1024),date varchar(32),img varchar(1024),content varchar(65535));
 insert into zongbuxinwen values
 (1,'厉行节约 反对浪费 | 联社机关支部主题党日发出倡议','2020-10-24','./img/5f640ecba9738.jpg',),
 (2,'区供销联社机关支部半年度组织生活会辣味十足','2020-10-24','./img/5f236b9586354.jpg',),

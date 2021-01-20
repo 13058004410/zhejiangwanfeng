@@ -127,8 +127,7 @@ luyou.get('/wanfenglicheng',function(req,res){
 //总部新闻
 luyou.get('/zongbuxinwen1',function(req,res){    
     var sql='select*from zongbuxinwen1';
-    pool.query(sql,function(err,result){  
-           
+    pool.query(sql,function(err,result){             
         res.send(result)
     })    
 })
@@ -138,18 +137,18 @@ luyou.get('/zongbuxinwen1',function(req,res){
 
 
 //总部新闻1
-// luyou.get('/zongbuxinwen',function(req,res){    
-//     var pno=req.query.pno;
-//     console.log(pno)  
-//     var psize=req.query.psize;
-//     var count=parseInt(psize);
-//     var start=(pno-1)*count;
-//     var sql='select*from zongbuxinwen limit ?,?';
-//     pool.query(sql,[start,count],function(err,result){
-//         console.log(result);
-//         res.send(result)
-//     }) 
-// })
+luyou.get('/zongbuxinwen',function(req,res){    
+    var pno=req.query.pno;
+    console.log(pno)  
+    var psize=req.query.psize;
+    var count=parseInt(psize);
+    var start=(pno-1)*count;
+    var sql='select*from zongbuxinwen limit ?,?';
+    pool.query(sql,[start,count],function(err,result){
+        console.log(result);
+        res.send(result)
+    }) 
+})
 
 
 module.exports=luyou;
