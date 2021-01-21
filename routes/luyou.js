@@ -139,7 +139,7 @@ luyou.get('/zongbuxinwen1',function(req,res){
 //总部新闻1
 luyou.get('/zongbuxinwen',function(req,res){    
     var pno=req.query.pno;
-    console.log(pno)  
+    // console.log(pno)  
     var psize=req.query.psize;
     var count=parseInt(psize);
     var start=(pno-1)*count;
@@ -153,11 +153,11 @@ luyou.get('/zongbuxinwen',function(req,res){
 //总部新闻---------------内容页
 luyou.get('/zongbuxinwen/news',function(req,res){
     var obj=req.query.id;
-    // console.log(obj)
-    var sql=`select * from zongbuxinwen;`;
-    pool.query(sql,function(err,result){
+    console.log(obj)
+    var sql=`select * from zongbuxinwen where id=?;`;
+    pool.query(sql,[obj],function(err,result){
         res.send(result)
-        // console.log(result);
+        console.log(result);
     })
 })
 
