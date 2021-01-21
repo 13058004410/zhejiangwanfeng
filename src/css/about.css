@@ -258,21 +258,13 @@ a img{display: block;}
     text-align: center;
     cursor: pointer;
     margin-bottom: 50px;
-<<<<<<< HEAD
-    margin-right: 1%;
-=======
     margin-right: 10px;
->>>>>>> fc3713059d4e011034210c988cdbc6b9293fb170
 }
 
 #content .jituanrongyu li img{
     /* display:block; */
-<<<<<<< HEAD
-    height:100%;
-=======
     vertical-align:top;
     height:87%;
->>>>>>> fc3713059d4e011034210c988cdbc6b9293fb170
     width:100%;
 }
 
@@ -342,13 +334,8 @@ a img{display: block;}
     width:46px;
     height:43px;
     position: relative;
-<<<<<<< HEAD
-    top:-240px;
-    left:-28px;
-=======
     top:-255px;
     left:-30px;
->>>>>>> fc3713059d4e011034210c988cdbc6b9293fb170
 }
 #content .chengyuandanwei li p{
     background:none;

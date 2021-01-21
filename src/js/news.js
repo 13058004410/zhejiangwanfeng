@@ -159,12 +159,14 @@ $(document).ready(function(){
     )    
 
 //二级菜单点中切换文章内容
-    yemian8();   
-    yemian8_1();   
+    // yemian8();   
+    // yemian8_1();   
+    yemian8_2(1);   
     //切换到集团概况
     $('#nav_2>li').eq(0).click(function(){
-        yemian8(); 
-        yemian8_1(); 
+        // yemian8(); 
+        // yemian8_1(); 
+        yemian8_2(1);
               
               
     })

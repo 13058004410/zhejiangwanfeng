@@ -145,10 +145,22 @@ luyou.get('/zongbuxinwen',function(req,res){
     var start=(pno-1)*count;
     var sql='select*from zongbuxinwen limit ?,?';
     pool.query(sql,[start,count],function(err,result){
-        console.log(result);
+        
         res.send(result)
     }) 
 })
+
+//总部新闻---------------内容页
+luyou.get('/zongbuxinwen/news',function(req,res){
+    var obj=req.query.id;
+    // console.log(obj)
+    var sql=`select * from zongbuxinwen;`;
+    pool.query(sql,function(err,result){
+        res.send(result)
+        // console.log(result);
+    })
+})
+
 
 
 module.exports=luyou;
