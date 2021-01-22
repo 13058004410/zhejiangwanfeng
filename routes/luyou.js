@@ -152,10 +152,11 @@ luyou.get('/zongbuxinwen',function(req,res){
 
 //总部新闻---------------内容页
 luyou.get('/zongbuxinwen/news',function(req,res){
-    var obj=req.query.id;
-    console.log(obj)
-    var sql=`select * from zongbuxinwen where id=?;`;
-    pool.query(sql,[obj],function(err,result){
+    // var obj=req.query.id;
+    // console.log(obj)
+    // var sql=`select * from zongbuxinwen where id=?;`;
+    var sql=`select * from zongbuxinwen;`;
+    pool.query(sql,function(err,result){
         res.send(result)
         console.log(result);
     })

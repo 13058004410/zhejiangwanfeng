@@ -161,14 +161,20 @@ $(document).ready(function(){
 //二级菜单点中切换文章内容
     yemian8();   
     yemian8_1();   
-    // yemian8_2(1);   
     //切换到集团概况
-    $('#nav_2>li').eq(0).click(function(){
+    $('#nav_2>li').eq(0).click(function(){       
+        $('#container').empty()
         yemian8(); 
-        yemian8_1(); 
-        // yemian8_2(1);
-              
-              
+        yemian8_1();
+        function getId(name) {   
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数               
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+        var id=getId('id') 
+        if(id==NaN){
+            
+        }
     })
    
 
