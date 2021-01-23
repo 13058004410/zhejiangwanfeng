@@ -629,10 +629,8 @@ function yemian8(){
     }
    
     //第二个函数：生成轮播图=======================================
-    function innerData(data){
-        
-        
-        // var totalPage=Math.ceil(data.length/6);
+    function innerData(data,curPage){       
+        var totalPage=Math.ceil(data.length/6);
         // console.log(data.length)
         var html=`
                     <div class="banner">
@@ -666,7 +664,9 @@ function yemian8(){
                     </div>
                      `; 
 
-        $('#container').html(html)                            
+        $('#container').html(html)  
+        
+        
         //新闻资讯页面的总部新闻---新闻的列表页 
         $.ajax({
             type:'get',
@@ -691,6 +691,86 @@ function yemian8(){
                     </div>
                 `;
                 $('#content .zongbuxinwen').html(str);
+                //生成分页列表============================================
+                // var str='';
+                //把首页按钮输出来
+                if(curPage!=1){
+                    str+=`
+                        <li class='' id='home'>首页</li>
+                    `;      
+                };
+                //把上一页输出
+                if(curPage!=1){
+                    str+=`
+                        <li class='' id='pre'>上一页</li>
+                    `;
+                }
+                //循环输出页码================  
+                console.log(totalPage) 
+                totalPage=totalPage/2 
+                for(var i=1;i<=totalPage;i++){
+                    if(i==curPage){
+                        str+=`
+                            <li class="li active" index="${i}">${i}</li>
+                        `;
+                    }else{
+                        str+=`
+                            <li class="li" index="${i}">${i}</li>
+                        `;
+                    }                                    
+                }
+                //把下一页输出
+                if(curPage!=totalPage){
+                    str+=`
+                        <li class='' id='next'>下一页</li>
+                    `;
+                }
+                //把末页按钮输出来
+                if(curPage!=totalPage){
+                    str+=`
+                        <li class='' id='total'>末页</li>
+                    `;
+                };
+                $('#pagination ul').html(str);
+            
+                //点击首页
+                $('#home').click(function(){
+                    pno=1;
+                    getData(pno,pageSize);
+                })
+                //点击上一页
+                $('#pre').click(function(){
+                    pno=pno-1;
+                    if(pno<1){
+                        pno==1;
+                    };
+                    getData(pno,pageSize);
+                })
+                //点击下一页
+                $('#next').click(function(){
+                    pno=pno+1;
+                    if(pno>totalPage){
+                        pno==totalPage;
+                    };
+                    getData(pno,pageSize);
+                })
+                //点击末页
+                $('#total').click(function(){
+                    pno=totalPage;
+                    getData(pno,pageSize);
+                })
+                //点击切换内容页
+                $('.li').click(function(){                  
+                    pno=$(this).attr('index');
+                    //获取pno发再次发ajax请求
+                    getData(pno,pageSize);                
+                    var html='<div id="content"><ul>';
+                    for(var i=0;i<Math.ceil(data.length);i++){  
+                        html+=data[i];                         
+                    }
+                    html+='</ul></div>';
+                })
+        
             }
         })
     //新闻资讯页面的总部新闻---新闻列表的内容页 
@@ -700,7 +780,7 @@ function yemian8(){
         if (r != null) return unescape(r[2]); return null; //返回参数值
     }
     var id=getId('id')  
-    console.log(id)
+    // console.log(id)
 
     $.ajax({                   
         type:'get',
@@ -715,6 +795,48 @@ function yemian8(){
                     console.log(val.content)
                     $('#container').empty()
                     $('#container').html(val.content);
+                    // console.log(data.length)
+                    
+                }
+            })
+            //内容页点击上一条    
+            $('.slip-tab').find('a.prev').click(function(){
+                function getId(name) {   
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                    var r = window.location.search.substr(1).match(reg); //匹配目标参数 
+                    console.log(window.location.href)              
+                    if (r != null) return unescape(r[2]); return null; //返回参数值
+                }
+                var id=getId('id')
+                
+                if(id!==null){
+                    id--;
+                    if(id<1){
+                        id==1;                        
+                    }else{
+                        window.location.href=`news?id=${id}`
+                    }
+                    
+                }  
+            })
+            //内容页点击下一条    
+            $('.slip-tab').find('a.next').click(function(){
+                function getId(name) {   
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                    var r = window.location.search.substr(1).match(reg); //匹配目标参数 
+                                
+                    if (r != null) return unescape(r[2]); return null; //返回参数值
+                }
+                var id=getId('id')
+                
+                if(id!==null){
+                    id++;
+                    if(id>data.length){
+                        id==data.length;                        
+                    }else{
+                        window.location.href=`news?id=${id}`
+                    }
+                    
                 }
             })
             
@@ -759,43 +881,43 @@ function yemian8_1(){
    
     //第二个函数：生成分页列表、生成内容列表
     function innerData(data,curPage){
-        var totalPage=Math.ceil(data.length/6);
-        
+        var totalPage=Math.ceil(data.length);
+        console.log(totalPage)
         //生成新闻列表===========================================                  
-        // var html='';
-        // for(var i=0;i<Math.ceil(data.length);i++){
-        //     html+=`<a href="/news?id=${data[i].id}">
-        //         <li>${data[i].title}</li>
-        //     </a>`;    
-        //     // console.log(data[i]) 
-        // }
-        // $('#content .zongbuxinwen').html(html);
+        var html='';
+        for(var i=0;i<totalPage;i++){
+            html+=`<a href="/news?id=${data[i].id}">
+                <li>${data[i].title}</li>
+            </a>`;    
+            // console.log(data[i]) 
+        }
+        $('#content .zongbuxinwen').html(html);
             
-        // $.ajax({
-        //     type:'get',
-        //     dataType:'json',
-        //     url:'/luyou/zongbuxinwen/news',
-        //     async:false,
-        //     success:function(data){
-        //         var str=`
-        //             <div class="news-list">
-        //                 <ul>`;
+        // // $.ajax({
+        // //     type:'get',
+        // //     dataType:'json',
+        // //     url:'/luyou/zongbuxinwen/news',
+        // //     async:false,
+        // //     success:function(data){
+        // //         var str=`
+        // //             <div class="news-list">
+        // //                 <ul>`;
                      
-        //                 $.each(data,function(idx,val){
-        //                     // console.log(val)
-        //                     str+=`
-        //                     <a href="news?id=${val.id}">
-        //                         <li>${val.title}</li>
-        //                     </a>
-        //                     `;
-        //                 })   
+        // //                 $.each(data,function(idx,val){
+        // //                     // console.log(val)
+        // //                     str+=`
+        // //                     <a href="news?id=${val.id}">
+        // //                         <li>${val.title}</li>
+        // //                     </a>
+        // //                     `;
+        // //                 })   
                         
-        //             str+=`</ul>
-        //             </div>
-        //         `;
+        // //             str+=`</ul>
+        // //             </div>
+        // //         `;
                 
-        //         $('#content .zongbuxinwen').html(str)
-        //     }
+        // //         $('#content .zongbuxinwen').html(str)
+        // //     }
         // })
 
         
@@ -817,7 +939,9 @@ function yemian8_1(){
             `;
         }
         //循环输出页码================  
-        // console.log(data.length)  
+          
+        totalPage=totalPage/5;
+        console.log(totalPage)
         for(var i=1;i<=totalPage;i++){
             if(i==curPage){
                 str+=`
@@ -841,7 +965,7 @@ function yemian8_1(){
                 <li class='' id='total'>末页</li>
             `;
         };
-        // $('#pagination ul').html(str);
+        $('#pagination ul').html(str);
        
         //点击首页
         $('#home').click(function(){
@@ -893,74 +1017,6 @@ function yemian8_1(){
 
 
 
-// $(function(){
-//     //新闻资讯页面的总部新闻---新闻的列表页 
-//     // $.ajax({
-//     //     type:'get',
-//     //     dataType:'json',
-//     //     url:'/luyou/zongbuxinwen/news',
-//     //     async:false,
-//     //     success:function(data){
-//     //         var str=`
-//     //             <div class="news-list">
-//     //                 <ul>`;
-                 
-//     //                 $.each(data,function(idx,val){
-//     //                     // console.log(val)
-//     //                     str+=`
-//     //                     <a href="news?id=${val.id}">
-//     //                         <li>${val.title}</li>
-//     //                     </a>
-//     //                     `;
-//     //                 })   
-                    
-//     //             str+=`</ul>
-//     //             </div>
-//     //         `;
-//     //         $('#content .zongbuxinwen').html(str);
-//     //     }
-//     // })
-
-
-
-
-
-
-
-
-
-//     //新闻资讯页面的总部新闻---新闻列表的内容页 
-//     // function getId(name) {   
-//     //     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-//     //     var r = window.location.search.substr(1).match(reg); //匹配目标参数               
-//     //     if (r != null) return unescape(r[2]); return null; //返回参数值
-//     // }
-//     // var id=getId('id')  
-//     // console.log(id)
-
-//     // $.ajax({                   
-//     //     type:'get',
-//     //     dataType:'json',
-//     //     url:'/luyou/zongbuxinwen/news',
-//     //     contentType:'application/json;utf-8',
-//     //     async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
-//     //     success:function(data){
-//     //         $.each(data,function(idx,val){
-//     //             // console.log(val);
-//     //             if(id==val.id){
-//     //                 console.log(val.content)
-//     //                 $('#container').empty()
-//     //                 $('#container').html(val.content);
-//     //             }
-//     //         })
-            
-//     //     },
-//     //     error:function(e){
-//     //         console.log(e.staus)
-//     //         console.log(e.responseText)
-//     //     }
-//     // })   
-// })
 
 
 
