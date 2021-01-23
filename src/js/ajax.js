@@ -15,7 +15,7 @@ $(function(){
             for(var i=0;i<data.length;i++){
                 str+=`
                     <li>
-                        <a href="#">
+                        <a href="news?id=${data[i].id}">
                             ${data[i].title}
                         </a>
                         <img src="./img/hot.png" alt="">
@@ -41,13 +41,14 @@ $(function(){
                 str+=`
                     <li>
                         <img src="./img/index_icon.jpg" alt="">
-                        <a href="#">
+                        <a href="news?id=${data[i].id}">
                             ${data[i].title}
                         </a>
-                        <li>${data[i].date}/li>
+                        <span>${data[i].date}<span>
                     </li>
                 `
             }
+
             $('#news-list').html(str);
         },
         error:function(e){
@@ -65,7 +66,7 @@ $(function(){
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
-                    <li><a href="#">${data[i].title}</a></li>
+                    <li><a href="news?id=${data[i].id}">${data[i].title}</a></li>
                 `;
             }
             $('#document').html(str);
@@ -85,7 +86,7 @@ $(function(){
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
-                    <div><a href="#"><img src="${data[i].img}" alt=""><h3>${data[i].title}</h3></a></div>
+                    <div><a href="news?id=${data[i].id}"><img src="${data[i].img}" alt=""><h3>${data[i].title}</h3></a></div>
                 `;
             }
             $('#hexinyewu').html(str);
@@ -107,7 +108,7 @@ $(function(){
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
-                    <li><a href="#">${data[i].title}</a><img src="./img/hot.png" alt=""></li>
+                    <li><a href="news?id=${data[i].id}">${data[i].title}</a><img src="./img/hot.png" alt=""></li>
                 `
             };
             $('#member_unit').html(str);
@@ -127,7 +128,7 @@ $(function(){
             var str='';
             for(var i=0;i<data.length;i++){
                 str+=`
-                    <li><a href="#">${data[i].title}</a></li>
+                    <li><a href="news?id=${data[i].id}">${data[i].title}</a></li>
                 `;
             };
             $('#video-list').html(str);
@@ -238,7 +239,7 @@ function yemian4(){
         //生成内容列表=======================================
         var html='<div id="content"><ul class="jituanrongyu">';
         for(var i=0;i<Math.ceil(data.length);i++){
-            html+=`<li><img src=${data[i].img}><p>${data[i].p}</p></li>`;    
+            html+=`<a href="news?id=${data[i].id}"><li><img src=${data[i].img}><p>${data[i].p}</p></li></a>`;    
             console.log(data[i]) 
         }
         html+='</ul></div>';

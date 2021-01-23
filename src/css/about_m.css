@@ -54,6 +54,10 @@
     }
 
     /* 文章部分 */
+
+    .text-content img{
+        width:100%;
+    }
     .text-content .num-info .num-item p:nth-child(1){
         font-size: 32px;
         color:#0073bc;
@@ -69,5 +73,48 @@
         color: #666;
         line-height: 25px;
         margin-bottom: 40px;
+    }
+
+    #content .jituanrongyu li{
+        width:47% !important;
+        height:40% !important;
+        margin-bottom: 2% !important;
+    }
+    #content a li:nth-child(even){
+        margin-right:0 !important;
+    }
+
+    #content p{
+        font-size:12px !important;
+    }
+    #content .chengyuandanwei li{
+        width:47% !important;
+        height:30% !important;
+        padding: 15px 10px 20px !important;
+        line-height: 20px !important;
+    }
+    #container .qywh-wrapper .title{
+        font-size:26px;
+    }
+    #container .flex-box .flex-item{
+        width:100% !important;
+    }
+    #container .flex-box .flex-item p,strong{
+        font-size:16px;
+    }
+    #container .qywh-wrapper .flex_img{
+        width:100% !important;
+    }
+    #container .qywh-wrapper .flex_img img{
+        width:100% !important;
+    }
+
+
+    #pagination ul{
+        width:100%;
+    }
+    #pagination ul li{
+        width:12%;
+        font-size:10px;
     }
 }
