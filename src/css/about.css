@@ -390,7 +390,7 @@ a img{display: block;}
     padding-top:15px;
 }
 #container .list{
-width:900px;
+width:83%;
 height:400px;
 position:absolute;
 overflow: hidden;
@@ -457,7 +457,7 @@ display:block;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    margin-right:50px;
+    margin-right:10%;
     font-size: 24px;
     color: #666;
     cursor: pointer;

@@ -161,7 +161,7 @@ $(document).ready(function(){
                     targetLeft=-imgWidth_num*(index-1);
                 }
             }
-            $('.list').animate({left:targetLeft+'px'});
+            $('.banner .list').animate({left:targetLeft+'px'});
             //更新后的圆点加上样式
             $(buttonLi_m[index-1]).addClass('active');
             $(buttonLi[index-1]).addClass('active');

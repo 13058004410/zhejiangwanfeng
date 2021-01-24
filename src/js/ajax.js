@@ -527,7 +527,7 @@ function yemian7(){
         var totalPage=Math.ceil(data.length);
         // console.log(totalPage);
         var html='<div class="wrapper">';
-        html+=`<div class="list" id="list" style="left:250px">`;
+        html+=`<div class="list" id="list" style="left:23%">`;
         //循环输出页码================    
         for(var i=1;i<=totalPage;i++){
             if(i==curPage){
@@ -570,7 +570,7 @@ function yemian7(){
             }else{
                 getData(pno,pageSize);
             }
-            
+            $('.wrapper .list').animate({left:'100px'})
         });
         //下一页=======
         $('#left').click(function(){
@@ -581,7 +581,7 @@ function yemian7(){
             }else{
                 getData(pno,pageSize);
             }
-            console.log(pno)
+            $('.wrapper .list').animate({left:'-100px'})
         });
 
         //点击页码=========
