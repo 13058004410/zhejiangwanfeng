@@ -7,7 +7,7 @@ $(function(){
     $.ajax({
         type:'GET',
         dataType:'json',  //服务器返回的数据类型
-        contentType:'application/json;charset=UTF-8',  //发给服务器的数据类型
+        //contentType:'application/json;charset=UTF-8',  //发给服务器的数据类型
         url:'/luyou/huoqu',
         success:function(data){
             // console.log(data);
@@ -34,7 +34,7 @@ $(function(){
         type:'GET',
         dataType:'json',
         url:'/luyou/huoqu_2',
-        contentType:'application/json;charset=UTF-8',
+        //contentType:'application/json;charset=UTF-8',
         success:function(data){
             var str='';
             for(var i=0;i<data.length;i++){
@@ -60,7 +60,7 @@ $(function(){
     $.ajax({
         type:"get",
         dataType:'json',
-        contentType:'application/json;charset=utf-8',
+        //contentType:'application/json;charset=utf-8',
         url:'/luyou/huoqu_2',
         success:function(data){
             var str='';
@@ -80,7 +80,7 @@ $(function(){
     $.ajax({
         type:"get",
         dataType:'json',
-        contentType:'application/json;charset=utf-8',
+        //contentType:'application/json;charset=utf-8',
         url:'/luyou/huoqu_3',
         success:function(data){
             var str='';
@@ -101,7 +101,7 @@ $(function(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;charset=utf-8',
+        //contentType:'application/json;charset=utf-8',
         url:'/luyou/huoqu_4',       
         success:function(data){
             // console.log(data)
@@ -122,7 +122,7 @@ $(function(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;charset=uft-8',
+        //contentType:'application/json;charset=uft-8',
         url:'/luyou/huoqu_5',
         success:function(data){
             var str='';
@@ -151,7 +151,7 @@ function yemian1(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;utf-8',
+        //contentType:'application/json;utf-8',
         url:'/luyou/qiyegaikuang',
         success:function(data){
             var str=''; 
@@ -170,7 +170,7 @@ function yemian2(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;utf-8',
+        //contentType:'application/json;utf-8',
         url:'/luyou/dongshizhangzhici',
         success:function(data){          
             var str='';
@@ -189,7 +189,7 @@ function yemian3(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;utf-8',
+        //contentType:'application/json;utf-8',
         url:'/luyou/zuzhikuangjia',
         success:function(data){          
             var str='';
@@ -218,7 +218,7 @@ function yemian4(){
             type:'get',
             dataType:'json',
             url:'/luyou/jituanrongyu?pno='+curPage+'&psize='+pageSize,
-            contentType:'application/json;utf-8',  
+            //contentType:'application/json;utf-8',  
             success:function(data){
                 // console.log(data);
                 // $('#pagination').html(data)
@@ -345,7 +345,7 @@ function yemian5(){
     $.ajax({
         type:'get',
         dataType:'json',
-        contentType:'application/json;utf-8',
+        //contentType:'application/json;utf-8',
         url:'/luyou/qiyewenhua',
         success:function(data){          
             var str='';
@@ -374,7 +374,7 @@ function yemian6(){
                 type:'get',
                 dataType:'json',
                 url:'/luyou/chengyuandanwei?pno='+curPage+'&psize='+pageSize,
-                contentType:'application/json;utf-8',  
+                //contentType:'application/json;utf-8',  
                 success:function(data){
                     // console.log(data.length);
                     // $('#pagination').html(data)
@@ -508,7 +508,7 @@ function yemian7(){
             type:'get',
             dataType:'json',
             url:'/luyou/wanfenglicheng?pno='+curPage+'&psize='+pageSize,
-            contentType:'application/json;utf-8',  
+            //contentType:'application/json;utf-8',  
             success:function(data){
                 // console.log(data);
                 // $('#pagination').html(data)
@@ -613,7 +613,7 @@ function yemian8(){
             type:'get',
             dataType:'json',
             url:'/luyou/zongbuxinwen1?pno='+curPage+'&psize='+pageSize,
-            contentType:'application/json;utf-8',
+            //contentType:'application/json;utf-8',
             async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
             success:function(data){
                 // console.log(data);
@@ -787,7 +787,7 @@ function yemian8(){
         type:'get',
         dataType:'json',
         url:'/luyou/zongbuxinwen/news',
-        contentType:'application/json;utf-8',
+        //contentType:'application/json;utf-8',
         async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
         success:function(data){
             $.each(data,function(idx,val){
@@ -865,7 +865,7 @@ function yemian8_1(){
             type:'get',
             dataType:'json',
             url:'/luyou/zongbuxinwen?pno='+curPage+'&psize='+pageSize,
-            contentType:'application/json;utf-8',
+            //contentType:'application/json;utf-8',
             async:false,  //这个设置很有用！！！！！！！！！！！！！！！！！
             success:function(data){
                 // console.log(data);
