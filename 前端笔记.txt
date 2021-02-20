@@ -95,10 +95,13 @@ ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
 
 28.如果git公钥出现问题，那就删除.ssh文件夹，然后用gitBash工具运行 ssh-keygen -t rsa -C "自己的邮箱" 成功之后打开.ssh文件夹下以pub结尾的文件，把里边的东西复制出来粘贴到远程仓库的设置里边
 
+29.后端代码那里，如果是查询数据库表格的话就用 result.length!=0 来判断；
+   如果是修改数据库表格的话就用 result.affectedRows>0 来判断
 
 
+30.请求模拟数据报错： Access to XMLHttpRequest at ‘file:///C:/Users/Administrator/Desktop/test/AJAX/demo_test.txt’ from origin ‘null’ has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.
 
-
+解决办法：在浏览器属性目标里边最后添加 空格--allow-file-access-from-files
 
 
 
