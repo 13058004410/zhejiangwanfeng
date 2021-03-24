@@ -122,7 +122,7 @@ $(function(){
     $.ajax({
         type:'get',
         dataType:'json',
-        //contentType:'application/json;charset=uft-8',
+        //contentType:'application/json;charset=uft-8',  get方法是没有这句话的,post才有
         url:'/luyou/huoqu_5',
         success:function(data){
             var str='';

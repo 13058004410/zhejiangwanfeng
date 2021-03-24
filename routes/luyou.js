@@ -89,6 +89,7 @@ luyou.get('/huoqu_6',function(req,res){
     var start=(pno-1)*count;
     var sql='select*from jituanrongyu limit ?,?';
     pool.query(sql,[start,count],function(err,result){
+        if(err) throw err;
         res.send(result)
     })
 });
@@ -96,6 +97,7 @@ luyou.get('/huoqu_6',function(req,res){
 //企业文化
 luyou.get('/qiyewenhua',function(req,res){
     pool.query('select*from article',function(err,result){
+        if(err) throw err;
         res.send(result)
     })
 })
@@ -107,6 +109,7 @@ luyou.get('/chengyuandanwei',function(req,res){
     var start=(pno-1)*count;
     var sql='select*from chengyuandanwei limit ?,?';
     pool.query(sql,[start,count],function(err,result){
+        if(err) throw err;
         // console.log(result);
         res.send(result)
     })
@@ -118,7 +121,8 @@ luyou.get('/wanfenglicheng',function(req,res){
     var count=parseInt(psize);
     var start=(pno-1)*count;
     var sql='select*from wanfenglicheng limit ?,?';
-    pool.query(sql,[start,count],function(err,result){       
+    pool.query(sql,[start,count],function(err,result){   
+        if(err) throw err;    
         res.send(result)
     })
 });
@@ -126,8 +130,10 @@ luyou.get('/wanfenglicheng',function(req,res){
 
 //总部新闻
 luyou.get('/zongbuxinwen1',function(req,res){    
+    
     var sql='select*from zongbuxinwen1';
-    pool.query(sql,function(err,result){             
+    pool.query(sql,function(err,result){   
+        if(err) throw err;          
         res.send(result)
     })    
 })
@@ -145,7 +151,7 @@ luyou.get('/zongbuxinwen',function(req,res){
     var start=(pno-1)*count;
     var sql='select*from zongbuxinwen limit ?,?';
     pool.query(sql,[start,count],function(err,result){
-        
+        if(err) throw err;
         res.send(result)
     }) 
 })
@@ -157,6 +163,7 @@ luyou.get('/zongbuxinwen/news',function(req,res){
     // var sql=`select * from zongbuxinwen where id=?;`;
     var sql=`select * from zongbuxinwen;`;
     pool.query(sql,function(err,result){
+        if(err) throw err;
         res.send(result)
         console.log(result);
     })

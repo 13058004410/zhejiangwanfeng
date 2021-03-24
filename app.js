@@ -9,6 +9,7 @@ app.listen(80,function(){
 
 
 app.use(express.static('src'));
+
 app.use(bodyParser.urlencoded({
     extended:false
 }));
@@ -22,8 +23,6 @@ app.get('/about',function(req,res){
 app.get('/news',function(req,res){
     res.sendFile(__dirname+'/src/'+'news.html');
 });
-
-
 
 
 
