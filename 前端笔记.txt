@@ -1,0 +1,127 @@
+﻿
+0.npm init -y  初始化当前项目，创建一个叫package.json的文件
+
+1.不需要用npm install 在当前目录下创建node_modules文件夹，后面用gulp创建。
+
+2.npm install express 在node_modules目录下创建express文件夹
+
+3.Please make sure you have the correct access rights and the repository exists.这是git的ssh公钥出问题，把C：\user下的.ssh文件夹删掉。然后打开git bash  输入 
+git config —global user.name "用户名"回车
+git config —global user.email "邮箱"回车
+ssh-keygen -t rsa -C "你的名字/你的邮箱"回车
+最后你会看到类似一幅图画的代码，代表新的公钥已经生成。打开id_ras.pub这个文件，复制里边的公钥，去github上面新建SSH公钥就可以了。
+
+4.npm install gulp-less gulp-watch gulp-cssmin gulp-livereload gulp-rev-collector gulp-clean gulp-connect gulp-sourcemaps gulp gulp-sass gulp-uglify gulp-babel @babel/core @babel/preset-env gulp-htmlmin gulp-connect --save-dev     安装gulp以及gulp插件，同时也会创建node_modules文件目录
+
+1.gulp是一个类似于webpack的打包工具。它的功能可以有搭建后端服务器、把ES6代码降级为ES5代码、压缩代码、往dist文件夹里边写入文件等等。
+
+2.创建项目的基本步骤：在github创建一个仓库，然后克隆到本地，然后进入项目文件夹用npm init -y 初始化项目生产packege.json文件，创建gulpfile.js配置文件，手动创建dist和src及其子目录，运行gulp init命令初始化gulp插件以及创建node_modules文件目录，运行gulp dev启动gulpfile.js里边的任务就会顺便启动服务器了。src下面有js、css、image这些文件夹以及index.html文件。
+
+3.gulp init 命令是在gulp dev启动服务器之后在浏览器输入localhost:端口第一次打开index.html页面之后才能执行的命令。
+
+4.@media (max-width:767px){
+            写一些样式在里边，
+            让这些样式在屏幕小于767px的时候执行
+        }
+
+5.若页面需默认用极速内核，增加标签：<meta name="renderer" content="webkit"> 
+
+6. 以前的bootstrap框架文件使用使用顺序是：
+	1.bootstrap.css
+	2.jquery.js
+	3.popper.js
+	4.bootstrap.js
+    现在的是：
+	1.bootstrap.css
+	2.jquery.js
+	3.bootstrap.bundle.js
+
+7.媒体查询：
+
+                @media (min-width:768px){          }
+	@media(min-width:992px){           }
+	@media(min-width:1200px){            }
+
+                由小到大从上到下排列，左右外边距为auto
+
+
+
+8.新闻列表的标题和日期想要浏览器窗口放大缩小不散架就用ul li布局
+
+9.媒体查询的样式要另外一个文件写
+
+10.关于两个DIV在父元素里边浮动，缩小窗口其中一个会往下跑的问题解决：左边浮动的DIV的有外边距要用百分比！！！
+
+11.导航栏显示二级菜单适合使用$(this).eq(0)这个方法，选定特定的li起作用
+
+12.把新建的本地分支推送到github上面git push origin first
+
+13.第一次在电脑上使用命令行连接mysql数据库要进行一下设置：
+	在cmd所在的文件目录打开它（因为这样才能永久生效）
+	输入 chpc 65001回车
+	右键点击上面标题栏选择属性
+	点击选项，查看当前代码页是否已经切换为65001(utf-8)
+	如果是则继续点击字体，把字体更改为Lucida Console
+	点击确定保存退出
+
+14.针对每一个知识点主动找练习去练
+
+
+15.在非严格模式下，在函数里边没有用var定义一个变量的话它会变成全局变量；在严格模式下则不会，而是会报错：xx is not defined
+
+16.如果用var定义的变量它会发生函数提升，函数里边的除外。
+
+17.手机端导航条的显示和隐藏适合用slideToggle()函数配合click()点击事件来实现。（jquery）
+
+18.想要用nodejs实现动态页面跳转（没有.html后缀）就要引入FS文件系统模块，app.get('/login',function(req,res){res.sendFile(__dirname+'/src/'+'login.html')})
+
+19.如果项目要用到图片CSS、js等静态资源，app.use(express.static('src'))
+
+20.如果是发POST请求，就要使用到中间件body-parser，它可以对POST的请求体进行解析。app.use(bodyPar.urlencoded({extended:false}))
+
+21.数据库里边的数据导进去的时候要连页面的标签一起导进去，调用的时候就方便。
+
+22.事件委托这个题目要背一下
+
+23.有时候并不需要事件委托，函数调用的位置不对页面也是没有反应的
+
+24. script标签里边的src网址前面一定要加http:// 否则会自动加上当前网站的域名。
+
+25.样式表要多写几个选择器
+
+26.当页面可以显示某个元素而且DOM树也有加载，但就是获取不到该元素，那就要看看是不是把AJAX请求的async设置为true，如果是就改为false
+
+27.开始一个项目的时候要详细规划一下，有哪些文件全部列好
+
+28.如果git公钥出现问题，那就删除.ssh文件夹，然后用gitBash工具运行 ssh-keygen -t rsa -C "自己的邮箱" 成功之后打开.ssh文件夹下以pub结尾的文件，把里边的东西复制出来粘贴到远程仓库的设置里边
+
+29.后端代码那里，如果是查询数据库表格的话就用 result.length!=0 来判断；
+   如果是修改数据库表格的话就用 result.affectedRows>0 来判断
+
+
+30.请求模拟数据报错： Access to XMLHttpRequest at ‘file:///C:/Users/Administrator/Desktop/test/AJAX/demo_test.txt’ from origin ‘null’ has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.
+
+解决办法：在浏览器属性目标里边最后添加 空格--allow-file-access-from-files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
